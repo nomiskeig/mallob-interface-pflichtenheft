@@ -1,0 +1,139 @@
+\section{Funktionale Anforderungen}
+
+
+\subsection{API}
+\begin{itemize}
+
+%--------------------Core Funktionen und Anforderungen an die API   
+        
+    \item API antwortet immer
+    \begin{itemize}
+        \item Bei falschen Daten, Fehlermeldung
+        \item Bei korrekten Daten das Ergebnis
+    \end{itemize}
+
+    \item Job zur Bearbeitung hinzufügen
+    
+    
+    \item Jobs abbrechen
+    \begin{itemize}
+        \item Teil-Ergebnisse Statistik über gemachte Arbeit wird als Antwort gesendet
+    \end{itemize}
+    
+    
+    \item Spezifizierung von Jobs 
+    \begin{itemize}
+        \item (Siehe schnittstelle Mallob); Priorisierung, Einstellung von Laufzeit (Coreminuten)..
+    \end{itemize}
+    
+    
+    \item Möglichkeiten für das Einreichen einer Job-Beschreibung
+    \begin{itemize}
+        \item Job-Beschreibung separat von JSON
+        \item Link zur Datei angeben
+        \item Jobbeschreibung direkt in JSON eingebunden
+        \item Bereits eingereichte Job-Beschreibungen
+    \end{itemize}
+    
+    \item System-Diagnose über API verfügbar sein$^3$
+        \begin{itemize}
+            \item Abfrage für Fehler, vermutlich auch ganze Liste an Fehlern
+            \item Differenzierung in Nutzer und Admin: Admins sehen alle Fehler, Nutzer nur diejenigen Fehler, die sie auch etwas angehen
+        \end{itemize}
+    
+    \item Streaming des Ouput-Logs von Mallob an das Frontend$^1$
+    \item Nutzer-Verwaltung :  Registrieren und anmelden muss über API möglich sein.$^2$
+
+    %------------------------------------Keine Ahnung was diese Punkte heißen sollen
+    \item Query für bereits abgeschlossene Jobs
+
+    \item Die Betreuer wollen, das eine korrekte Anfrage erst mit dem Ergebnis beantwortet will. Da die Verbindung abbrechen kann (z.B Timeout), muss auch Möglichkeit existieren, um das Ergebnis unabhängig von der Anfrage zu erhalten.\\
+    Hier wäre es vermutlich sinnvoll, einfach eine Anfrage zu haben, die einfach den Status der letzten Anfrage zurück gibt, unabhängig davon, ob ein Verbindungs-abbruch vorliegt oder nicht.
+
+    
+    %------------------------------------------------------Offene Fragen & sachen die evlt nicht in die API gehören
+    
+    \item Bereits eingereichte Jobs?
+    \begin{itemize}
+        \item irgendwas stand im Raum mit Caching von schonmal gelösten Problemen
+        \item Nutzer hat Zugriff auf eine Historie mit bisher eingereichten Jobs?
+    \end{itemize}
+
+
+\end{itemize}
+
+\subsubsection{Kommentare, Fragen und Ideen zur Umsetzung}
+
+$^1$ Das hier sieht dafür interessant aus, aber da muss man sich noch gut einlesen \\
+\url{https://technicalsand.com/streaming-data-spring-boot-restful-web-service/#0-spring-boot-rest-api-streaming-options} \\da ist auch irgendwie die Frage ob das alles blockt wenn man das irgendwie so streamt und das mehrmals parallel, am schönesten wäre eigentlich einfach ne "reverse api"..\\
+
+
+    
+ $^2$ Gängiges Verfahren festlegen. Vorschlag; Tokens. Ein Nutzer bekommt bei Registrierung einen Token und benutzt diese um anfragen an die API zu authentifizieren:\\
+\url{https://www.ibm.com/docs/de/ibm-mq/9.1?topic=security-using-token-based-authentication-rest-api} \\
+
+
+$^3$ Erfragen was genau eine System-diganose beinhalten soll (Schnittstellen von Mallob)
+
+%------------------------------------------------------------WEB-Interface
+\subsection{Web-Interface}
+
+\begin{itemize}
+    \item Funktionen der API sollen auch über Web-interface ansprechbar sein
+    \item Kleiner Editor für Formeln (mindestens im DIMACS.cnf) Format, (wunsch: auch visuell)
+\end{itemize}
+
+%-------------------------------------------------------------Visualisierung
+\subsection{Visualisierung}
+
+\begin{itemize}
+    \item Nutzer sollen nur Auskunft über ihre laufenden Jobs bekommen 
+    \item Jobs anderer Nutzer werden anonymisiert dargestellt
+    \item Für Daten Visualisierung soll der Output-Log-Stream von Mallob eingelesen und verarbeteitet werden -> das macht das backend (?)
+\end{itemize}
+
+
+%---------------------------------Administration
+\subsection{Administration}
+\begin{itemize}
+    \item Diagnostik für Mallob
+    \item Warnungen und Fehler von Mallob einsehbar
+    \item überprüfen ob Mallob gerade läuft und evtl. Warnung ausgeben, wenn Mallob nicht erreichbar ist
+    \item Authentifizierung von Nutzerkonten (siehe Benutzerkonten)
+    
+        
+    \item (Nice to have): Mallob (neu)starten und beenden, parametrisierung angeben
+    
+    \item Werden die Admins selbst Jobs einreichen können und mit welchem Priorität?
+    \item Wieviele Administratoren soll es geben?
+\end{itemize}
+
+%---------------------------------Benutzerkonten
+
+\subsection{Benutzerkonten}
+
+\begin{itemize}
+    \item Anlegen eines Benutzerkontos
+    \begin{itemize}
+        \item Erst-Registrierung von Nutzern im System; jeder kann ein Konto anlegen. Kontos werden nach Authentifizierung durch Administrator freigeschaltet.
+    \end{itemize}
+    \item Speicherung der Konten in einer Datenbank
+\end{itemize}
+
+
+%---------------------------------Prioritäten
+
+\subsection{Job-/Nutzer-Priorität}
+Information : Mallob sieht nur eine Priorität. Es ist unsere Aufgabe \textbf{eine} Priorität für jeden Job herzuleiten. Dazu müssen folgende Prioritäten vereint werden: 
+\begin{itemize}
+    \item Pro Nutzer wird es eine Priorität geben 
+    \item Beim Anlegen eines Nutzer bekommt jeder eine Standardpriorität. Diese kann durch einen Administrator verändert werden.
+    \item Pro Job darf jeder Nutzer eine Priorität vergeben
+    \item Mallob sieht nur eine Priorität
+    \item evtl. die vom Nutzer vergebene Priorität durch den Durchschnitt der vom Nutzer vergebenen Prioritäten teilen um die Zahl zu normalisieren
+\end{itemize}
+
+
+
+\subsection{Plugins}
+\section{Nichtfunktionale Anforderungen}

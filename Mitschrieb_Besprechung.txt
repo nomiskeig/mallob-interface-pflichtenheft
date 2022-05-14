@@ -1,14 +1,35 @@
-Mitschrieb der Besprechung am 14.05.2022+
+Mitschrieb der Besprechung am 14.05.2022
 
 Aufgaben
 
---GUI Entwurf 
+--GUI Entwurf + Erklärung der Funktionen (grob)
+Simon, Siwi
 
 --Testfälle 
+Valentin, Maik
+
+
+--Systemmodell (plus anwendungsfalldiagramme)
+Simon, Maik
 
 ----Funktionalen Anforderungen ausarbeiten
 --API
---Web-Interface
---Visualisierung
---Administration
+Siwi,Valentin
 
+--Web-Interface
+Kaloyan
+
+--Visualisierung (Was wird visualisiert und evtl auch wie)
+Maik, Kaloyan
+
+--Administration 
+Simon, Kaloyan, Siwi
+
+
+
+
+-- Produkt-Daten (für alle, falls jemandem was einfällt)
+--Einleitung, Zielbestimmung und Produkt-Einsatz free-for-all, Anwendungsfalldiagramm
+
+
+%//Falls Zeit; Änderung einer Datei in echtzeit auslesen (Java), Änderungen ans Frontend weiterleiten?

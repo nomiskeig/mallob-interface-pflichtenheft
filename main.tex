@@ -1,4 +1,3 @@
-\documentclass{article}
 
 % Hier gibts ne Vorlage falls wir die Nutzen wollen https://git.scc.kit.edu/IPDSnelting/pflichtenheft/-/blob/master/pflichtenheft.tex
 %Bindet die setup-datei ein. Beim Kompilieren wird alles was in setup.tex steht an diese stelle kopiert
@@ -15,112 +14,18 @@
 
 \section{Introduction}
 
-\section{Funktionale Anforderungen}
+\input{1_Einleitung}
+\input{2_Zielbestimmungen}
+\input{3_Produkt-Einsatz}
+\input{4_Produktumgebung}
+\input{5_Produktfunktionen}
+\input{6_Produkt-Daten}
+\input{7_Systemmodell}
+\input{8_Produkt-Leistungen}
+\input{9_Benutzeroberfläche}
+\input{10_Testszenarien}
 
 
-\subsection{API}
-\begin{itemize}
-    \item Die API muss jederzeit ständig den aktuellen Zustand rauszugeben. Das hier sieht dafür interessant aus, aber da muss man sich noch gut einlesen
-    \url{https://technicalsand.com/streaming-data-spring-boot-restful-web-service/#0-spring-boot-rest-api-streaming-options} da ist auch irgendwie die Frage ob das alles blockt wenn man das irgendwie so streamt und das mehrmals parallel, am schönesten wäre eigentlich einfach ne "reverse api"..
-    \item Query für bereits abgeschlossene Jobs
-    \item irgendwas stand im Raum mit Caching von schonmal gelösten problemen
-    \item API liefert immer Antwort, wenn Daten falsch sind fehlermeldung, wenn Daten korrekt das
-        Ergebnis
-    \item Die Betreuer wollen, das eine korrekte Anfrage erst mit dem Ergebnis beantwortet will. Da die Verbindung abbrechen kann     (z.B Timeout), muss auch Möglichkeit existieren, um das Ergebnis unabhängig von der Anfrage zu erhalten.\\
-        Hier wäre es vermutlich sinnvoll, einfach eine Anfrage zu haben, die einfach den Status der letzten Anfrage zurückgibt, unabhängig davon, ob ein Verbindungsabbruch vorliegt oder nicht.
-
-    \item Registrieren und anmelden muss über API möglich sein. Hier sollten wir uns auf irgendein gängiges Verfahren festlegen (Tokens etc.)
-    \item Diagnose muss über API verfügbar sein
-        \begin{itemize}
-            \item Abfrage für Fehler, vermutlich auch ganze Liste an Fehlern
-            \item was genau muss vermutlich erfragt werden, aber mindestens das womit auch das Frontend arbeiten kann
-            \item Abfrage für Fehler von nur bestimmten Nutzer
-        \end{itemize}
-
-    \item Job hinzufügen
-    \item Nutzer hat Zugriff auf eine Historie mit bisher eingereichten Jobs?
-    
-    
-    \item Einreichen der Job-Beschreibung
-    \begin{itemize}
-        \item Jobbeschreibung separat von JSON
-        \item Link zur Datei angeben
-        \item Jobbeschreibung direkt in JSON eingebunden
-    \end{itemize}
-    
-    \item Jobs können über API abgebrochen werden. Teilergebnisse (Statistik über gemachte Arbeit wird als Antwort gesendet)
-    
-    \item Korrektheit der Daten wird durch Mallob geprüft
-    
-    \item Es wird keine Korrektur von falschen Daten durch die API geben
-    
-    \item Vielleicht können die Daten auch separat aufgeschrieben werden und 
-    die API erstellt eine JSON Datei damit.
-\end{itemize}
-
-%----------------------------WEB-Interface
-\subsection{Web-Interface}
-
-\begin{itemize}
-    \item Funktionen der API sollen auch über Web-interface ansprechbar sein
-    \item Kleiner Editor für Formeln (mindestens im DIMACS.cnf) Format, (wunsch: auch visuell)
-\end{itemize}
-
-%---------------------------------Visualisierung
-\subsection{Visualisierung}
-
-\begin{itemize}
-    \item Nutzer sollen nur Auskunft über ihre laufenden Jobs bekommen 
-    \item Jobs anderer Nutzer werden anonymisiert dargestellt
-    \item Für Daten Visualisierung soll der Output-Log-Stream von Mallob eingelesen und verarbeteitet werden -> das macht das backend (?)
-\end{itemize}
-
-
-%---------------------------------Administration
-\subsection{Administration}
-\begin{itemize}
-    \item Diagnostik für Mallob
-    \item Warnungen und Fehler von MAllob einsehbar
-    \item (Nice to have): Mallob (neu)starten und beenden, parametrisierung angeben
-    \item überprüfen ob Mallob gerade läuft und evtl. Warnung ausgeben, wenn Mallob nicht erreichbar ist
-    
-    \item Werden die Admins selbst Jobs einreichen können und mit welchem Priorität?
-\end{itemize}
-
-%---------------------------------Benutzerkonten
-
-\subsection{Benutzerkonten}
-
-\begin{itemize}
-    \item Erst-Registrierung von Nutzern im System; jeder kann ein Konto anlegen. Kontos werden nach authentifizierung durch Administrator freigeschaltet.
-    \item Speicherung der Konten in Datenbank
-\end{itemize}
-
-
-%---------------------------------Prioritäten
-
-\subsection{Job-/Nutzer-Priorität}
-Information : Mallob sieht nur eine Priorität. Es ist unsere Aufgabe \textbf{eine} Priorität für jeden Job herzuleiten. Dazu müssen folgende Prioritäten vereint werden: 
-\begin{itemize}
-    \item Pro Nutzer wird es eine Priorität geben 
-    \item Beim Anlegen eines Nutzer bekommt jeder eine Standardpriorität. Diese kann durch einen Administrator verändert werden.
-    \item Pro Job darf jeder Nutzer eine Priorität vergeben
-    \item Mallob sieht nur eine Priorität
-    \item evtl. die vom Nutzer vergebene Priorität durch den Durchschnitt der vom Nutzer vergebenen Prioritäten teilen um die Zahl zu normalisieren
-\end{itemize}
-
-
-
-\subsection{Plugins}
-\section{Nichtfunktionale Anforderungen}
-
-
-%--------------------------------Abgrenzungskritierien-----
-\section{Abgrenzungskriterien}
-    \begin{itemize}
-        \item Nur eine Jobbeschreibung pro Anfrage
-    \end{itemize}
-    
 %---------------------------Kommunikation mit Mallob------    
 \section{Kommunikation mit Mallob}
 
@@ -130,6 +35,16 @@ Information : Mallob sieht nur eine Priorität. Es ist unsere Aufgabe \textbf{ei
     \item Der Output wird von Mallob ebenfalls las Datei in einem Verzeichnis ausgegeben
     \item JSON und Jobbschreibung können unterschiedliche Dateien sein (siehe Einreichen der Jobbeschreibung, API)
 \end{itemize}
+
+
+
+%--------------------------------Abgrenzungskritierien-----
+\section{Abgrenzungskriterien}
+    \begin{itemize}
+        \item Nur eine Jobbeschreibung pro Anfrage
+        \item Korrektheit der Daten wird durch Mallob geprüft
+        \item Es wird keine Korrektur von falschen Daten durch die API geben
+    \end{itemize}
 
 
 
