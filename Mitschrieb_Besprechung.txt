@@ -1,0 +1,14 @@
+Mitschrieb der Besprechung am 14.05.2022+
+
+Aufgaben
+
+--GUI Entwurf 
+
+--Testfälle 
+
+----Funktionalen Anforderungen ausarbeiten
+--API
+--Web-Interface
+--Visualisierung
+--Administration
+
