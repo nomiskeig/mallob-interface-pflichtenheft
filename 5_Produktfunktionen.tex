@@ -1,137 +1,106 @@
 \section{Funktionale Anforderungen}
+% Sollten wir noch nutzen
+%https://de.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
 
 
 \subsection{API}
+
 \begin{itemize}
-
-%--------------------Core Funktionen und Anforderungen an die API   
+    \item[FA10] \textbf{Registrierung von Nutzern} \\
+    Es ist möglich neue Nutzer über die API zu registrieren, sodass diese sich mit ihren Zugangsdaten authentifizieren können -> wie genau?
+    
+    \item[FA20] \textbf{Authentifizierung von Nutzern} \\
+    Nach dem Registrieren ist es dem Nutzer möglich sich über die API zu authentifizieren und Zugriff auf die anderen Funktionen der API zu erlangen. Dies kann er mit seinem Bearer-Token tun. Diesen Token erhält ein Nutzer bei Registrierung.
+    
+    \item[FA30] \textbf{Einreichen von Jobs} \\
+    Die API ermöglicht es Jobs, die durch eine JSON-Datei und eine Job-Beschreibung spezifiziert werden, zu übergeben. Es existieren drei verschiedene Möglichkeiten um die Job-Beschreibung zu übergeben. Die Jobs werden von Mallob bearbeitet und das Ergebnis wird an den Nutzer zurückgegeben.
+    %genaue Spezifizierung der Jobs (Priorität,Laufzeit, ...) auch hier oder an anderer Stelle?
+    
+    \begin{itemize}
+        \item[FA31] \textbf{Einreichen der Job-Beschreibung separat von der JSON-Datei} \\
+        Es ist möglich die Job-Beschreibung in einer eigenen Datei zu spezifizieren. Dabei muss es sich um eine Datei handeln, die dem DIMACS CNF Standard entspricht. Diese Datei wird zusammen mit der JSON-Datei an die API übergeben
+        % soll das Dateiformat überhaupt hier schon spezifiziert werden?
         
-    \item API antwortet immer
-    \begin{itemize}
-        \item Bei falschen Daten, Fehlermeldung
-        \item Bei korrekten Daten das Ergebnis
+        \item[FA32] \textbf{Job-Beschreibung innerhalb der JSON-Datei} \\
+        Es ist möglich die Job-Beschreibung direkt in der JSON-Datei zu spezifizieren. Die Beschreibung muss auch in diesem Fall dem DIMACS CNF Format entsprechen. Bei dieser Möglichkeit wird nur die JSON-Datei an die API übergeben
+        
+        \item[FA33] \textbf{Übergeben der Job-Beschreibung über einen Link} \\
+        Es kann ein Link an die API übergeben werden, der auf eine Datei verweist, in der die Job-Beschreibung enthalten ist. Die referenzierte Datei muss ebenfalls dem DIMACS CNF Format entsprechen. Zusätzlich zu dem Link muss die JSON-Datei mit den weiteren Job-Spezifikationen an die API übergeben werden
+        
+        \item[FA34] \textbf{Bereits eingereichte Job-Beschreibung verwenden}\\
+        Ein Nutzer kann Job-Beschreibungen, welche er Bereits eingereicht hat über eine ID referenzieren und wiederverwenden.
+        
     \end{itemize}
+    
+    \item[FA40] \textbf{Abbrechen von eingereichten Jobs} \\
+    Der Nutzer kann einen eingereichten Job wieder abbrechen. In diesem Fall wird eine Statistik über die bereits verrichtete Arbeit zurückgegeben
+    
+    \item[FA50] \textbf{Zurückgeben von Ergebnissen} \\
+    Für jeden eingereichten Job gibt die API eine Antwort an den Nutzer zurück. Wurde der Job erfolgreich gelöst, wird die Lösung des Problems zurückgegeben. Tritt bei der Berechnung ein Fehler auf, wird eine aussagekräftige Fehlermeldung zurückgegeben. Ist die maximale Bearbeitungszeit des Jobs erreicht, wird eine Statistik mit der bereits verrichteten Arbeit zurückgegeben.
+    
+    \begin{itemize}
+        \item[FA51] \textbf{Ergebnisabfrage von Jobs} \\
+        Es ist möglich für jeden Job (auch nach Beendigung) seinen aktuellen Status (in Bearbeitung, Bearbeitet, Fehler) abzufragen. Die Antwort  enthält dabei alle Informationen zum Status des Jobs, wie das Ergebnis oder eventuelle Fehlermeldung.
+    \end{itemize}
+    
 
-    \item Job zur Bearbeitung hinzufügen
+    \item[FA60] \textbf{Zurückgeben des Systemzustands von Mallob} \\
     
     
-    \item Jobs abbrechen
-    \begin{itemize}
-        \item Teil-Ergebnisse Statistik über gemachte Arbeit wird als Antwort gesendet
-    \end{itemize}
-    
-    
-    \item Spezifizierung von Jobs 
-    \begin{itemize}
-        \item (Siehe schnittstelle Mallob); Priorisierung, Einstellung von Laufzeit (Coreminuten)..
-    \end{itemize}
-    
-    
-    \item Möglichkeiten für das Einreichen einer Job-Beschreibung
-    \begin{itemize}
-        \item Job-Beschreibung separat von JSON
-        \item Link zur Datei angeben
-        \item Jobbeschreibung direkt in JSON eingebunden
-        \item Bereits eingereichte Job-Beschreibungen
-    \end{itemize}
-    
+
+\end{itemize}
+
+
+
+
+\begin{itemize}
     \item System-Diagnose über API verfügbar sein$^3$
         \begin{itemize}
             \item Abfrage für Fehler, vermutlich auch ganze Liste an Fehlern
             \item Differenzierung in Nutzer und Admin: Admins sehen alle Fehler, Nutzer nur diejenigen Fehler, die sie auch etwas angehen
         \end{itemize}
-    
-    \item Streaming des Ouput-Logs von Mallob an das Frontend$^1$
-    \item Nutzer-Verwaltung :  Registrieren und anmelden muss über API möglich sein.$^2$
-
-    %------------------------------------Keine Ahnung was diese Punkte heißen sollen
-    \item Query für bereits abgeschlossene Jobs
-
-    \item Die Betreuer wollen, das eine korrekte Anfrage erst mit dem Ergebnis beantwortet will. Da die Verbindung abbrechen kann (z.B Timeout), muss auch Möglichkeit existieren, um das Ergebnis unabhängig von der Anfrage zu erhalten.\\
-    Hier wäre es vermutlich sinnvoll, einfach eine Anfrage zu haben, die einfach den Status der letzten Anfrage zurück gibt, unabhängig davon, ob ein Verbindungs-abbruch vorliegt oder nicht.
-
-    
-    %------------------------------------------------------Offene Fragen & sachen die evlt nicht in die API gehören
-    
-    \item Bereits eingereichte Jobs?
-    \begin{itemize}
-        \item irgendwas stand im Raum mit Caching von schonmal gelösten Problemen
-        \item Nutzer hat Zugriff auf eine Historie mit bisher eingereichten Jobs?
-    \end{itemize}
-
-
 \end{itemize}
 
-\subsubsection{Kommentare, Fragen und Ideen zur Umsetzung}
 
-$^1$ Das hier sieht dafür interessant aus, aber da muss man sich noch gut einlesen \\
-\url{https://technicalsand.com/streaming-data-spring-boot-restful-web-service/#0-spring-boot-rest-api-streaming-options} \\da ist auch irgendwie die Frage ob das alles blockt wenn man das irgendwie so streamt und das mehrmals parallel, am schönesten wäre eigentlich einfach ne "reverse api"..\\
-
-
-    
- $^2$ Gängiges Verfahren festlegen. Vorschlag; Tokens. Ein Nutzer bekommt bei Registrierung einen Token und benutzt diese um anfragen an die API zu authentifizieren:\\
-\url{https://www.ibm.com/docs/de/ibm-mq/9.1?topic=security-using-token-based-authentication-rest-api} \\
-
-
-$^3$ Erfragen was genau eine System-diganose beinhalten soll (Schnittstellen von Mallob)
 
 %------------------------------------------------------------WEB-Interface
 \subsection{Web-Interface}
 
+
+
+% Web-Interface nochmal anders formuliert, eher an Beispiel von Betreuern orrientiert
 \begin{itemize}
-    \item Funktionen der API sollen auch über Web-interface ansprechbar sein
-    \item Kleiner Editor für Formeln (mindestens im DIMACS.cnf) Format, (wunsch: auch visuell)
-\end{itemize}
-
-%-------------------------------------------------------------Visualisierung
-\subsection{Visualisierung}
-
-\begin{itemize}
-    \item Nutzer sollen nur Auskunft über ihre laufenden Jobs bekommen 
-    \item Jobs anderer Nutzer werden anonymisiert dargestellt
-    \item Für Daten Visualisierung soll der Output-Log-Stream von Mallob eingelesen und verarbeteitet werden -> das macht das backend (?)
-\end{itemize}
-
-
-%---------------------------------Administration
-\subsection{Administration}
-\begin{itemize}
-    \item Diagnostik für Mallob
-    \item Warnungen und Fehler von Mallob einsehbar
-    \item überprüfen ob Mallob gerade läuft und evtl. Warnung ausgeben, wenn Mallob nicht erreichbar ist
-    \item Authentifizierung von Nutzerkonten (siehe Benutzerkonten)
-    
+     \item[FA10] \textbf{Anmelden} \\
+        Der Nutzer kann sich im Web-Interface anmelden. Dies geschieht über die Anmelde-Maske. Die Anmeldung geschieht mit Nutzernamen und Passwort. Nach erfolgreicher Registierung wird der Nutzer zur Auftrag-Seite gebracht.(Email)?
+     \item[FA20] \textbf{Registrieren} \\
+        Der Nutzer kann sich über das Web-Interface registrieren. Dies geschieht über die Registrieren-Maske. Diese kann von der Anmelde-Maske mit der entsprechenden Schaltfläche erreicht werden. Für die Registrierung wird ein Nutzername, ein Passwort und die wiederholte Eingabe des Passworts benötigt. Nach erfolgreicher Registierung wird der Nutzer zur Auftrag-Seite gebracht.
+    \item[FA30] \textbf{Ergebnisse einsehen} \\
+        Befindet sich in der Liste der Aufträge ein abgeschlossener Auftrag, so kann über die zu diesem Auftrag gehörige Schaltfläche "get results" das Ergebnis angezeigt werden. Hier kann es auch in die Zwischenablage kopiert werden oder heruntergeladen werden.
+   \item[FA40] \textbf{Auftrag hinzufügen} \\ 
+        Mittels einer Schaltfläche über der Liste der eigenen Aufträge gelangt der Nutzer zu einer Eingabe-Maske, über welche er einen neuen Auftrag hinzufügen kann. 
+   \item[FA50] \textbf{Auftrag abbrechen} \\
+   
+   \item[FA60] \textbf{Anzeigen von Fehlern} \\
+        Tritt bei Mallob ein Fehler auf, so wird der Nutzer umgehend mittels einer Fehlermeldung darauf aufmerksam gemacht. Diese Fehlermeldung wird immer angezeigt, unabhängig davon auf welcher Seite der Nutzer sich momentan befindet. 
+    \item[FA70] \textbf{Visualisierung} \\
+        Das Web-Interface besitzt eine Visualisierung des System-Zustandes. Diese kann über den entsprechenden Reiter erreicht werden.
         
-    \item (Nice to have): Mallob (neu)starten und beenden, parametrisierung angeben
+        \begin{itemize}
+            \item[FA72] \textbf{Anzeigen des aktuellen Zustandes} \\
+                Standardmäßig wird immer der aktuelle Zustand angezeigt. Dieser Zustand wird, solange kein anderer Zeitpunkt ausgewählt wurde, steht dynamisch aktuell gehalten. 
+            \item[FA71] \textbf{Zeitachse} \\
+                Die Visualisierung verfügt über eine Zeitachse, mit derer ein entsprechender Zeitpunkt der letzten [...] Minuten/Stunden ausgewählt werden kann. Nach der Auswahl wird der System-Zustand zum entsprechenden Zeitpunkt angezeigt.
+            \item[FA72] \textbf{Zurückspringen zu aktueller Ansicht} \\
+                Wird mittels FA71 [TODO: REF] der angezeigte Zeitpunkt geändert, so wird eine Schaltfläche angezeigt, mit der der Nutzer jederzeit wieder zur aktuellen Zeit zurückspringen kann.
+            \item[FA73] \textbf{Einsehen der Verteilung eines Auftrages} \\
+                 
+        \end{itemize}
+    \item[FA80] \textbf{Ändern von Benutzer-Daten} \\
     
-    \item Werden die Admins selbst Jobs einreichen können und mit welchem Priorität?
-    \item Wieviele Administratoren soll es geben?
+    \item[FA90] \textbf{Abmelden} \\
+        Der Nutzer kann sich jederzeit über das entsprechende Menü in der Navigationsleiste abmelden. In diesem Falle wird wieder die Anmelde-Maske angezeigt.
 \end{itemize}
 
-%---------------------------------Benutzerkonten
-
-\subsection{Benutzerkonten}
-
-\begin{itemize}
-    \item Anlegen eines Benutzerkontos
-    \begin{itemize}
-        \item Erst-Registrierung von Nutzern im System; jeder kann ein Konto anlegen. Kontos werden nach Authentifizierung durch Administrator freigeschaltet.
-    \end{itemize}
-    \item Speicherung der Konten in einer Datenbank
-\end{itemize}
-
-
-%---------------------------------Prioritäten
-
-\subsection{Job-/Nutzer-Priorität}
-Information : Mallob sieht nur eine Priorität. Es ist unsere Aufgabe \textbf{eine} Priorität für jeden Job herzuleiten. Dazu müssen folgende Prioritäten vereint werden: 
-\begin{itemize}
-    \item Pro Nutzer wird es eine Priorität geben 
-    \item Beim Anlegen eines Nutzer bekommt jeder eine Standardpriorität. Diese kann durch einen Administrator verändert werden.
-    \item Pro Job darf jeder Nutzer eine Priorität vergeben
-    \item Mallob sieht nur eine Priorität
-    \item evtl. die vom Nutzer vergebene Priorität durch den Durchschnitt der vom Nutzer vergebenen Prioritäten teilen um die Zahl zu normalisieren
-\end{itemize}
 
 
 
