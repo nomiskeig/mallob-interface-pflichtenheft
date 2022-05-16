@@ -1,0 +1,108 @@
+
+%-------------------------------------------------------------Visualisierung
+% war bei webinterface
+\begin{itemize}
+    \item Funktionen der API sollen auch über Web-interface ansprechbar sein
+    \item Kleiner Editor für Formeln (mindestens im DIMACS.cnf) Format, (wunsch: auch visuell)
+    \item Datenschutzerklärung? Cookies?
+    \item /FA010/ Vom Benutzer eingereichten Daten an der API schicken.
+    \item /FA020/ Requests mit den vom Benutzer/Admin angegebene Daten zum Ein-/Ausloggen/Registrieren zur Authentifizierung schicken.
+    \item /FA030/ Requests auf Warnungen/Fehler in Mallob oder auf den ganzen Logs zur Diagnostizierung schicken (wenn das vom Admin angefordert wird).
+    \item /FA040/ Requests auf Stoppen/Starten der Visualisierung-Simulation (Vielleicht auch Mallob?) schicken?
+    \item /FA050/ Jeden Nutzer authentifizieren (Benutzername und Passwort erfordern).
+\end{itemize}
+
+
+
+\subsection{Visualisierung}
+\begin{itemize}
+    \item Nutzer sollen nur Auskunft über ihre laufenden Jobs bekommen 
+    \item Jobs anderer Nutzer werden anonymisiert dargestellt
+    \item Für Daten Visualisierung soll der Output-Log-Stream von Mallob eingelesen und verarbeteitet werden -> das macht das backend (?)
+    \item /FA010/ Das System visualisiert vom API erhaltene Statistiken dynamisch.
+    \item /FA020/ Zu jedem Kern-Visualisierung die Job Beschreibung, Rank des aktuellen Kernes und eine Subtree der Kerne anzeigen (die darauf gearbeitet haben).
+    \item /FA030/ Beschreibung von Mallob anzeigen.
+    \item /FA040/ Instruktionen zu DIMACS.cnf Format anzeigen (oder Link dazu).
+    \item /FA050/ Die Simulation (die Verteilung der Jobs/Aufwand auf den Kernen) kann unterbrochen und fortgesetzt werden?
+    \item /FA060/ Warnungen und Fehler von Mallob anzeigen.
+    \item /FA070/ Eine Login/Register Schnittstelle anzeigen, die Benutzername und Passwort "Kasten" enthält.
+\end{itemize}
+
+
+%---------------------------------Administration
+\subsection{Administration}
+\begin{itemize}
+    \item Diagnostik für Mallob
+    \item Warnungen und Fehler von Mallob einsehbar
+    \item überprüfen ob Mallob gerade läuft und evtl. Warnung ausgeben, wenn Mallob nicht erreichbar ist
+    \item Authentifizierung von Nutzerkonten (siehe Benutzerkonten)
+    
+        
+    \item (Nice to have): Mallob (neu)starten und beenden, parametrisierung angeben
+    
+    \item Werden die Admins selbst Jobs einreichen können und mit welchem Priorität?
+    \item Wieviele Administratoren soll es geben?
+    \item Wie läuft die Diagnostik (einfach Admins können die Logs von Mallob sehen?)
+    \item Kann man als einen Admin registrieren oder stehen bereits feste Anzahl an Admin Konten in der Datenbank zur Verfügung?
+    \item /FA010/ Warnungen und Fehlermeldungen über bestimmte Jobs an den Nutzern weiterleiten.
+    \item /FA020/ Admins können (mit maximalen Priorität?) Jobs einreichen.
+    \item /FA030/ Admins können die Priorität eines Nutzers setzen.
+\end{itemize}
+
+%---------------------------------Benutzerkonten
+
+\subsection{Benutzerkonten}
+
+\begin{itemize}
+    \item Anlegen eines Benutzerkontos
+    \begin{itemize}
+        \item Erst-Registrierung von Nutzern im System; jeder kann ein Konto anlegen. Kontos werden nach Authentifizierung durch Administrator freigeschaltet.
+    \end{itemize}
+    \item Speicherung der Konten in einer Datenbank
+    \item \textbf{Benutzer können:}
+    \begin{itemize}  
+        \item /F010/ Jederzeit auf die Startseite gehen.
+        \item /F020/ Jederzeit sich ausloggen.
+        \item /F030/ Statistiken über die bisher eingereichten Jobs sehen (Historie?).
+        \item /F040/ Jederzeit zur Schnittstelle zum Job Einreichung gehen.
+        \item /F050/ Priorität von seinen eingereichten Jobs setzen.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+%---------------------------------Benutzerkonten
+
+\subsection{Benutzerkonten}
+
+\begin{itemize}
+    \item Anlegen eines Benutzerkontos
+    \begin{itemize}
+        \item Erst-Registrierung von Nutzern im System; jeder kann ein Konto anlegen. Kontos werden nach Authentifizierung durch Administrator freigeschaltet.
+    \end{itemize}
+    \item Speicherung der Konten in einer Datenbank
+    \item \textbf{Benutzer können:}
+    \begin{itemize}  
+        \item /F010/ Jederzeit auf die Startseite gehen.
+        \item /F020/ Jederzeit sich ausloggen.
+        \item /F030/ Statistiken über die bisher eingereichten Jobs sehen (Historie?).
+        \item /F040/ Jederzeit zur Schnittstelle zum Job Einreichung gehen.
+        \item /F050/ Priorität von seinen eingereichten Jobs setzen.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+%---------------------------------Prioritäten
+
+\subsection{Job-/Nutzer-Priorität}
+Information : Mallob sieht nur eine Priorität. Es ist unsere Aufgabe \textbf{eine} Priorität für jeden Job herzuleiten. Dazu müssen folgende Prioritäten vereint werden: 
+\begin{itemize}
+    \item Pro Nutzer wird es eine Priorität geben 
+    \item Beim Anlegen eines Nutzer bekommt jeder eine Standardpriorität. Diese kann durch einen Administrator verändert werden.
+    \item Pro Job darf jeder Nutzer eine Priorität vergeben
+    \item Mallob sieht nur eine Priorität
+    \item evtl. die vom Nutzer vergebene Priorität durch den Durchschnitt der vom Nutzer vergebenen Prioritäten teilen um die Zahl zu normalisieren
+\end{itemize}

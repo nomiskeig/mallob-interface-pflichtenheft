@@ -9,7 +9,7 @@ Simon, Siwi
 Valentin, Maik
 
 
---Systemmodell (plus anwendungsfalldiagramme)
+--Systemmodell (plus Anwendungsfalldiagramme)
 Simon, Maik
 
 ----Funktionalen Anforderungen ausarbeiten
@@ -17,7 +17,7 @@ Simon, Maik
 Siwi,Valentin
 
 --Web-Interface
-Kaloyan
+Kaloyan, Simon
 
 --Visualisierung (Was wird visualisiert und evtl auch wie)
 Maik, Kaloyan
@@ -33,3 +33,22 @@ Simon, Kaloyan, Siwi
 
 
 %//Falls Zeit; Änderung einer Datei in echtzeit auslesen (Java), Änderungen ans Frontend weiterleiten?
+
+
+
+
+%-----------------------
+16.05.
+
+-Testszenarien aufdröseln 
+-Funktionale Anforderungen aufräumen 
+-Einleitung schreiben
+-Systemmodell?
+-Anwendungsfalldiagramme erstellen 
+-Job-Spezifikation (API)
+
+
+
+-- Fragen
+- Wenn man Auftrag im Webinterface einreicht, soll man hier auch direkt die JSON-Datei hochladen könnnen?
+- Muss Webinterface auch auf kleinen Bildschirmen (Handy/Smartphone) korrekt angezeigt werden und nutzbar sein?

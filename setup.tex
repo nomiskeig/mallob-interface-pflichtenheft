@@ -2,10 +2,13 @@
 %Hält das ganze etwas übersichtlicher
 
 
-\documentclass[parskip=full,11pt,twoside]{scrartcl}
+%\documentclass[parskip=full,11pt,twoside]{scrartcl} - DIeses two side ist mega der bs
+\documentclass[parskip=full,11pt]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage[nonumberlist]{glossaries}     % provides glossary commands, taken from SWT
 
+\usepackage{svg}
 
 % section numbers in margins:
 \renewcommand\sectionlinesformat[4]{\makebox[0pt][r]{#3}#4}
@@ -21,7 +24,7 @@
 \usepackage[german]{babel}
 \usepackage[yyyymmdd]{datetime} % must be after babel
 \renewcommand{\dateseparator}{-} % ISO8601 date format
-\usepackage{hyperref}
+\usepackage[]{hyperref}
 \usepackage{amsmath} % for $\text{}$
 \usepackage[nameinlink]{cleveref}
 \crefname{figure}{Abb}{Abb}
