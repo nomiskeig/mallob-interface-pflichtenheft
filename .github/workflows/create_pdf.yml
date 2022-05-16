@@ -4,6 +4,7 @@ name: Build pdf
 
 # Controls when the workflow will run
 on: 
+  push:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -31,9 +32,4 @@ jobs:
           path: main.pdf
             # The desired behavior if no files are found using the provided path.
           if-no-files-found: error
-      - name: Build release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: main.pdf
 
