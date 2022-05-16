@@ -28,3 +28,13 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: main.tex
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.0.0
+        with:
+            # Artifact name
+          name: Pflichtenheft
+            # A file, directory or wildcard pattern that describes what to upload
+          path: main.pdf
+            # The desired behavior if no files are found using the provided path.
+          if-no-files-found: error
+
