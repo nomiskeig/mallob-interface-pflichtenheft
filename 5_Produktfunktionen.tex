@@ -7,7 +7,7 @@
 
 \begin{itemize}
     \item[FA10] \textbf{Registrierung von Nutzern} \\
-    Es ist möglich neue Nutzer über die API zu registrieren, sodass diese sich mit ihren Zugangsdaten authentifizieren können -> wie genau?
+    Es ist möglich neue Nutzer über die API zu registrieren, sodass diese sich mit ihren Zugangsdaten authentifizieren können.
     
     \item[FA20] \textbf{Authentifizierung von Nutzern} \\
     Nach dem Registrieren ist es dem Nutzer möglich sich über die API zu authentifizieren und Zugriff auf die anderen Funktionen der API zu erlangen. Dies kann er mit seinem Bearer-Token tun. Diesen Token erhält ein Nutzer bei Registrierung.
@@ -18,7 +18,7 @@
     
     \begin{itemize}
         \item[FA31] \textbf{Einreichen der Job-Beschreibung separat von der JSON-Datei} \\
-        Es ist möglich die Job-Beschreibung in einer eigenen Datei zu spezifizieren. Dabei muss es sich um eine Datei handeln, die dem DIMACS CNF Standard entspricht. Diese Datei wird zusammen mit der JSON-Datei an die API übergeben
+        Es ist möglich die Job-Beschreibung in einer eigenen Datei zu spezifizieren. Dabei muss es sich um eine Datei handeln, die dem DIMACS CNF Standard entspricht. Diese Datei wird zusammen mit der JSON-Datei an die API übergeben.
         % soll das Dateiformat überhaupt hier schon spezifiziert werden?
         
         \item[FA32] \textbf{Job-Beschreibung innerhalb der JSON-Datei} \\
@@ -33,13 +33,22 @@
     \end{itemize}
     
     \item[FA40] \textbf{Abbrechen von eingereichten Jobs} \\
-    Der Nutzer kann einen eingereichten Job wieder abbrechen. In diesem Fall wird eine Statistik über die bereits verrichtete Arbeit zurückgegeben
+    Der Nutzer kann einen eingereichten Job wieder abbrechen. In diesem Fall wird eine Statistik über die bereits verrichtete Arbeit zurückgegeben.
     
     \item[FA50] \textbf{Zurückgeben von Ergebnissen} \\
-    Für jeden eingereichten Job gibt die API eine Antwort an den Nutzer zurück. Wurde der Job erfolgreich gelöst, wird die Lösung des Problems zurückgegeben. Tritt bei der Berechnung ein Fehler auf, wird eine aussagekräftige Fehlermeldung zurückgegeben. Ist die maximale Bearbeitungszeit des Jobs erreicht, wird eine Statistik mit der bereits verrichteten Arbeit zurückgegeben.
+    Für jeden eingereichten Job gibt die API immer eine Antwort an den Nutzer zurück. 
     
     \begin{itemize}
-        \item[FA51] \textbf{Ergebnisabfrage von Jobs} \\
+        \item[F51] \textbf{Zurückgeben des Ergebnisses bei erfolgreicher Berechnung} \\
+        Wurde der eingereichte Job erfolgreich gelöst, wird das Ergebnis des Jobs an den Nutzer zurückgegeben.
+        
+        \item[F52] \textbf{Zurückgeben des Ergebnisses nach Erreichen der maximalen Bearbeitungszeit} \\
+        Wenn die maximale Bearbeitungszeit des eingereichten Jobs erreicht wurde und kein Ergebnis gefunden wurde, wird eine Statistik über die bereits verrichtete Arbeit an den Nutzer zurückgegeben
+        
+        \item[F53] \textbf{Zurückgeben des Ergebnisses nach einem Fehler} \\
+        Wenn während der Bearbeitung des eingereichten Jobs ein Fehler auftritt, wird eine aussagekräftige Fehlermeldung an den Nutzer zurückgegeben
+        
+        \item[FA54] \textbf{Ergebnisabfrage von Jobs} \\
         Es ist möglich für jeden Job (auch nach Beendigung) seinen aktuellen Status (in Bearbeitung, Bearbeitet, Fehler) abzufragen. Die Antwort  enthält dabei alle Informationen zum Status des Jobs, wie das Ergebnis oder eventuelle Fehlermeldung.
     \end{itemize}
     
@@ -51,18 +60,6 @@
 \end{itemize}
 
 
-
-
-\begin{itemize}
-    \item System-Diagnose über API verfügbar sein$^3$
-        \begin{itemize}
-            \item Abfrage für Fehler, vermutlich auch ganze Liste an Fehlern
-            \item Differenzierung in Nutzer und Admin: Admins sehen alle Fehler, Nutzer nur diejenigen Fehler, die sie auch etwas angehen
-        \end{itemize}
-\end{itemize}
-
-
-
 %------------------------------------------------------------WEB-Interface
 \subsection{Web-Interface}
 
@@ -70,34 +67,54 @@
 
 % Web-Interface nochmal anders formuliert, eher an Beispiel von Betreuern orrientiert
 \begin{itemize}
-     \item[FA10] \textbf{Anmelden} \\
-        Der Nutzer kann sich im Web-Interface anmelden. Dies geschieht über die Anmelde-Maske. Die Anmeldung geschieht mit Nutzernamen und Passwort. Nach erfolgreicher Registierung wird der Nutzer zur Auftrag-Seite gebracht.(Email)?
-     \item[FA20] \textbf{Registrieren} \\
-        Der Nutzer kann sich über das Web-Interface registrieren. Dies geschieht über die Registrieren-Maske. Diese kann von der Anmelde-Maske mit der entsprechenden Schaltfläche erreicht werden. Für die Registrierung wird ein Nutzername, ein Passwort und die wiederholte Eingabe des Passworts benötigt. Nach erfolgreicher Registierung wird der Nutzer zur Auftrag-Seite gebracht.
-    \item[FA30] \textbf{Ergebnisse einsehen} \\
+     \item[FA010] \textbf{Web-Interface aufrufen} \\
+        Nach dem Aufrufen des Web-Interface über die URL gelangt man zur Anmelde-Maske.
+
+     \item[FA020] \textbf{Anmelden} \\
+        Der Nutzer kann sich über das Web-Interface anmelden. Dies geschieht über die Anmelde-Maske. Die Anmeldung geschieht mit Nutzernamen und Passwort. Nach erfolgreicher Registierung wird der Nutzer zur Auftrag-Seite gebracht.
+        
+     \item[FA030] \textbf{Registrieren} \\
+        Der Nutzer kann sich über das Web-Interface registrieren. Dies geschieht über die Registrieren-Maske. Diese kann von der Anmelde-Maske mit der entsprechenden Schaltfläche erreicht werden. 
+        
+    \begin{itemize}
+        \item[FA031] \textbf{Daten zur Registrierung} \\
+        Für die Registrierung wird ein Nutzername, ein Passwort und die wiederholte Eingabe des Passworts benötigt. Nach erfolgreicher Registierung wird der Nutzer zur Auftrag-Seite gebracht.
+    \end{itemize}
+        
+
+        
+    \item[FA040] \textbf{Ergebnisse einsehen} \\
         Befindet sich in der Liste der Aufträge ein abgeschlossener Auftrag, so kann über die zu diesem Auftrag gehörige Schaltfläche "get results" das Ergebnis angezeigt werden. Hier kann es auch in die Zwischenablage kopiert werden oder heruntergeladen werden.
-   \item[FA40] \textbf{Auftrag hinzufügen} \\ 
+        
+   \item[FA050] \textbf{Auftrag hinzufügen} \\ 
         Mittels einer Schaltfläche über der Liste der eigenen Aufträge gelangt der Nutzer zu einer Eingabe-Maske, über welche er einen neuen Auftrag hinzufügen kann. 
-   \item[FA50] \textbf{Auftrag abbrechen} \\
+   \item[FA00] \textbf{Auftrag abbrechen} \\
    
-   \item[FA60] \textbf{Anzeigen von Fehlern} \\
+   \item[FA070] \textbf{Anzeigen von Fehlern} \\
         Tritt bei Mallob ein Fehler auf, so wird der Nutzer umgehend mittels einer Fehlermeldung darauf aufmerksam gemacht. Diese Fehlermeldung wird immer angezeigt, unabhängig davon auf welcher Seite der Nutzer sich momentan befindet. 
-    \item[FA70] \textbf{Visualisierung} \\
+    \item[FA080] \textbf{Visualisierung} \\
         Das Web-Interface besitzt eine Visualisierung des System-Zustandes. Diese kann über den entsprechenden Reiter erreicht werden.
         
         \begin{itemize}
-            \item[FA72] \textbf{Anzeigen des aktuellen Zustandes} \\
+            \item[FA081] \textbf{Anzeigen des aktuellen Zustandes} \\
                 Standardmäßig wird immer der aktuelle Zustand angezeigt. Dieser Zustand wird, solange kein anderer Zeitpunkt ausgewählt wurde, steht dynamisch aktuell gehalten. 
-            \item[FA71] \textbf{Zeitachse} \\
+            \item[FA082] \textbf{Zeitachse} \\
                 Die Visualisierung verfügt über eine Zeitachse, mit derer ein entsprechender Zeitpunkt der letzten [...] Minuten/Stunden ausgewählt werden kann. Nach der Auswahl wird der System-Zustand zum entsprechenden Zeitpunkt angezeigt.
-            \item[FA72] \textbf{Zurückspringen zu aktueller Ansicht} \\
+            \item[FA083] \textbf{Zurückspringen zu aktueller Ansicht} \\
                 Wird mittels FA71 [TODO: REF] der angezeigte Zeitpunkt geändert, so wird eine Schaltfläche angezeigt, mit der der Nutzer jederzeit wieder zur aktuellen Zeit zurückspringen kann.
-            \item[FA73] \textbf{Einsehen der Verteilung eines Auftrages} \\
+            \item[FA084] \textbf{Einsehen der Verteilung eines Auftrages} \\
                  
         \end{itemize}
-    \item[FA80] \textbf{Ändern von Benutzer-Daten} \\
+    \item[FA090] \textbf{Ändern von Benutzer-Daten} \\
     
-    \item[FA90] \textbf{Abmelden} \\
+    \item[FA100] \textbf{Verwalten von Nutzern}
+    \item[FA110] \textbf{Verwalten von Nutzern}
+        \begin{itemize}
+            \item Nutzer löschen
+            \item Nutzer verifizieren [TODO: besseres Wort für freigeben, ich meine damit das das der Admin den Nutzer eben bestätigen muss, bevor er Aufträge hinzufügen kann...j]
+            \item 
+        \end{itemize} 
+    \item[FA120] \textbf{Abmelden} \\
         Der Nutzer kann sich jederzeit über das entsprechende Menü in der Navigationsleiste abmelden. In diesem Falle wird wieder die Anmelde-Maske angezeigt.
 \end{itemize}
 

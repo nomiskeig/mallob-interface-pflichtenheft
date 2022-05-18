@@ -9,7 +9,10 @@
 \usepackage[nonumberlist]{glossaries}     % provides glossary commands, taken from SWT
 
 \usepackage{svg}
-
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{changepage}
+\usepackage{float}
 % section numbers in margins:
 \renewcommand\sectionlinesformat[4]{\makebox[0pt][r]{#3}#4}
 
@@ -24,7 +27,7 @@
 \usepackage[german]{babel}
 \usepackage[yyyymmdd]{datetime} % must be after babel
 \renewcommand{\dateseparator}{-} % ISO8601 date format
-\usepackage[]{hyperref}
+%usepackage[]{hyperref}
 \usepackage{amsmath} % for $\text{}$
 \usepackage[nameinlink]{cleveref}
 \crefname{figure}{Abb}{Abb}
@@ -39,3 +42,13 @@
 
 
 \newcommand\urlpart[2]{$\underbrace{\text{\texttt{#1}}}_{\text{#2}}$}
+\newenvironment{FA}
+    {
+    \begin{adjustwidth}{-3.5cm}{}
+    \begin{tabular}[t]{rL{0.8\textwidth}}
+    }
+    {
+    \end{tabular}
+    \end{adjustwidth}
+    \vspace{1em}
+    }

@@ -1,0 +1,143 @@
+\section{Funktionale Anforderungen}
+% Sollten wir noch nutzen
+%https://de.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
+
+%Produktanforderungen nach dem Stil in SWT
+
+
+%Vorlange für Funktionale Anforderungen, Orientierung
+%\item[F10] \textbf{Registrierung von Nutzern} \\
+%    \begin{FA}
+%        \textbf{Vorbedingung:} &  -keine- \\
+%        \textbf{Nachbedingung (Erfolg):} &  der Nutzer besitzt einen Authentifizierungstoken für die API\\
+%        \textbf{Nachbedingung (Fehlschlag):} &  der Nutzer besitzt keinen Authentifizierungstoken für die API \\
+%        \textbf{Akteure:} & Nutzer, Administrator\\
+%        \textbf{Auslösendes Ereignis:} & Nutzer möchte API verwenden \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{enumerate}[noitemsep] 
+%        \item Der Nutzer schickt eine Anfrage mit seinen Nutzerdaten an die API
+%        \item Die Anfrage wird von einem Administrator bearbeitet 
+%        \item Der Authentifizierungstoken wird an den Nutzer zurückgegeben
+%    \end{enumerate}
+%    
+%    
+%Vorlange für Funktionale Anforderungen, zum Einfügen von Text
+%\item[F10] \textbf{} \\
+%    \begin{FA}
+%        \textbf{Vorbedingung:} & \\
+%        \textbf{Nachbedingung (Erfolg):} &  \\
+%        \textbf{Nachbedingung (Fehlschlag):} &  \\
+%        \textbf{Akteure:} & \\
+%        \textbf{Auslösendes Ereignis:} &  \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{enumerate}[noitemsep] 
+%        \item 
+%        \item 
+%    \end{enumerate}
+
+\subsection{API}
+
+\begin{itemize}[nosep]
+    \setlength\itemsep{4em}
+    \item[F10] \textbf{Registrierung von Nutzern} \\
+    \begin{FA}
+        \textbf{Vorbedingung:} &  -keine- \\
+        \textbf{Nachbedingung (Erfolg):} &  der Nutzer besitzt einen Authentifizierungstoken für die API\\
+        \textbf{Nachbedingung (Fehlschlag):} &  der Nutzer besitzt keinen Authentifizierungstoken für die API \\
+        \textbf{Akteure:} & Nutzer, Administrator\\
+        \textbf{Auslösendes Ereignis:} & Nutzer möchte API verwenden \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{enumerate}[noitemsep] 
+        \item Der Nutzer schickt eine Anfrage mit seinen Nutzerdaten an die API
+        \item Die Anfrage wird von einem Administrator bearbeitet 
+        \item Der Authentifizierungstoken wird an den Nutzer zurückgegeben
+    \end{enumerate}
+    
+    
+    
+    
+    \item[F20] \textbf{Authentifizieren von Nutzern} \\
+    \begin{FA}
+        \textbf{Ziel:} & Authentifizierung eines Nutzers mit einem Token \\
+        \textbf{Vorbedingung:} & der Nutzer besitzt einen Authentifizierungstoken (siehe F10) \\
+        \textbf{Nachbedingung (Erfolg):} & der Nutzer hat Zugriff auf die Funktionen der API \\
+        \textbf{Nachbedingung (Fehlschlag):} & der Nutzer hat keinen Zugriff auf die Funktionen der API \\
+         \textbf{Akteure:} & der Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Nutzer möchte Funktionen der API verwenden \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{enumerate}[noitemsep]
+        \item der Nutzer schickt eine Anfrage zur Authentifizierung an die API, die seinen Authentifizierungstoken enthält
+        \item die Anfrage wird von der API verarbeitet und der Nutzer wird authentifiziert
+        \item der Nutzer erhält die Berechtigung, die Funktionen der API zu verwenden
+    \end{enumerate}
+    
+    
+    \item[F30] \textbf{Einreichen von Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Übergeben eines Jobs an die API, der von Mallob bearbeitet wird \\
+        \textbf{Vorbedingung:} & der Nutzer ist authentifiziert (siehe F20) \\
+        \textbf{Nachbedingung (Erfolg):} & der Nutzer hat das Ergebnis des eingereichten Jobs
+        \textbf{Nachbedingung(Fehlschlag):} & der Nutzer hat eine Fehlermeldung oder eine Statistik über die verrichtete Arbeit \\
+        \textbf{Akteure:} & der Nutzer \\
+        \textbf{Auslösendes Ergebnis:} & der Nutzer möchte das Ergebnis zu einem Job haben \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{enumerate}[noitemsep]
+        \item Der Nutzer schickt eine Anfrage an die API, die sowohl eine JSON Datei mit der Konfiguration des Jobs als auch eine weitere Datei, die die Beschreibung des Jobs beinhaltet, enthält
+        \item Der eingereichte Job wird von Mallob bearbeitet
+        \item Das Ergebnis der Bearbeitung wird an den Nutzer zurückgegeben
+    \end{enumerate}
+    
+    
+    
+\subsection{Web-Interface}
+\begin{itemize}
+    \setlength\itemsep{4em}
+    \item[F10] \textbf{Anmelden} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Nutzer ist in der Lage, sich im Web-Interface zu authentifizieren. \\
+        \textbf{Vorbedingung:} & Der Nutzer besitzt bereits ein Konto und ist noch nicht angemeldet. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Der Nutzer wird angemeldet und zur Auftragsseite weitergeleitet. [TODO: Namen für Seiten, möglichst einheitlich, was genau wird angezeigt?] \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer erhält eine Fehlermeldung in der GUI, dass seine Anmeldung nicht erfolgreich war. \\
+        \textbf{Akteure:} & Kunden, Admins \\
+        \textbf{Auslösendes Ereignis:} &  Der Kunde ruft das Web-Interface im Browser auf. \\
+        \textbf{Beschreibung:} & \begin{enumerate}[noitemsep] 
+        \item Eingabe des Nutzernamens
+        \item Eingabe des Passwortes
+        \item Bestätigung durch Betätigung der Schaltfläche "login"
+    \end{enumerate} 
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{enumerate}[noitemsep] 
+        \item Eingabe des Nutzernamens
+        \item Eingabe des Passwortes
+        \item Bestätigung durch Betätigung der Schaltfläche "login"
+    \end{enumerate} 
+    
+    
+    \item[F20] \textbf{Registrieren} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Kunde ist in der Lage, ein neues Konto zu erstellen.\\
+        \textbf{Vorbedingung:} &  Der Kunde ist nicht angemeldet. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Ein Konto wird für den Kunden erstellt und er wird zur Auftragsseite weitergeleitet. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Das Konto kann nicht erstellt werden und es wird eine aussagekräftige Fehlermeldung angezeigt. \\
+        \textbf{Akteure:} & Kunde \\
+        \textbf{Auslösendes Ereignis:} &  Der Kunde ruft das Web-Interface im Browser auf und besitzt noch kein Konto. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{enumerate}[noitemsep] 
+        \item Der Kunde wählt die "register"- Schaltfläche aus.
+        \item Eingabe des gewünschten Nutzernames
+        \item Eingabe des gewünschten Passwortes
+        \item Eingabe des wiederholten Passwortes
+        \item Bestätigung der Eingabe mittels der Schaltfläche "register"
+    \end{enumerate}
+\end{itemize}
+    
+  
+    
+\end{itemize}

@@ -11,8 +11,12 @@
 
 \begin{document}
 
-\maketitle
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
+
+\maketitle
 \newpage
 \tableofcontents 
 \newpage
@@ -25,6 +29,7 @@
 \input{4_Produktumgebung}
 \newpage
 \input{5_Produktfunktionen}
+%\input{5_Produktfunktionen_SWT}
 \newpage
 \input{6_Produkt-Daten}
 \newpage
@@ -34,7 +39,16 @@
 \newpage
 \input{9_Benutzeroberfläche}
 \newpage
-\input{10_Testszenarien}
+\input{10_Testfälle_und_Testszenarien}
+\newpage
+\input{11_Qualtiätsbestimmungen}
+\newpage
+\input{12_Entwicklungsumgebung}
+\newpage
+Es folgen die schöneren Produktfunktionen
+\newpage
+\input{5_Produktfunktionen_SWT}
+
 
 
 
