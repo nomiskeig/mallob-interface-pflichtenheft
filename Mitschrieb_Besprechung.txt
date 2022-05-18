@@ -52,3 +52,4 @@ Simon, Kaloyan, Siwi
 -- Fragen
 - Wenn man Auftrag im Webinterface einreicht, soll man hier auch direkt die JSON-Datei hochladen könnnen?
 - Muss Webinterface auch auf kleinen Bildschirmen (Handy/Smartphone) korrekt angezeigt werden und nutzbar sein?
+- welche nictfunktionale anforderungen?
