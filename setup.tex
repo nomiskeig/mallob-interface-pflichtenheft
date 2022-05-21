@@ -22,6 +22,7 @@
 \refoot{\today}
 \pagestyle{scrheadings}
 
+
 \usepackage[sfdefault,light]{roboto}
 \usepackage[T1]{fontenc}
 \usepackage[german]{babel}
@@ -40,7 +41,6 @@
 }
 \usepackage{csquotes}
 
-
 \newcommand\urlpart[2]{$\underbrace{\text{\texttt{#1}}}_{\text{#2}}$}
 \newenvironment{FA}
     {
@@ -52,3 +52,5 @@
     \end{adjustwidth}
     \vspace{1em}
     }
+    
+\newenvironment{FAList}{\begin{itemize}[noitemsep, leftmargin=1cm,align=parleft]}{\end{itemize}}

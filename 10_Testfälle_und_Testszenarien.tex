@@ -1,77 +1,73 @@
 \section{Testfälle und Testszenarien}
-Für jede Funktion existiert mindestens ein atomarer Testfall. Die Testfälle werden in Basis-Testfälle und erweiterte Testfälle unterschieden, wobei die Basis-Testfälle die Musskriterien und die erweiterten Testfälle die Wunschkriterien abdecken.
+Für jede Funktion existiert mindestens ein atomarer Testfall. Unter jedem Testfall wird aufgelistet, welche Funktionen dieser abdeckt. Die Testfälle werden, wie die korrespondierenden Anforderungen, in API-Testfälle, Web-Interface-Testfälle und Visualisierung-Testfälle unterschieden.
 
-\subsection{Basis-Testfälle}
+\subsection{API Testfälle}
 
 
 \begin{itemize}
-    \item[T010] \textbf{Das Web-Interface aufrufen.} 
+
+    \item[T010] \textbf{Einen neuen Benutzer registrieren.}
     
-    \item[T020] \textbf{Einen neuen Benutzer registrieren.}
+    %\item[T020] \textbf{Eine neue Benutzerregistrierung verifizieren.}
     
-    \item[T030] \textbf{Eine neue Benutzerregistrierung durch einen Admin verifizieren.}
+    \item[T030] \textbf{Einen registrierten Benutzer anmelden.}
     
-    \item[T040] \textbf{Einen registrierten Benutzer anmelden.}
+    \item[T040] \textbf{Die Benutzerdaten eines registrierten Benutzers ändern.}
     
-    \item[T050] \textbf{Die Benutzerdaten eines registrierten Benutzers ändern.}
+    \item[T050] \textbf{Einen Benutzer mit Administrationsrechten registrieren}
     
-    \item[T060] \textbf{Einen Admin anmelden.}
-    
-    \item[T070] \textbf{Die Benutzerdaten eines Admins ändern.}
+    \item[T060] \textbf{Einen Benutzer mit Administrationsrechten anmelden.}
     
     \item[T080] \textbf{Einen Benutzer abmelden.}
     
-    \item[T090] \textbf{Einen Admin abmelden.}
+    \item[T090] \textbf{Einen Benutzer löschen.}
     
     \item[T100] \textbf{Einen Benutzer mit fehlerhaften Zugangsdaten anmelden.}
     
-    \item[T110] \textbf{Einen Admin mit fehlerhaften Zugangsdaten anmelden.}
+    \item[T120] \textbf{Priorität eines Benutzers durch einen Admin ändern.}
     
-    \item[T120] \textbf{Priorität eines Benutzers durch einen Admin ändern}
+    \item[T130] \textbf{Einen Job durch eine JSON-Datei und eine separate Job-Beschreibungs-Datei einreichen.}
     
-    \item[T130] \textbf{Einreichen eines Jobs durch eine JSON-Datei und eine separate Job-Beschreibungs-Datei}
+    \item[T140] \textbf{Einen Job durch eine JSON-Datei mit enthaltener Job-Beschreibung einreichen.}
     
-    \item[T140] \textbf{Einreichen eines Jobs durch eine JSON-Datei mit enthaltener Job-Beschreibung}
+    \item[T150] \textbf{Einen Job durch eine JSON-Datei mit einem Link, der auf eine Job-Beschreibungs-Datei verweist, einreichen.}
     
-    \item[T150] \textbf{Einreichen eines Jobs durch eine JSON-Datei mit einem Link, der auf eine Job-Beschreibungs-Datei verweist}
+    \item[T160] \textbf{Einen fehlerhaften Job einreichen.}
     
-    \item[T160] \textbf{Einreichen eines Fehlerhaften Jobs}
+    \item[T170] \textbf{Eine Jobbearbeitung abbrechen.}
     
-    \item[T170] \textbf{Abbrechen einer Jobbearbeitung}
+    \item[T180] \textbf{Das Ergebnis eines vollendeten Jobs zurückgeben}
     
-    \item[T180] \textbf{Erhalten einer Antwort auf einen vollendeten Job/abgebrochenen Job}
+    \item[T010] \textbf{Ein Teilergebnis eines Jobs mit erreichter maximaler Berechnungszeit zurückgeben.}
     
-    \item[T190] \textbf{Erstellen eines neuen korrekten Jobs}
+    \item[T010] \textbf{Eine Fehlermeldung bei fehlerhafter Bearbeitung eines Jobs zurückgeben.}
     
-    \item[T200] \textbf{Erstellen eines fehlerhaften Jobs}
+    \item[T190] \textbf{Eine Antwort auf einen abgebrochenen Job zurückgeben.}
     
-    \item[T210] \textbf{Aufrufen des derzeitigen Systemzustands von mallob}
+    \item[200] \textbf{Den Status eines Jobs zurückgeben}
     
-    \item[T220] \textbf{Aufrufen eines hierarchischen Baumes aller an einem Job arbeitenden Prozesseinheiten}
+    \item[T190] \textbf{Einen neuen Job erstellen.}
     
-    \item[T230] \textbf{Aufrufen eines vergangenen Systemzustands von mallob über die Zeitachse}
+    \item[T010] \textbf{Den Status eines inkrementellen Jobs zurückgeben.}
     
-    \item[T240] \textbf{Aufrufen der laufenden Jobs eines Benutzers}
+    \item[T010] \textbf{Information über mindestens einen Job abfragen.}
     
-    \item[T250] \textbf{Aufrufen aller der Zeit auf dem System laufenden Jobs durch einen Admin}
+    \item[T240] \textbf{Ergebnisse von mindestens einem bearbeiteten Job ausgeben.}
     
-    \item[T260] \textbf{Aufrufen der Statistik eines vollendeten/abgebrochenen Jobs}
+    \item[T010] \textbf{Job-Beschreibung von mindestens einem eingereichten Job ausgeben.}
     
     \item[T270] \textbf{Aufrufen bereits abgeschlossener Jobs}
-\end{itemize}
-
-\subsection{Erweiterte Testfälle}
-
-\begin{itemize}
-    \item[T280] \textbf{Aufrufen einer Visualisierung der Lösung eines Jobs}
     
     \item[T290] \textbf{Mallob beenden}
     
     \item[T300] \textbf{Mallob neustarten}
 \end{itemize}
 
+\subsection{Web-Interface Testfälle}
+
+\subsection{Visualisierung Testfälle}
+
+
 \subsection{Testszenarien}
-
-
-
+%emptiness
 	

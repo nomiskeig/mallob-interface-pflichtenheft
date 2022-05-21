@@ -1,0 +1,3 @@
+Nutzer: Person, die angemeldet ist, aber kein Administrator ist
+Jobs sind eingereicht, wenn sie im System sind, aktiv wenn sie bearbeitet werden, und abgeschlossen wenn sie fertig sind.,
+Ein Job hat eine Job-Beschreibung und eine Job-Konfiguration.

@@ -5,16 +5,67 @@
 \newglossaryentry{Job}{
     name=Job,
     plural=Jobs,
-    description={Jobs sind Aufträge}
+    description={Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus der Job-Konfiguration und der Job—Beschreibung.}
 }
 
-\newglossaryentry{Auftrag}{
-    name=Auftrag,
-    plural=Aufträge,
-    description={Aufträge sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Auftrag stellt ein einzelnes zu lösendes Problem dar. Ein Auftrag besteht aus der Auftragsbeschreibung und der dem zu lösenden Problem}
+\newglossaryentry{Job-Konfiguration}{
+    name=Job-Konfiguration,
+    plural=Job-Konfigurationen,
+    description={
+    Die Job-Konfiguration beinhaltet alle Parameter des Jobs, welche bei der Bearbeitung berücksichtigt werden.\\
+    Diese sind:\\\\\begin{tabular}{lL{0.6\textwidth}l}
+        Name & Beschreibung & Notwendig\\
+        \\
+        name & Der Name des Jobs & Ja\\
+        priority & Die Prioriät des Jobs & Ja\\
+        application & Das Anwendungsfeld des Jobs & Ja\\ 
+        max-demand & Die maximaler Anzahl paralleler Prozesse, die dieser Job nutzen kann & Nein\\
+        wallclock-limit & Zeitliches Ausführungsbudget des Jobs & Nein\\
+        cpu-limit & Corestudnen-Ausführungsbudget des Jobs & Nein\\
+        arrival & Frühester Bearbeitungsbeginn in Sekunden seit Start von Mallob & Nein\\
+        dependencies & Jobs, die abgeschlossen sein müssen, bevor dieser Job beginnt & Nein\\
+        incremental & Handelt es sich um einen Job mit mehreren Revisionen oder Inkrementen? &  Nein\\
+        precursor & Vorgänger-Job bei inkrementellen Jobs & Nein\\
+        % TODO: files hier auch?
+        content-mode & Text- oder Binärformat der Beschreibung & Nein\\
+        % TODO: literals und assumptions?
+    \end{tabular}} 
+}
+
+\newglossaryentry{Job-Beschreibung}{
+    name=Job-Beschreibung,
+    plural=Job-Beschreibungen,
+    description={Die Job-Beschreibung ist der Teil des Jobs, der das eigentliche Problem darstellt.}
+}
+
+
+\newglossaryentry{Nutzer}{
+    name=Nutzer,
+    plural=Nutzer,
+    description={Ein Nutzer ist eine Person, welche sich registriert hat und die mit dem System interagiert.}
+}
+
+\newglossaryentry{Administrator}{
+    name=Administrator,
+    plural=Administratoren,
+    description={Administratoren sind Nutzer mit mehr Rechten zur Verwaltung des Systems. Sie haben dennoch alle Möglichkeiten, die auch ein Nutzer hat, welcher kein Administrator ist.}
 }
 
 \newglossaryentry{Web-Interface}{
     name=Web-Interface,
-    description={Mit Web-Interface wird die Webseite referenziert, die der Nutzer im Internet aufrufen kann.}
+    description={Mit Web-Interface wird die Webseite referenziert, die der Nutzer im Internet aufrufen kann}
+}
+\newglossaryentry{API}{
+    name=API,
+    plural=APIs,
+    description={Application Programming Interface. Wird im Kontext dieses Systems genutzt, um die Dienste in einer Art und Weise bereitszustellen, dass sie in andere Anwendungen integriert werden kann}
+}
+
+\newglossaryentry{Konfigurationsdatei}{
+    name=Konfigurationsdatei,
+    description={Eine Datei in einem spezifischen Format, die vom System eingelesen wird. Darin werden bestimmte Werte definiert, die dann vom System verwendet werden, wie etwa die maximale Anzahl der parallelen Prozesse pro Job.}
+}
+\newglossaryentry{System-Administrator}{
+    name=System-Administrator,
+    description={Eine Person, die die Ausführungsumgebung des Systems verwaltet. Verantwortlich für das Starten und Beenden des Systems.}
 }

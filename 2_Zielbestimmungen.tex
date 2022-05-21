@@ -19,56 +19,77 @@
 %\end{itemize}
 
 \section{Zielbestimmung}
-Dieses Programm ermöglicht Nutzern, einfacher mit \href{https://github.com/domschrei/mallob}{Mallob} zu interagieren. Diese Interaktion kann auf zwei Wege erfolgen:
+Dieses Programm ermöglicht es Nutzern, einfacher mit \href{https://github.com/domschrei/mallob}{Mallob} zu interagieren. Diese Interaktion kann auf zwei Wege erfolgen:
 Einerseits wird eine REST-API angeboten für die Interaktion angeboten. Anderseits gibt es aber auch ein benutzerfreundliches Web-Interface, welches die API nutzt und somit eine graphische Oberfläche für diese darstellt.
 \subsection{Musskriterien}
     \subsubsection{API}
         \begin{itemize}
+            \item Unterscheiden zwischen Benutzern und Administratoren
             \item Authentifizieren von Benutzern
             \item Registrierung von neuen Benutzern
-            \item Verwalten von Aufträgen
+            \item Verwalten von Jobs
                 \begin{itemize}
-                    \item Auftrag hinzufügen
-                    \item Auftrag abbrechen
-                    \item Aktueller Status des Auftrags betrachten
-                    \item Auflisten der eigenen Aufträge
+                    \item Jobs hinzufügen
+                    \item Jobs abbrechen
+                    \item Aktuellen Status eines Jobs abfragen
+                    \item Auflisten der eigenen Jobs
                 \end{itemize}
-            \item Abfragen von Aufträgen
-            \item Erhalten von Informationen zu Fehlern
+            \item Abfragen von Jobs
+            \item Bereitstellung eines Ereignis-Streams von Mallob zum Erhalten von Updates
+            \item Erhalten von Informationen zu aufgetretenen Fehlern
         \end{itemize}
     \subsubsection{Web-Interface}
         \begin{itemize}
-            \item Authentifizieren von Benutzern
-            \item Registrierung von neuen Benutzern
-            \item Verwalten von Aufträgen
+            \item Authentifizieren von Nutzern
+            \item Registrierung von neuen Nutzern
+            \item Verwalten von Jobs
                  \begin{itemize}
-                    \item Auftrag hinzufügen
-                    \item Auftrag abbrechen
-                    \item Aktueller Status des Auftrags betrachten
-                    \item Auflisten der eigenen Aufträge
+                    \item Jobs hinzufügen
+                    \item Jobs abbrechen
+                    \item Aktuellen Status des Jobs betrachten
+                    \item Auflisten der eigenen Jobs
                 \end{itemize}
             \item Einsehen der eigenen Aufträge und derer Ergebnisse
+            \item Herunterladen der Ergebnisse der Jobs
             \item Anzeigen von aufgetretenen Fehlern
-            \item Visualisierung des aktuellen Systemzustandes im Web-Interface
+            \item Verifizierungsmöglichkeit von neuen Nutzern für Administratoren 
+            
+                      
+        \end{itemize}
+    \subsubsection{Visualisierung}    
+        \begin{itemize}
+            \item Das Web-Interface enthält eine Visualisierung des System-Zustands
+            \item Wenn die Live-Ansicht ausgewählt ist, wird die Visualisierung automatisch aktualisiert
+            %\item Darstellung der PE als Punkte %TODO: Ranks? oder PEs? oder ganz anderes Word?
+            %\item Färbung der Punkte entsprechend dem zugehörigen Job
+            %\item Verbinden der Punkte entsprechend der Position im Binärbaum des Jobs
+            %\item Dynamische Größe der Punkte und Verbindungen entsprechend der Position im Binärbaum des Jobs.
+        \end{itemize}
+    
+    \subsubsection{System}
+        \begin{itemize}
+            \item Konfigurationsdatei für globale Einstellungen des Systems
         \end{itemize}
         
         
 \subsection{Wunschkriterien}
     \begin{itemize}
-        \item Speichern von Auftragsdaten für Statistiken
-        \item Möglichkeit für Admins, die Instanz von Mallob zu starten, beenden oder neustarten
-        \item Sortieren der Auftragsliste im Web—Interface
+        %\item Speichern von Jobdaten für Statistiken -> Irgendwie redundaten, da wir eh schon jobdaten speichern
+        \item Möglichkeit für Administratoren, zu starten, beenden oder neustarten
+        \item Sortieren der Job-Tabelle im Web—Interface
         \item Graphischer Editor zur Eingabe der Job-Beschreibung
-        \item Möglichkeit zur Diagnostik der Aufträge für Admins
+        \item Diagnosemöglichkeit für Administratoren
         \item Nutzer benachrichtigen, falls Mallob abstürzen sollte
         \item Darstellen eines bestimmten vergangenen Zeitpunktes bei der Visualisierung
-        \item Plugins [TODO: ?????]
+        \item Ändern der Wiedergabegeschwindigkeit bei der Visualisierung
+        \item Einsehen von Details zu einem aktiven Job in der Visualisierung
+        \item Darstellung des vollständigen Binärbaums des Jobs
+        \item Schnittstelle für Plugins in Web—Interface
     \end{itemize}
     
 \subsection{Abgrenzungskriterien}
     \begin{itemize}
-        \item Das Web-Interface wird nur zur Darstellung auf herkömmlichen Desktop-PCs konzipiert. [TODO: Hoffentlich, noch fragen]
-        \item Es kann maximal ein Auftrag pro Anfrage hinzugefügt werden 
+        \item Es kann maximal ein Auftrag pro Anfrage hinzugefügt werden
         \item Korrektheit der Daten wird durch Mallob geprüft
-        \item Es gibt keine Möglichkeit, falsche Daten in der API zu korrigieren, in diesem Fall muss die gleiche Anfrage mit korrekten Daten erneut erfolgen.
+        \item Es gibt keine Möglichkeit, falsche Daten in der API zu korrigieren, in diesem Fall muss die gleiche Anfrage mit korrekten Daten erneut erfolgen
     \end{itemize}

@@ -41,9 +41,10 @@ Simon, Kaloyan, Siwi
 16.05.
 
 -Testszenarien aufdröseln 
+-performance tests
 -Funktionale Anforderungen aufräumen 
 -Einleitung schreiben
--Systemmodell?
+-Systemmodell? 
 -Anwendungsfalldiagramme erstellen 
 -Job-Spezifikation (API)
 

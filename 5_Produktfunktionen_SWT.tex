@@ -1,3 +1,4 @@
+
 \section{Funktionale Anforderungen}
 % Sollten wir noch nutzen
 %https://de.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
@@ -15,93 +16,463 @@
 %        \textbf{Auslösendes Ereignis:} & Nutzer möchte API verwenden \\
 %    \end{FA}
 %    \textbf{Beschreibung:}
-%    \begin{enumerate}[noitemsep] 
-%        \item Der Nutzer schickt eine Anfrage mit seinen Nutzerdaten an die API
-%        \item Die Anfrage wird von einem Administrator bearbeitet 
-%        \item Der Authentifizierungstoken wird an den Nutzer zurückgegeben
-%    \end{enumerate}
+%    \begin{FAList} 
+%        \item[1.] Der Nutzer schickt eine Anfrage mit seinen Nutzerdaten an die API
+%        \item[2.] Die Anfrage wird von einem Administrator bearbeitet 
+%        \item[3.] Der Authentifizierungstoken wird an den Nutzer zurückgegeben
+%    \end{FAList}
 %    
 %    
 %Vorlange für Funktionale Anforderungen, zum Einfügen von Text
 %\item[F10] \textbf{} \\
 %    \begin{FA}
-%        \textbf{Vorbedingung:} & \\
+%        \textbf{Ziel:} &  \\
+%        \textbf{Vorbedingung:} &  \\
 %        \textbf{Nachbedingung (Erfolg):} &  \\
-%        \textbf{Nachbedingung (Fehlschlag):} &  \\
+%        \textbf{Nachbedingung (Fehlschlag):} &   \\
 %        \textbf{Akteure:} & \\
 %        \textbf{Auslösendes Ereignis:} &  \\
 %    \end{FA}
 %    \textbf{Beschreibung:}
-%    \begin{enumerate}[noitemsep] 
-%        \item 
-%        \item 
-%    \end{enumerate}
+%    \begin{FAList} 
+%        \item[1.] 
+%        \item[2.] 
+%        \item[3.] 
+%    \end{FAList}
 
 \subsection{API}
 
+
 \begin{itemize}[nosep]
     \setlength\itemsep{4em}
-    \item[F10] \textbf{Registrierung von Nutzern} \\
+    
+    %-----------------API - Registrierung von Nutzern
+
+    \phantomsection
+    \label{FA:API:Registrierung von Nutzern}
+    \item[F1000] \textbf{Registrierung von Nutzern} \\
+    
     \begin{FA}
+        \textbf{Ziel: } & Ein neuer Nutzer wird in Der API registriert \\
         \textbf{Vorbedingung:} &  -keine- \\
-        \textbf{Nachbedingung (Erfolg):} &  der Nutzer besitzt einen Authentifizierungstoken für die API\\
-        \textbf{Nachbedingung (Fehlschlag):} &  der Nutzer besitzt keinen Authentifizierungstoken für die API \\
+        \textbf{Nachbedingung (Erfolg):} &  Der Nutzer ist in der API registriert und hat eine Bestätigung erhalten\\
+        \textbf{Nachbedingung (Fehlschlag):} &  Der Nutzer ist nicht registriert und hat eine Fehlermeldung erhalten \\
         \textbf{Akteure:} & Nutzer, Administrator\\
         \textbf{Auslösendes Ereignis:} & Nutzer möchte API verwenden \\
     \end{FA}
     \textbf{Beschreibung:}
-    \begin{enumerate}[noitemsep] 
-        \item Der Nutzer schickt eine Anfrage mit seinen Nutzerdaten an die API
-        \item Die Anfrage wird von einem Administrator bearbeitet 
-        \item Der Authentifizierungstoken wird an den Nutzer zurückgegeben
-    \end{enumerate}
+    \begin{FAList} 
+        \item[1.] Der Nutzer schickt eine Anfrage API, die seinen Nutzernamen und sein Passwort enthält
+        \item[2.] Die Anfrage wird von einem Administrator bearbeitet 
+        \item[3.a.] Wenn die Registrierung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+        \item[3.b.] Wenn die Registrierung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
     
     
+    %-----------------API - Authentifizierung von Nutzern
+    \phantomsection
+    \label{FA:API:Authentifizieren von Nutzern}
+    \item[F1010] \textbf{Authentifizieren von Nutzern}\\
     
-    
-    \item[F20] \textbf{Authentifizieren von Nutzern} \\
     \begin{FA}
-        \textbf{Ziel:} & Authentifizierung eines Nutzers mit einem Token \\
-        \textbf{Vorbedingung:} & der Nutzer besitzt einen Authentifizierungstoken (siehe F10) \\
-        \textbf{Nachbedingung (Erfolg):} & der Nutzer hat Zugriff auf die Funktionen der API \\
-        \textbf{Nachbedingung (Fehlschlag):} & der Nutzer hat keinen Zugriff auf die Funktionen der API \\
-         \textbf{Akteure:} & der Nutzer \\
+        \textbf{Ziel:} & Ein Nutzer authentifiziert sich mit seinem Nutzernamen und Passwort \\
+        \textbf{Vorbedingung:} & Der Nutzer ist in der API registriert (siehe F10) \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat einen Authentifizierungstoken, der ihm Zugriff auf die Funktionen der API ermöglicht \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat keinen Authentifizierungstoken und hat eine Fehlermeldung erhalten \\
+         \textbf{Akteure:} & Nutzer \\
         \textbf{Auslösendes Ereignis:} & Nutzer möchte Funktionen der API verwenden \\
     \end{FA}
     \textbf{Beschreibung:}
-    \begin{enumerate}[noitemsep]
-        \item der Nutzer schickt eine Anfrage zur Authentifizierung an die API, die seinen Authentifizierungstoken enthält
-        \item die Anfrage wird von der API verarbeitet und der Nutzer wird authentifiziert
-        \item der Nutzer erhält die Berechtigung, die Funktionen der API zu verwenden
-    \end{enumerate}
+    \begin{FAList}
+        \item[1.] Der Nutzer schickt eine Anfrage zur Authentifizierung an die API, die seinen Nutzernamen und sein Passwort enthält
+        \item[2.] Die Anfrage wird von der API verarbeitet und der Nutzer wird authentifiziert
+        \item[3.a.] Wenn die Authentifizierung erfolgreich war, wird der Authentifizierungstoken an den Nutzer zurückgegeben
+        \item[3.b.] Wenn die Authentifizierung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
     
     
-    \item[F30] \textbf{Einreichen von Jobs} \\
+    %-------------API - Ändern von Nutzerdaten   müssen wir nicht machen!!
+%   \phantomsection
+%   \label{FA:API:Aeandern von Nutzerdaten} 
+%    \item[F1020] \textbf{Ändern von Nutzerdaten} \\
+%    \begin{FA}
+%        \textbf{Ziel:} & Ein Nutzer kann seinen Nutzernamen und Passwort ändern \\
+%        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert (siehe F20) \\
+%        \textbf{Nachbedingung (Erfolg):} & Die Nutzerdaten des Nutzers sind geändert und der Nutzer hat eine Bestätigung erhalten  \\
+%        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung erhalten \\
+%        \textbf{Akteure:} & Der Nutzer\\
+%        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte seine Nutzerdaten ändern \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Nutzer schickt eine Anfrage an die API mit seinem neuen Nutzernamen und Passwort
+%        \item[2.] Die Nutzerdaten werden von der API aktualisiert
+%        \item[3.a.] Wenn die Änderung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+%        \item[3.b.] Wenn die Änderung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+%    \end{FAList}
+    
+    
+    %--------------API - Löschen eines Nutzers   Müssen wir auch nicht machen!!
+%   \phantomsection
+%    \label{FA:API:Loeschen eines Nutzers} 
+%    \item[F1020] \textbf{Löschen eines Nutzers} \\
+%    \begin{FA}
+%        \textbf{Ziel:} & Ein Nutzer kann von einem Administrator gelöscht werden \\
+%        \textbf{Vorbedingung:} & Der zu löschende Nutzer muss registriert sein \\
+%        \textbf{Nachbedingung (Erfolg):} & Der Nutzer ist gelöscht und der Administrator hat eine Bestätigung erhalten \\
+%        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer ist noch vorhanden und der Administrator hat eine Fehlermeldung erhalten \\
+%        \textbf{Akteure:} & Der Administrator \\
+%        \textbf{Auslösendes Ereignis:} & Der Administrator möchte einen Nutzer entfernen \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Administrator schickt eine Anfrage an die API mit dem Nutzernamen des zu löschenden Nutzers
+%        \item[2.] Der Nutzer wird aus den registrierten Nutzern entfernt
+%        \item[3.a.] Wenn das Löschen des Nutzers erfolgreich war, wird eine Bestätigung an den Administrator zurückgegeben
+%        \item[3.b.] Wenn das Löschen des Nutzers nicht erfolgreich war, wird eine Fehlermeldung an den Administrator zurückgegeben
+%    \end{FAList}
+
+    
+    %-----------------API - Einreichen von Jobs
+    \phantomsection
+    \label{FA:API:Einreichen von Jobs} 
+    \item[F1020] \textbf{Einreichen von Jobs} \\
     \begin{FA}
-        \textbf{Ziel:} & Übergeben eines Jobs an die API, der von Mallob bearbeitet wird \\
-        \textbf{Vorbedingung:} & der Nutzer ist authentifiziert (siehe F20) \\
-        \textbf{Nachbedingung (Erfolg):} & der Nutzer hat das Ergebnis des eingereichten Jobs \\
-        \textbf{Nachbedingung(Fehlschlag):} & der Nutzer hat eine Fehlermeldung oder eine Statistik über die verrichtete Arbeit \\
-        \textbf{Akteure:} & der Nutzer \\
-        \textbf{Auslösendes Ergebnis:} & der Nutzer möchte das Ergebnis zu einem Job haben \\
+        \textbf{Ziel:} & Ein Nutzer kann einen Job an die API übergeben, der von Mallob bearbeitet wird \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert (siehe F20) \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat das Ergebnis des eingereichten Jobs \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung oder eine Statistik über die verrichtete Arbeit \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ergebnis:} & Der Nutzer möchte das Ergebnis zu einem Job haben \\
     \end{FA}
     \textbf{Beschreibung:}
-    \begin{enumerate}[noitemsep]
-        \item Der Nutzer schickt eine Anfrage an die API, die sowohl eine JSON Datei mit der Konfiguration des Jobs als auch eine weitere Datei, die die Beschreibung des Jobs beinhaltet, enthält
-        \item Der eingereichte Job wird von Mallob bearbeitet
-        \item Das Ergebnis der Bearbeitung wird an den Nutzer zurückgegeben
-    \end{enumerate}
+    \begin{FAList}
+            \item[1.a.] Der Nutzer schickt eine Anfrage an die API, die sowohl die Job-Konfiguration des Jobs als auch die Job-Beschreibung enthält, wobei die Job-Beschreibung in einer separaten Datei spezifiziert ist
+            \item[1.b.] Der Nutzer schickt eine Anfrage an die API, die ebenfalls die Job-Konfiguration des Jobs als auch die Job-Beschreibung enthält, wobei in diesem Fall beides in  einer einzelnen Datei spezifiziert wird
+            \item[1.c.] Der Nutzer schickt eine Anfrage an die API, die ebenfalls die Job-Konfiguration und einen Link  zu einer Datei enthält, in der die Job-Beschreibung spezifiziert ist
+            \item[1.d.] Der Nutzer schickt eine Anfrage an die API, die eine Referenz auf einen bereits eingereichten Job enthält, der nochmal ausgeführt werden soll
+            \item[2.] Der eingereichte Job wird Mallob bearbeitet
+            \item[3.a.] Wenn die Bearbeitung erfolgreich war, wird das Ergebnis an den Nutzer zurückgegeben
+            \item[3.b.] Wenn die spezifizierte maximale Bearbeitungszeit erreicht wird, ohne dass ein Ergebnis gefunden wurde, wird eine Statistik über die bereits verrichtete Arbeit an den Nutzer zurückgegeben
+            \item[3.c.] Wenn während der Bearbeitung ein Fehler auftritt, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
     
     
+    %-----------------API - Abbrechen von Jobs
+   \phantomsection
+    \label{FA:API:Abbrechen von eingereichten Jobs}  
+    \item[F1030] \textbf{Abbrechen von eingereichten Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Nutzer kann einen oder mehrere eingereichte Jobs wieder abbrechen \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und hat mindestens einen laufenden Job \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat das Teil-Ergebnis, sowie Statistik des eingereichten Jobs \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung oder eine Statistik über die verrichtete Arbeit \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ergebnis:} & Der Nutzer möchte den Job abbrechen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+            \item[1.a] Der Nutzer schickt eine Anfrage an die API, welche eine Liste von Job-IDs enthält.
+            \item[1.b] Der Nutzer schickt eine Anfrage an die API, welche eine Liste von Job-Namen enthält.
+            \item[2.] Die Jobs werden abgebrochen
+            \item[3.a.] Wenn das Abbrechen erfolgreich war, werden die Teil-Ergebnisse und Statistiken an den Nutzer zurückgegeben.
+            \item[3.b.] Wenn das Abbrechen nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
     
+    
+    %-----------------API - Zurückgeben von Ergebnissen
+    \phantomsection
+    \label{FA:API:Zurueckgeben von Ergebnissen} 
+    \item[F1040] \textbf{Zurückgeben von Ergebnissen} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Nutzer erhält auf jede Anfrage eine Antwort \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und hat eine Anfrage gestellt  \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer bekommt das als Antwort, was er angefragt hat \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer bekommt eine Fehlermeldung \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ergebnis:} & Der Nutzer möchte eine Antwort auf eine Anfrage an die API \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+            \item[1.a] Bei erfolgreicher Berechnung eines Jobs, wird das Ergebnis an den Nutzer zurückgegeben
+            \item[1.b] Wenn die maximale Bearbeitungszeit des eingereichten Jobs erreicht wurde und kein Ergebnis gefunden, wird eine Statistik über die bereits verrichtete Arbeit an den Nutzer gegeben
+            \item[1.c] Wenn während der Bearbeitung des eingereichten Jobs ein Fehler auftritt, wird eine aussagekräftige  Fehlermeldung an den Nutzer zurückgegeben.
+            \item[1.d] Es ist möglich das Ergebnis bzw. den Status (in Bearbeitung, Bearbeitet, Fehler) abzufragen. Die Antwort enthält dabei alle Informationen zum Status des Jobs, wie das Ergebnis oder eventuelle Fehlermeldung 
+    \end{FAList}
+    
+    
+    %---------------------API - Starten von Mallob
+    \phantomsection
+    \label{FA:API:Starten von Mallob}  
+    \item[F1050] \textbf{Starten von Mallob} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Mallob Instanz wird von einem Administrator gestartet \\
+        \textbf{Vorbedingung:} & Mallob läuft noch nicht \\
+        \textbf{Nachbedingung (Erfolg):} & Mallob ist gestartet und der Administrator hat eine Bestätigung erhalten \\
+        \textbf{Nachbedingung (Fehlschlag):} & Mallob ist nicht gestartet und der Administrator hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator will die Mallob-Instanz starten \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Der Administrator schickt eine Anfrage an die API
+        \item[2.] Die Mallob-Instanz wird gestartet
+        \item[3.a.] Wenn das Starten erfolgreich war, wird eine Bestätigung an den Administrator zurückgegeben
+        \item[3.b.] Wenn das Starten der Mallob-Instanz nicht erfolgreich war, wird eine Fehlermeldung an den Administrator zurückgegeben
+    \end{FAList}
+    
+    
+    %---------------------API - Stoppen von Mallob
+    \phantomsection
+    \label{FA:API:Stoppen von Mallob}  
+    \item[F1060] \textbf{Stoppen von Mallob} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Mallob Instanz wird von einem Administrator gestoppt \\
+        \textbf{Vorbedingung:} & Die Mallob-Instanz läuft bereits \\
+        \textbf{Nachbedingung (Erfolg):} & Die Mallob-Instanz läuft nicht mehr und der Administrator hat eine Bestätigung erhalten \\
+        \textbf{Nachbedingung (Fehlschlag:} & Die Mallob-Instanz läuft noch und der Administrator hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator will die Mallob-Instanz stoppen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Der Administator schickt eine Anfrage an die API
+        \item[2.] Die Mallob-Instanz wird gestoppt
+        \item[3.a.] Wenn das Stoppen der Mallob-Instanz erfolgreich war, wird eine Bestätigung an den Administrator zurückgegeben
+        \item[3.b.] Wenn das Stoppen der Mallob-Instanz fehlschlägt, wird wird eine Fehlermeldung an den Administrator zurückgegeben
+    \end{FAList}
+    
+    
+    %-------------------------------API - Neustart von Mallob
+    \phantomsection
+    \label{FA:API:Neustart von Mallob}  
+    \item[F1070] \textbf{Neustart von Mallob} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Mallob-Instanz wird von einem Administrator neu gestartet \\
+        \textbf{Vorbedingung:} & Die Mallob-Instanz läuft bereits \\
+        \textbf{Nachbedingung (Erfolg):} & Die Mallob-Instanz wurde neu gestartet und der Administrator hat eine Bestätigung erhalten \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Administrator hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Mallob-Instanz neu starten \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Der Administrator schickt eine Anfrage an die API
+        \item[2.] Die Mallob-Instanz wird neu gestartet
+        \item[3.a.] Wenn der Neustart der Mallob-Instanz erfolgreich war, wird eine Bestätigung an den Administrator zurückgegeben
+        \item[3.b.] Wenn der Neustart der Mallob-Instanz fehlgeschlagen ist, wird eine Fehlermeldung an den Administrator zurückgegeben
+    \end{FAList}
+    
+    
+    %--------------------------API - Abfrage für inkrementelle Jobs
+    \phantomsection
+    \label{FA:API:Abfragen der Fertigstellung eines inkrementellen Jobs}  
+    \item[F1080] \textbf{Abfragen der Fertigstellung eines inkrementellen Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es wird abgefragt, ob ein inkrementeller Job abgeschlossen ist oder ob Teil-Jobs existieren, die noch bearbeitet werden müssen \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert (siehe F20) es wurde ein inkrementeller Job eingereicht \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat eine Antwort erhalten, ob der Job abgeschlossen ist oder nicht \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte herausfinden, ob ein inkrementeller Job abgeschlossen ist \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Nutzer schickt eine Anfrage an die API mit der Job-ID des inkrementellen Jobs, der abgefragt werden soll
+        \item[2.] Der Bearbeitungsstand des inkrementellen Jobs wird abgefragt
+        \item[3.a] Wenn die Abfrage erfolgreich war, wird das Ergebnis an den Nutzer zurückgegeben
+        \item[3.b.] Wenn die Abfrage nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
+    
+    
+    %--------------------------API - Abfragen der Daten eines einzelnen Jobs
+    \phantomsection
+    \label{FA:API:Abfragen der Informationenen für einen oder mehrere Jobs}  
+    \item[F1090] \textbf{Abfragen der Informationen für einen oder mehrere Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es werden die Informationen von einem oder mehreren Jobs von einem Nutzer abgefragt \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert (siehe F20) und die gewünschten Jobs wurden bereits eingereicht \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat die Daten zu den angefragten Jobs erhalten \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Der Nutzer hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Informationen von einem oder mehreren eingereichten Jobs herausfinden \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Nutzer stellt eine Anfrage an die API mit einer Liste von Job-IDs, deren Informationen abgefragt werden soll
+        \item[2.] Die Daten der Jobs werden abgefragt
+        \item[3.a.] Wenn die Abfrage erfolgreich war, werden die Informationen an den Nutzer zurückgegeben
+        \item[3.b.] Wenn die Abfrage nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
+    
+    
+    %---------------API - Ergebnisdatei anfordern
+    \phantomsection
+    \label{FA:API:Ausgeben des Ergebnisses für eine oder mehrere Jobs}  
+    \item[F1100] \textbf{Ausgeben des Ergebnisses für eine oder mehrere Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es werden die Ergebnisdateien von einem oder mehreren Jobs von einem Nutzer abgefragt \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und die angeforderte Jobs wurden eingereicht und bearbeitet \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat die Ergebnisdateien der spezifizierten Jobs \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung erhalten  \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Ergebnisdateien von einem oder mehreren Jobs haben \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Nutzer schickt eine Anfrage an die API mit einer Liste von Job-IDs 
+        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die Ergebnisdateien der Jobs an den Nutzer zurückgegeben 
+        \item[2.b.] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
+    
+    
+    %---------------API - Job-Beschreibung ausgeben
+    \phantomsection
+    \label{FA:API:Ausgeben der Job-Beschreibung}  
+    \item[F1110] \textbf{Ausgeben der Job-Beschreibung für einen oder mehrere Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es werden die Job-Beschreibungen von einem oder mehreren Jobs an den Nutzer ausgegeben  \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und die angegebenen Jobs wurden bereits eingereicht \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat die Job-Beschreibungen der spezifizierten Jobs \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Job-Beschreibungen von einem oder mehreren Jobs haben \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Nutzer schickt eine Anfrage an die API mit einer Liste von Job-IDs
+        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die Job-Beschreibungen an den Nutzer zurückgegeben 
+        \item[2.b] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben 
+    \end{FAList}
+    
+    
+    %--------------API - Abfragen der Informationen von Mallob
+    \phantomsection
+    \label{FA:API:Abfragen der Informationen von Mallob}  
+    \item[F1120] \textbf{Abfragen der Informationen von Mallob} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Administrator kann den Status und weitere Informationen zu Mallob abrufen \\
+        \textbf{Vorbedingung:} & Der Administrator muss authentifiziert sein \\
+        \textbf{Nachbedingung (Erfolg):} & Der Administrator hat die Informationen zu Mallob erhalten \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Administrator hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte genauere Informationen zu Mallob haben \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Administrator schickt eine Anfrage an die API
+        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die Informationen an den Administrator zurückgegeben 
+        \item[2.b.] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den Administrator zurückgegeben 
+    \end{FAList}
+    
+    
+    %-----------API - Ausgeben eines Ereignis-Streams von Mallob
+    \phantomsection
+    \label{FA:API:Ausgeben eines Ereignis-Streams von Mallob}  
+    \item[F1130] \textbf{Ausgeben eines Ereignis-Streams von Mallob} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Nutzer hat Zugriff auf einen Ereignis-Stream, über den Ereignisse von Mallob übertragen werden \\
+        \textbf{Vorbedingung:} & Der Nutzer muss authentifiziert sein \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer hat Zugriff auf den Ereignis-Stream \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat keinen Zugriff und hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Ereignisse von Mallob einsehen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Nutzer schickt eine Anfrage an die API
+        \item[2.a.] Wenn die Anfrage erfolgreich war, wird der Stream an den Nutzer zurückgegeben 
+        \item[2.b.] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben 
+    \end{FAList}
+    
+    %----------------API - Löschen von einem oder mehreren abgeschlossenen Jobs
+    
+    %\item[F10] \textbf{Löschen von abgeschlossenen Jobs} \\
+%    \begin{FA}
+%        \textbf{Ziel:} & Der Nutzer kann einen oder mehrere abgeschlossene Jobs aus der Liste der gespeicherten Jobs entfernen \\
+%        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und die gewünschten Jobs sind bereits abgeschlossen \\
+%        \textbf{Nachbedingung (Erfolg):} & der Job wurde gelöscht und der Nutzer hat eine Bestätigung erhalten \\
+%        \textbf{Nachbedingung (Fehlschlag):} & der Nutzer hat eine Fehlermeldung erhalten  \\
+%        \textbf{Akteure:} & der Nutzer \\
+%        \textbf{Auslösendes Ereignis:} & der Nutzer möchte einen oder mehrere abgeschlossene Jobs aus der Liste der gespeicherten Jobs entfernen \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Nutzer schickt eine Anfrage an die API mit einer Liste von Job-IDs
+%        \item[2.] Die Jobs werden aus der Liste der gespeicherten Jobs entfernt
+%        \item[3.a.] Wenn das Löschen erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+%        \item[3.b.] Wenn das Löschen nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+%    \end{FAList}
+    \phantomsection
+    \label{FA:API:Aendern der Pro eines Nutzers} 
+    \item[F1140] \textbf{Ändern der Priorität eines Nutzers} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Admin kann die Priorität eines beliebigen Nutzers ändern \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert \\
+        \textbf{Nachbedingung (Erfolg):} & Die Priorität des Nutzers wurde geändert \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Priorität des Nutzers bleibt gleich und der Admin erhält eine Fehlermeldung \\
+        \textbf{Akteure:} & Admin \\
+        \textbf{Auslösendes Ereignis:} & Der Admin möchte die Priorität eines Nutzers erhöhen oder senken \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Der Admin schickt eine Anfrage an die API mit dem Nutzernamen und der neuen Priorität
+        \item[2.] Die Priorität wird von der API aktualisiert
+        \item[3.a.] Wenn die Änderung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+        \item[3.b.] Wenn die Änderung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:API:Aktualisieren von Einstellungen und Plugins}  
+     \item[F1150] \textbf{Aktualisieren von Einstellungen und Plugins} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die API bietet eine Möglichkeit, die Konfigurationsdatei und Plugins neu einzulesen.\\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  & Einstellung werden entsprechend der Konfigurationsdatei angepasst und Plugins wurden erneut eingelesen.\\
+        \textbf{Nachbedingung (Fehlschlag):} & Es wird eine Fehlermeldung zurückgegeben. Es kann auch vorkommen, das entsprechend nur die Einstellungen geändert werden oder nur die Plugins erneut eingelesen werden. \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Einstellungen ändern oder die Plugins einlesen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Schicken der entsprechenden API-Anfrage.
+    \end{FAList} 
+    
+    \phantomsection
+    \label{FA:API:Abrufen von Einstellungen}  
+    \item[F1160] \textbf{Abrufen von durch Konfigurationsdatei festgelegte Einstellungen} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die API bietet eine Möglichkeit, die Einstellungen der Konfigurationsdatei abzurufen.\\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  & Die Einstellungen werden zurückgegeben.\\
+        \textbf{Nachbedingung (Fehlschlag):} & Es wird eine Fehlermeldung zurückgegeben. \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die aktuellen Einstellungen erfahren. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Schicken der entsprechenden API-Anfrage.
+    \end{FAList} 
+\end{itemize}
+    
+    
+%-------------------------------------------------------------------
+%--------------------WEB INTERFACE----------------------------------
+%-------------------------------------------------------------------
+\pagebreak
+
 \subsection{Web-Interface}
+Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interface und sind auch in diesem Kontext zu verstehen.
+
+
 \begin{itemize}
-    \setlength\itemsep{4em}
-    \item[F10] \textbf{Anmelden} \\
+    \phantomsection
+    \label{FA:Web-Interface:Anmelden} 
+    \item[F2000] \textbf{Anmelden} \\
     \begin{FA}
         \textbf{Ziel:} & Ein Nutzer ist in der Lage, sich im Web-Interface zu authentifizieren. \\
         \textbf{Vorbedingung:} & Der Nutzer besitzt bereits ein Konto und ist noch nicht angemeldet. \\
-        \textbf{Nachbedingung (Erfolg):}  &  Der Nutzer wird angemeldet und zur Auftragsseite weitergeleitet. [TODO: Namen für Seiten, möglichst einheitlich, was genau wird angezeigt?] \\
+        \textbf{Nachbedingung (Erfolg):}  &  Der Nutzer wird angemeldet und zur \hyperref[pages:job-table]{Job-Tabelle} weitergeleitet.\\
         \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer erhält eine Fehlermeldung in der GUI, dass seine Anmeldung nicht erfolgreich war. \\
         \textbf{Akteure:} & Kunden, Admins \\
         \textbf{Auslösendes Ereignis:} &  Der Kunde ruft das Web-Interface im Browser auf. \\
@@ -112,14 +483,16 @@
     \end{enumerate} 
     \end{FA}
     \textbf{Beschreibung:}
-    \begin{enumerate}[noitemsep] 
-        \item Eingabe des Nutzernamens
-        \item Eingabe des Passwortes
-        \item Bestätigung durch Betätigung der Schaltfläche "login"
-    \end{enumerate} 
+    \begin{FAList} 
+        \item[1.] Eingabe des Nutzernamens
+        \item[2.] Eingabe des Passwortes
+        \item[3.] Bestätigung durch Betätigung der Schaltfläche "login"
+    \end{FAList} 
     
-    
-    \item[F20] \textbf{Registrieren} \\
+ 
+    \phantomsection
+    \label{FA:Web-Interface:Registrieren} 
+    \item[F2010] \textbf{Registrieren} \\
     \begin{FA}
         \textbf{Ziel:} & Ein Kunde ist in der Lage, ein neues Konto zu erstellen.\\
         \textbf{Vorbedingung:} &  Der Kunde ist nicht angemeldet. \\
@@ -129,15 +502,552 @@
         \textbf{Auslösendes Ereignis:} &  Der Kunde ruft das Web-Interface im Browser auf und besitzt noch kein Konto. \\
     \end{FA}
     \textbf{Beschreibung:}
-    \begin{enumerate}[noitemsep] 
-        \item Der Kunde wählt die "register"- Schaltfläche aus.
-        \item Eingabe des gewünschten Nutzernames
-        \item Eingabe des gewünschten Passwortes
-        \item Eingabe des wiederholten Passwortes
-        \item Bestätigung der Eingabe mittels der Schaltfläche "register"
-    \end{enumerate}
+    \begin{FAList}
+        \item[1.] Der Kunde wählt die "register"- Schaltfläche aus.
+        \item[2.] Eingabe des gewünschten Nutzernames
+        \item[3.] Eingabe des gewünschten Passwortes
+        \item[4.] Eingabe des wiederholten Passwortes
+        \item[5.] Bestätigung der Eingabe mittels der Schaltfläche "register"
+    \end{FAList}
+    
+   
+    \phantomsection
+    \label{FA:Web-Interface:Job einreichen} 
+    \item[F2030] \textbf{Job einreichen} \\
+    \begin{FA}
+        \textbf{Ziel:} & Einreichen eines neuen Jobs über das Web-Interface.\\
+        \textbf{Vorbedingung:} & Der Kunde ist angemeldet.  \\
+        \textbf{Nachbedingung (Erfolg):} & Der Kunde wird auf die Seite des gerade eingereichten Job weitergeleitet.  \\
+        \textbf{Nachbedingung (Fehlschlag):} & Im Web-Interface wird eine aussagekräftige Fehlermeldung angezeigt. \\
+        \textbf{Akteure:} & Kunde, Admin \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte einen Job in Auftrag geben. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Liste mittles der Menu-Leiste
+        \item[2.] Auswahl der Schaltfläche "add job"
+        \item[3.] Eingabe der notwendigen Optionen des Jobs
+        \item[4a.] Eingabe der Job-Beschreibung über ein Eingabe-Feld direkt im Web-Interface
+        \item[4bI.] Dropdown-Menü nutzen, um Upload der Job-Beschreibung auszuwählen.
+        \item[4bII.] Entsprechende Schaltfläche nutzen, um die entsprechende Job-Beschreibung auszuwählen.
+        \item[4cI.] Dropdown-Menü nutzen, um Angabe einer URL der Job-Beschreibung auszuwählen.
+        \item[4cII.] Eingabe der URL zur Job-Beschreibung im entsprechenden Feld.
+        \item[5.] Bestätigung der Eingaben
+    \end{FAList}
+    \textbf{Erweiterungen}
+    \begin{FAList}
+        \item[3a.] HInzufügen von gewünschten optionalen Optionen mithilfe des entsprechenden Dropdown-Menüs.
+        \item[3b.] Eingabe der optionalen Optionen über die entsprechenden Felder.
+    \end{FAList}
+    
+    
+    \phantomsection
+    \label{FA:Web-Interface:Abbruch eines einzelnen Jobs} 
+    \item[F2040] \textbf{Abbruch eines einzelnen Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein bereits eingereichter Job wird wieder abgebrochen. \\
+        \textbf{Vorbedingung:} & Es gibt einen bereits eingereichten, noch nicht fertiggestellten Job. \\
+        \textbf{Nachbedingung (Erfolg):}  & Der Job wurde abgebrochen. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Der Job läuft weiter und dem Nutzer wird eine entsprechende Fehlermeldung angezeigt. \\
+        \textbf{Akteure:} & Nutzer, Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte einen laufenden Job abbrechen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle.
+        \item[2.] Anklicken des entsprechenden Jobs in der Tabelle.
+        \item[3.] Auswahl der entsprechenden Schaltfläche im aufgeklappten Fenster.
+        \item[4a.] Bestätigung des Abbrechens im erschienenen Menü.
+        \item[4b.] Keine Bestätigung des Abbrechens im erschienenen Menü, die Aktion wird abgebrochen und der Job läuft weiter.
+    \end{FAList}
+    \textbf{Alternative zu den Schritten 1 bis 3:}
+    \begin{FAList}
+        \item[1.] Navigation zur Job-Seite des abzubrechenden Jobs.
+        \item[2.] Auswahl der entsprechenden Schaltfläche.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Abbruch mehrerer Jobs auf einmal} 
+    \item[F2050] \textbf{Abbruch mehrerer Jobs auf einmal} \\
+    \begin{FA}
+        \textbf{Ziel:} & Mehrere bereits laufende werden auf einmal abgebrochen werden. Mit \enquote{auf einmal} ist hier gemeint, das nicht jeder Job einzeln abgebrochen wird, sondern alle abzubrechenden Jobs mit einem Klick zur selben Zeit abgebrochen werden können. \\
+        \textbf{Vorbedingung:} & Es gibt mehrere, bereits eingereichte und noch nicht fertiggestellte Jobs. \\
+        \textbf{Nachbedingung (Erfolg):}  & Die Jobs wurden alle abgebrochen. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Ein oder mehrere Jobs konnten nicht abgebrochen werden und der Nutzer erhält eine entsprechende Fehlermeldung. Die Jobs, bei denen der Abbruch erfolgreich ist, werden auch abgebrochen, falls  dies bei anderen Jobs fehlschlägt.\\
+        % [TODO: Formulierung überarbeiten]
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte mehrere laufende Jobs auf einmal abbrechen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle.
+        \item[2.] Setzen eines Kreuzes in der Checkbox bei allen Jobs, die Abgebrochen werden sollen.
+        \item[3.] Auswahl der entsprechenden Action im entsprechenden Dropdown-Menü.
+        \item[4.] Bestätigung des Abbruchs.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Neustart} 
+    \item[F2060] \textbf{Neustart eines abgebrochenen Jobs} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Nutzer kann einen abgebrochenen Job neustarten\\
+        \textbf{Vorbedingung:} & Der Nutzer hat einen abgebrochenen Job \\
+        \textbf{Nachbedingung (Erfolg):}  &  Der abgebrochene Job wird bearbeitet \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Der abgebrochene Job wird nicht bearbeiten \\
+        \textbf{Akteure:} & Nutzer\\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte einen abgebrochenen Job wieder starten \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle.
+        \item[2.] Anklicken des neuzustartenden, abgebrochennen Jobs.
+        \item[3.] Auswählen der entsprechenden Schaltfläche in der aufgeklappten Ansicht.
+        \item[4.] Weiterleitung zur \hyperref[pages:submit-job]{Seite zum Einreichen von Jobs}, wobei hier die entsprechenden Optionen bereits wieder ausgefüllt sind.
+        \item[5.] Verändern der Job-Beschreibung oder der Job-Konfiguration.
+        \item[6.] Einreichen des Jobs.
+    \end{FAList} 
+    \textbf{Alternative der Schritte 1-3:}
+    \begin{FAList}
+        \item[1.] Navigation zur Job-Seite des neuzustartenden Jobs.
+        \item[2.] Auswählen der entsprechenden Schaltfläche.
+    \end{FAList}
+    \textbf{Alternative von Schritt 5.}
+    \begin{FAList}
+        \item[5.] Nichts verändern.
+    \end{FAList}
+
+    
+    \phantomsection
+    \label{FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses} 
+    \item[F2070] \textbf{Herunterladen eines einzelnen Ergebnisses} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein einzelnes Ergebnis eines abgeschlossen Jobs kann heruntergeladen werden. \\
+        \textbf{Vorbedingung:} & Es gibt einen bereits abgeschlossenen Job. \\
+        \textbf{Nachbedingung (Erfolg):}  & Das Ergebnis wurde heruntergeladen. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Das Ergebnis wurde nicht heruntergeladen und eine Fehlermeldung wird angezeigt. \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte ein einzelnes Ergebnis herunterladen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle.
+        \item[2.] Anklicken des entsprechenden Jobs in der Tabelle.
+        \item[3.] Auswahl der entsprechenden Schaltfläche im aufgeklappten Fenster.
+        \item[4.] Das Ergebnis wird heruntergeladen.
+    \end{FAList}
+    \textbf{Alternative zu den Schritten 1 bis 3:}
+    \begin{FAList}
+        \item[1.] Navigation zur Job-Seite des Jobs mit dem gewünschten Ergebnis.
+        \item[2.] Auswahl der entsprechenden Schaltfläche.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:herunterladen mehrerer Ergebnisse auf einmal} 
+    \item[F2080] \textbf{Herunterladen mehrerer Ergebnisse auf einmal} \\
+    \begin{FA}
+        \textbf{Ziel:} & Mehrere Ergebnisse können auf einmal heruntergeladen werden. Mit \enquote{auf einmal} ist hier gemeint, das nicht alle Ergebnisse einzeln heruntergeladen werden, sondern alle gewünschten Ergebnisse mit einem Klick zur selben Zeit heruntergeladen werden können. \\
+        \textbf{Vorbedingung:} & Es gibt mindestens einen bereits fertigen Job. \\
+        \textbf{Nachbedingung (Erfolg):}  & Die Ergebnisse wurde alle heruntergeladen. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Ein oder mehrere Ergebnisse konnten nicht heruntergeladen werden und der Nutzer erhält eine entsprechende Fehlermeldung. Die restlichen gewünschten Ergebnisse werden dennoch heruntergeladen.\\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte mehrere Ergebnisse auf einmal herunterladen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Liste.
+        \item[2.] Setzen eines Kreuzes in der Checkbox bei allen Jobs, die heruntergeladen werden sollen.
+        \item[3.] Auswahl der entsprechenden Action im entsprechenden Dropdown-Menü.
+        \item[4.] Bestätigung des Herunterladens.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Anzeigen von Fehlern} 
+     \item[F2090] \textbf{Anzeigen von Fehlern} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es gibt eine Möglichkeit, den Nutzer über aufgetretene Fehler zu informieren. \\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  & Eine Fehlermeldung wird angezeigt. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Es wird keine Fehlermeldung angezeigt. \\
+        \textbf{Akteure:} & System \\
+        \textbf{Auslösendes Ereignis:} & Ein Fehler ist aufgetreten \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Ein Fehler tritt im System auf.
+        \item[2.] Dem Nutzer wird ein Fenster mit der Fehlermeldung angezeigt. Dieses Fenster befindet sich im Vordergrund und blockiert das restliche Web-Interface, bis der Nutzer die Bestätigungs-Schaltfläche betätigt oder er neben das Fenster klickt, um dieses zu schließen.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Verifizieren eines Kontos} 
+   \item[F2100] \textbf{Verifizieren eines Kontos} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein vorläufiges Konto kann verifiziert werden. \\
+        \textbf{Vorbedingung:} &  Ein vorläufiges Konto existiert. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Das vorläufige Konto wird zum regulären Konto. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Das vorläufige Konto  wird nicht verändert. \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Ein Kunde hat sich erfolgreich registriert. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zum \hyperref[pages:admin]{Adminstratoren-Seite} 
+        \item[2a.] Bestätigung des Kontos in der Liste über die entsprechende Schaltfläche
+        \item[2b.] Keine Bestätigung des Kontos in der Liste über die entsprechende Schaltfläche.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Anzeigen von Warungen und Fehlermeldungen}
+    \item[F2110] \textbf{Anzeigen von Mallob Warnungen und Fehlermeldungen} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Administrator kann die Fehlermeldungen und Warnungen einsehen, die von Mallob ausgegeben werden \\
+        \textbf{Vorbedingung:} & Der Administrator muss im Web-Interface angemeldet sein \\
+        \textbf{Nachbedingung (Erfolg):} & Es werden die Fehlermeldungen und Warnungen von Mallob angezeigt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Es werde die Fehlermeldungen und Warnungen von Mallob nicht angezeigt \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Fehlermeldungen und Warnungen von Mallob sehen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur \hyperref[pages:admin]{Administratoren-Seite}.
+        \item[2.] Die Fehlermeldungen und Warnungen werden im Web-Interface angezeigt
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Verwalten von Malllob}
+    \item[F2120] \textbf{Verwalten von Mallob} \\
+    \begin{FA}
+        \textbf{Ziel:} & Mallob kann vom Administrator gestartet, gestoppt und neu gestartet werden \\
+        \textbf{Vorbedingung:} & Der Administrator muss im Web-Interface angemeldet sein \\
+        \textbf{Nachbedingung (Erfolg):} & Mallob ist gestartet, gestoppt oder neu gestartet \\
+        \textbf{Nachbedingung (Fehlschlag):} & Mallob ist nicht gestartet, gestoppt oder neu gestartet \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator will Mallob starten, stoppen oder neu starten \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur \hyperref[pages:admin]{Administratoren-Seite}
+        \item[2.] Anklicken des Knopfes \enquote{start mallob} 
+        \item[3.] Mallob wird gestartet
+    \end{FAList}
+    \textbf{Alternative 1 zu den Schritten 2 bis 3:}
+    \begin{FAList}
+        \item[2.] Anklicken des Knopfes \enquote{stop mallob}
+        \item[3.] Mallob wird gestoppt
+    \end{FAList}
+    \textbf{Alternative 2 zu den Schritten 2 bis 3:}
+    \begin{FAList}
+        \item[2.] Anklicken des Knopfes \enquote{restart mallob}
+        \item[3.] Mallob wird neu gestartet
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Aktualisieren} 
+    \item[F2130] \textbf{Aktualisieren von Einstellungen und Plugins} \\
+    \begin{FA}
+        \textbf{Ziel:} & Das Web-Interface bietet eine Möglichkeit, die Konfigurationsdatei und Plugins neu einzulesen.\\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  & Einstellung werden entsprechend der Konfigurationsdatei angepasst und Plugins wurden erneut eingelesen.\\
+        \textbf{Nachbedingung (Fehlschlag):} & Es wird eine Fehlermeldung angezeigt. Es kann auch vorkommen, das entsprechend nur die Einstellungen geändert werden oder nur die Plugins erneut eingelesen werden. \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Einstellungen ändern oder die Plugins einlesen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zu Administratoren-Seite
+        \item[2.] Betätigung der ensprechenden Schaltfläche
+    \end{FAList} 
+ 
+    \phantomsection
+    \label{FA:Web-Interface:Einsehen von Job-Informationen}
+    \item[F2140] \textbf{Einsehen von Job-Information} \\
+    \begin{FA}
+        \textbf{Ziel:} & Verschiedene Wege, Informationen zu einem Job anzuzeigen. \\
+        \textbf{Vorbedingung:} &  Der Nutzer ist angemeldet und besitzt mindestens einen Job. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Der Nutzer kann Informationen zum gewünschten Job einsehen. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Eine Fehlermeldung wird angezeigt. \\
+        \textbf{Akteure:} & Nutzer, Admin \\
+        \textbf{Auslösendes Ereignis:} & Nutzer möchte Informationen zu einem Job einsehen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle.
+        \item[2.] Auswahl der gewünschten Attribute im Dropdown-Menü über der Liste.
+        \item[3.] Die ausgewählten Attribute werden jeweils als eigene Spalte in der Tabelle angezeigt. 
+    \end{FAList}
+    \textbf{Alternative 1:}
+    \begin{FAList}
+        \item[1.] Navigation zur Job-Tabelle.
+        \item[2.] Anklicken des entsprechenden Jobs in der Tabelle.
+        \item[3.] Die Job-Informationen werden aufgeklappten Fenster angezeigt.
+    \end{FAList}
+    \textbf{Erweiterung der Alternative 1:}
+    \begin{FAList}
+        \item[4.] Erneutes Anklicken des entsprechenden Jobs in der Tabelle.
+        \item[5.] Weiterleitung zur Job-Seite.
+        \item[6.] Die Job-Informationen werden auf der Job-Seite angezeigt.
+    \end{FAList}
+    \textbf{Alternative 2:}
+    \begin{FAList}
+        \item[1.] Direkter Aufruf der Job-Seite über die entsprechende URL.
+        \item[2.] Die Job-Informationen werden auf der Job-Seite angezeigt.
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Verwalten von Spalten}
+    \item[F2150] \textbf{Verwalten von Spalten in der Job-Tabelle} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es können Spalten zur Job-Tabelle hinzugefügt oder entfernt werden \\
+        \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein \\
+        \textbf{Nachbedingung (Erfolg):} & Die gewünschte Spalte wurde zur Job-Tabelle hinzugefügt oder entfernt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die gewünschte Spalte wurde nicht hinzugefügt oder nicht entfernt \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte eine Spalte zur Job-Tabelle hinzufügen oder entfernen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle
+        \item[2.] Anklicken des Dropdown-Menüs
+        \item[3.] Durch Anklicken auswählen, ob die Spalte zur Job-Tabelle hinzugefügt oder entfernt werden soll
+    \end{FAList}
+    
+    \phantomsection
+    \label{FA:Web-Interface:Sortieren der Tabelle}
+    \item[F2160] \textbf{Sortieren der Job-Tabelle nach Attributen} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Einträge der Job-Tabelle können nach den Attributen der verschiedenen Spalten sortiert werden \\
+        \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein \\
+        \textbf{Nachbedingung (Erfolg):} & Die Einträge der Job-Tabelle sind nach dem Wunsch des Nutzers sortiert \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Einträge der Job-Tabelle sind nicht nach dem Wunsch des Nutzers sortiert \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Einträge der Job-Tabelle sortieren \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle
+        \item[2.] Anklicken der Spalte, nach deren Attribut die Tabelle sortiert werden soll
+        \item[3.a.] Zeigt der Pfeil neben dem Attribut nach unten, werden die Einträge absteigend, bzw. alphabetisch sortiert
+        \item[3.b.] Zeigt der Pfeil neben dem Attribut nach oben, werden die Einträge aufsteigend, bzw. umgekehrt alphabetisch sortiert
+    \end{FAList}
+    
+    
+    \phantomsection
+    \label{FA:Web-Interface:Anzeigen von Plugins}
+    \item[F2170] \textbf{Anzeigen von Plugins} \\
+    \begin{FA}
+        \textbf{Ziel:} & Das Web-Interface kann extern erstelle Plugins anzeigen. \\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  &  Plugins werden in der Navigations-Leiste angezeigt und können asugewählt werden.\\
+        \textbf{Nachbedingung (Fehlschlag):} & Plugins werden nicht angezeigt. \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} &  Ein Plugin wurde eingelesen\\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Einlesen von Plugins durch \hyperref[FA:System:Einstellungen festlegen]{FA4000} oder \hyperref[FA:Web-Interface:Aktualisieren]{FA2080} oder \hyperref[FA:API:Aktualisieren von Einstellungen und Plugins]{FA1170}
+        
+    \end{FAList} 
+
+    \phantomsection
+    \label{FA:Web-Interface:Abmelden} 
+    \item[F2180] \textbf{Abmelden} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Nutzer kann sich wieder abmelden. \\
+        \textbf{Vorbedingung:} & Der Nutzer ist angemeldet. \\
+        \textbf{Nachbedingung (Erfolg):}  & Der Nutzer ist abgemeldet und wird zur Login-Seite weitergeleitet. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer ist weiterhin angemeldet und eine Fehlermeldung wird angezeigt. \\
+        \textbf{Akteure:} & Nutzer, Admin\\
+        \textbf{Auslösendes Ereignis:} & Nutzer möchte sich Abmelden \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Betätigung der entsprechenden Schaltfläche im Navigations-Menü.
+    \end{FAList} 
+
 \end{itemize}
+    
     
   
+%-------------------------------------------------------------------
+%--------------------Visualisierung---------------------------------
+%-------------------------------------------------------------------
+\pagebreak
+
+\subsection{Visualisierung}
+
+
+
+\begin{itemize}
+
+
+    %----------------------Visualisierung - Anzeigen des Systemzustands
+    
+    \phantomsection
+    \label{FA:Visualisierung:Anzeigen des Systemzustandes}
+    \item[F3000] \textbf{Anzeigen des Systemzustands} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Nutzer kann eine Visualisierung des aktuellen Systemzustands von Mallob sehen \\
+        \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein \\
+        \textbf{Nachbedingung (Erfolg):} & Der Systemzustand von Mallob wird im Web-Interface angezeigt \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Es wird eine Fehlermeldung im Web-Interface angezeigt \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Visualisierung des Systemzustands sehen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Visualisierung im Web-Interface
+        \item[2.a.] Wenn die Visualisierung erfolgreich geladen wurde, wird diese im Web-Interface angezeigt  
+        \item[3.b.] Wenn die Visualisierung nicht erfolgreich geladen wurde, wird eine Fehlermeldung im Web-Interface angezeigt 
+    \end{FAList}
+    
+    
+    %---------------Visualisierung - Anzeigen des Binärbaumes für einen Job
+    
+    \phantomsection
+    \label{FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job}
+    \item[F3010] \textbf{Anzeigen des Binärbaumes für einen Job} \\
+    \begin{FA}
+        \textbf{Ziel:} & Visualisierung des zu einem Job gehörenden Binärbaumes \\
+        \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein und muss einen Job eingereicht oder abgeschlossen haben \\
+        \textbf{Nachbedingung (Erfolg):} & Der Binärbaum zu dem gewünschten Job wird im Web-Interface angezeigt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Binärbaum wird nicht im Web-Interface angezeigt  \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer klickt einen Job in der Visualisierung an \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Visualisierung im Web-Interface
+        \item[2.] Anklicken eines Jobs in der Visualisierung
+        \item[3.] Der Binärbaum zu dem ausgewählten Job wird im Web-Interface angezeigt
+    \end{FAList}
+    
+    
+    %-----------------Visualisierung - Pausieren der Visualisierung
+    \phantomsection
+    \label{FA:Visualisierung:Pausieren der Visualisierung} 
+    \item[F3020] \textbf{Pausieren der Visualisierung} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Visualisierung kann pausiert werden \\
+        \textbf{Vorbedingung:} & Der Nutzer ist  die Visualisierung läuft bereits \\
+        \textbf{Nachbedingung (Erfolg):} & Der Nutzer muss im Web-Interface angemeldet sein und die Visualisierung ist pausiert und aktualisiert sich nicht mehr \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung ist nicht pausiert und läuft weiter \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Visualisierung pausieren \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Visualisierung im Web-Interface
+        \item[2.] Anklicken der Pause-Taste
+        \item[3.] Die Visualisierung pausiert und wird nicht mehr aktualisiert
+    \end{FAList}
+    
+    
+    %--------------------Visualisierung - Starten der Visualisierung
+    \phantomsection
+    \label{FA:Visualisierung:Starten der Visualisierung} 
+    \item[F3030] \textbf{Starten der Visualisierung} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Visualisierung kann nach dem pausieren wieder gestartet werden \\
+        \textbf{Vorbedingung:} & Der Nutzer ist im Web-Interface angemeldet und die Visualisierung ist bereits pausiert \\
+        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung läuft wieder und wird aktualisiert \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung ist weiterhin pausiert \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Visualisierung wieder starten \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Visualisierung im Web-Interface
+        \item[2.] Anklicken der Wiedergabe-Taste
+        \item[3.] Die Visualisierung startet und wird wieder aktualisiert
+    \end{FAList}
+    
+    
+    %----------------Visualisierung - Ändern der Wiedergabegeschwindigkeit
+    \phantomsection
+    \label{FA:Visualisierung:Aendern der Wiedergabegeschwindigkeit} 
+    \item[F3040] \textbf{Ändern der Wiedergabegeschwindigkeit} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die Geschwindigkeit, mit der die Visualisierung abgespielt wird kann geändert werden \\
+        \textbf{Vorbedingung:} & Der Nutzer ist im Web-Interface angemeldet \\
+        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung wird in der gewünschten Geschwindigkeit abgespielt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung wird weiterhin in der alten Geschwindigkeit abgespielt \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Wiedergabegeschwindigkeit der Visualisierung ändern \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Visualisierung im Web-Interface
+        \item[2.] Eingabe der gewünschten Wiedergabegeschwindigkeit in das Feld \enquote{replay speed}
+        \item[3.a.] Die Visualisierung wird in der gewünschten Wiedergabegeschwindigkeit abgespielt
+        \item[3.b.] Wenn die gewählte Wiedergabegeschwindigkeit schneller als Echtzeit ist und sich die Visualisierung am aktuellsten Punkt befindet, wird die Wiedergabegeschwindigkeit auf Echtzeit gesetzt
+        \item[3.c.] Wenn die gewählte Wiedergabegeschwindigkeit negativ ist, wird die Visualisierung rückwärts in der gewünschten Wiedergabegeschwindigkeit abgespielt
+    \end{FAList}
+    
+    
+    %-------------Visualisierung - Springen zu einem bestimmten Zeitpunkt
+    \phantomsection
+    \label{FA:Visualisierung:Springen} 
+    \item[F3050] \textbf{Springen zu einem bestimmten Zeitpunkt der Visualisierung} \\
+    \begin{FA}
+        \textbf{Ziel:} & Der Nutzer kann zu einem beliebigen Zeitpunkt in der Visualisierung vor- oder zurückspringen \\
+        \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein und Mallob muss gestartet sein \\
+        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung wird ab dem gewählten Zeitpunkt abgespielt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung wird nicht ab dem gewählten Zeitpunkt abgespielt  \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte die Visualisierung an einem bestimmten Zeitpunkt ansehen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Visualisierung
+        \item[2.] Wählen des gewünschte Zeitpunktes durch Anklicken oder Ziehen des Sliders zur gewünschten Position
+        \item[3.] Die Visualisierung wird ab dem gewählten Zeitpunkt abgespielt
+    \end{FAList}
     
 \end{itemize}
+
+
+%-------------------------------------------------------------------
+%----------------------------System---------------------------------
+%-------------------------------------------------------------------
+\pagebreak
+
+\subsection{System}
+
+\begin{itemize}
+    \phantomsection
+    \label{FA:System:Einstellungen festlegen}
+    \item[F4000] \textbf{Festlegen von Einstellungen mittels einer Konfigurationsdatei bei Systemstart} \\
+    \begin{FA}
+        \textbf{Ziel:} & Bestimmte Einstellungen können mit einer Konfigurationsdatei konfiguriert werden, welche bei Systemstart eingelesen werden. \\
+        \textbf{Vorbedingung:} & Eine korrekt formatierte Konfigurationsdatei existiert an einem fest vorgeschriebenen Ort im Dateisystem.\\
+        \textbf{Nachbedingung (Erfolg):}  & Die Einstellungen der Konfigurationsdatei sind angewandt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Konfigurationsdatei kann nicht geladen werden, das Programm beendet sich mit einer entsprechenden Fehlermeldung.\\
+        
+        \textbf{Akteure:} & System\\
+        \textbf{Auslösendes Ereignis:} & Starten des Systems
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Starten des Systems.
+        \item[2.] Konfigurationsdatei wird beim Start automatisch eingelesen.
+    \end{FAList} 
+  
+    \phantomsection
+    \label{FA:System:Einlesen von Plugins bei }
+    \item[F4010] \textbf{Einlesen von Plugins bei Systemstart} \\
+    \begin{FA}
+        \textbf{Ziel:} & Das System kann extern erstellte Plugins einlesen. \\
+        \textbf{Vorbedingung:} & Es liegen ein einzulesenede Plugins vor \\
+        \textbf{Nachbedingung (Erfolg):}  & Die Plugins werden eingelesen und entsprechende Schaltflächen erscheinen in der Navigations-Leiste des Web-Interfaces \\
+        \textbf{Nachbedingung (Fehlschlag):} & Ein oder mehrere Plugins konnten nicht eingelesen werden, diese sind nicht im Web-Interface verfügbar und auf der \hyperref[pages:admin]{Administratoren-Seite} werden mittels \hyperref[A:Web-Interface:Anzeigen von Warungen und Fehlermeldungen]{FA2110} \\
+        \textbf{Akteure:} & System \\
+        \textbf{Auslösendes Ereignis:} & Starten des Systems \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Starten des Systems.
+        \item[2.] Plugins werden beim Start eingelesen.
+    \end{FAList} 
+
+
+\end{itemize}
+

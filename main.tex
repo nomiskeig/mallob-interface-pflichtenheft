@@ -28,12 +28,12 @@
 \newpage
 \input{4_Produktumgebung}
 \newpage
-\input{5_Produktfunktionen}
-%\input{5_Produktfunktionen_SWT}
+%\input{5_Produktfunktionen}
+\input{5_Produktfunktionen_SWT}
 \newpage
 \input{6_Produkt-Daten}
 \newpage
-\input{7_Systemmodell}
+\input{7_Systemmodelle}
 \newpage
 \input{8_Produkt-Leistungen}
 \newpage
@@ -45,32 +45,19 @@
 \newpage
 \input{12_Entwicklungsumgebung}
 \newpage
-Es folgen die schöneren Produktfunktionen
-\newpage
-\input{5_Produktfunktionen_SWT}
 
 
 
 
 %---------------------------Kommunikation mit Mallob------    
-\section{Kommunikation mit Mallob}
-
-\begin{itemize}
-    \item Annahme für uns : Mallob läuft auf selben Dateisystem wie Backend 
-    \item JSON und Jobbeschreibung werden in einem Verzeichnis im Dateisystem abgelegt und von dort aus von Mallob verarbeitet
-    \item Der Output wird von Mallob ebenfalls las Datei in einem Verzeichnis ausgegeben
-    \item JSON und Jobbschreibung können unterschiedliche Dateien sein (siehe Einreichen der Jobbeschreibung, API)
-\end{itemize}
-
-
-
-%--------------------------------Abgrenzungskritierien-----
-\section{Abgrenzungskriterien}
-    \begin{itemize}
-        \item Nur eine Jobbeschreibung pro Anfrage
-        \item Korrektheit der Daten wird durch Mallob geprüft
-        \item Es wird keine Korrektur von falschen Daten durch die API geben
-    \end{itemize}
+%\section{Kommunikation mit Mallob}
+%
+%\begin{itemize}
+%    \item Annahme für uns : Mallob läuft auf selben Dateisystem wie Backend 
+%    \item JSON und Jobbeschreibung werden in einem Verzeichnis im Dateisystem abgelegt und von dort aus von Mallob verarbeitet
+%    \item Der Output wird von Mallob ebenfalls las Datei in einem Verzeichnis ausgegeben
+%    \item JSON und Jobbschreibung können unterschiedliche Dateien sein (siehe Einreichen der Jobbeschreibung, API)
+%\end{itemize}
 
 
 
@@ -81,6 +68,8 @@ Es folgen die schöneren Produktfunktionen
 
 
 %------------------------Glossar
-
+\newpage
+\glsaddall
+\setglossarystyle{altlist}
 \printnoidxglossaries
 \end{document}
