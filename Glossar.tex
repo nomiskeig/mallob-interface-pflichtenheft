@@ -13,23 +13,7 @@
     plural=Job-Konfigurationen,
     description={
     Die Job-Konfiguration beinhaltet alle Parameter des Jobs, welche bei der Bearbeitung berücksichtigt werden.\\
-    Diese sind:\\\\\begin{tabular}{lL{0.6\textwidth}l}
-        Name & Beschreibung & Notwendig\\
-        \\
-        name & Der Name des Jobs & Ja\\
-        priority & Die Prioriät des Jobs & Ja\\
-        application & Das Anwendungsfeld des Jobs & Ja\\ 
-        max-demand & Die maximaler Anzahl paralleler Prozesse, die dieser Job nutzen kann & Nein\\
-        wallclock-limit & Zeitliches Ausführungsbudget des Jobs & Nein\\
-        cpu-limit & Corestudnen-Ausführungsbudget des Jobs & Nein\\
-        arrival & Frühester Bearbeitungsbeginn in Sekunden seit Start von Mallob & Nein\\
-        dependencies & Jobs, die abgeschlossen sein müssen, bevor dieser Job beginnt & Nein\\
-        incremental & Handelt es sich um einen Job mit mehreren Revisionen oder Inkrementen? &  Nein\\
-        precursor & Vorgänger-Job bei inkrementellen Jobs & Nein\\
-        % TODO: files hier auch?
-        content-mode & Text- oder Binärformat der Beschreibung & Nein\\
-        % TODO: literals und assumptions?
-    \end{tabular}} 
+    }
 }
 
 \newglossaryentry{Job-Beschreibung}{
@@ -43,6 +27,13 @@
     name=Nutzer,
     plural=Nutzer,
     description={Ein Nutzer ist eine Person, welche sich registriert hat und die mit dem System interagiert.}
+}
+
+
+\newglossaryentry{Nutzerkonto}{
+    name=Nutzerkonto,
+    plural=Nutzerkonten,
+    description={Ein Nutzerkonto ist ein im System durch einen Nutzer registriertes und durch einen Administrator verifiziertes Konto.}
 }
 
 \newglossaryentry{Administrator}{
@@ -68,4 +59,48 @@
 \newglossaryentry{System-Administrator}{
     name=System-Administrator,
     description={Eine Person, die die Ausführungsumgebung des Systems verwaltet. Verantwortlich für das Starten und Beenden des Systems.}
+}
+
+\newglossaryentry{Token}{
+    name=Token,
+    description={Ein Token (sog. Bearer-Token), kann benutzt werden, um sich gegenüber einer API zu authentifizieren. Der Token verweist auf nur genau einen Nutzer. Dieser Token kann von jedem benutzt werden, der ihn besitzt (deswegen Bearer-Token). Der Token wird für jeden Nutzer bei der Registrierung generiert, sodass niemals zwei Nutzer denselben Token haben. Für den Nutzer ist es wichtig den Token, wie seine Anmeldedaten, geheim zu halten, bzw. nur authorisierten Personen mitzuteilen.}
+}
+
+%\newglossaryentry{Anfrage}{
+%    name=Anfrage
+%    plural=Anfragen
+%    description={Ein Nutzer kann eine Anfrage an eine API oder eine Website stellen.}
+%}
+
+\newglossaryentry{Datenbank}{
+    name=Datenbank,
+    plural=Datenbanken,
+    description={Eine Datenbank ist ein System, welches zur Datenspeicherung und Verwaltung genutzt wird. Die Hauptaufgabe einer Datenbank besteht darin, vordefinierte Daten zu speichern und schnellen Zugriff auf die Daten zu erlangen.}
+}
+
+\newglossaryentry{Output-Log}{
+    name=Datenbank,
+    plural=Datenbanken,
+    description={Eine Datenbank ist ein System, welches zur Datenspeicherung und Verwaltung genutzt wird. Die Hauptaufgabe einer Datenbank besteht darin, vordefinierte Daten zu speichern und schnellen Zugriff auf die Daten zu erlangen.}
+}
+
+\newglossaryentry{Stream}{
+    name=Stream,
+    description={Ein Stream von Daten ist eine andauernde eingehende oder ausgehende Menge von Daten.}
+}
+
+\newglossaryentry{Log-Datei}{
+    name=Log-Datei,
+    description={Eine Log-Datei ist eine Datei, welche Log-Daten speichert. Log-Daten sind Meta-Daten, welche gewisse Ereignisse festhalten sollen. Im Kontext von Mallob beispielsweise das Eingehen eines Jobs.}
+}
+
+\newglossaryentry{Vorlaeufiges Konto}{
+    name={Vorläufiges Konto},
+    description={Ein vorläufiges Konto sind Konten, die neu erstellt wurden und noch nicht durch einen \gls{Administrator} verifiziert wurden. Ein solches Konto eingeschränkt, es könnten noch keine Jobs in Auftrag gegeben werden.}
+}
+
+    
+\newglossaryentry{Bearbeitungszeit}{
+name=Bearbeitungszeit,
+description= {tt}%[todo]
 }

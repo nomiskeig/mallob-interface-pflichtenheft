@@ -4,13 +4,14 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Systemdiagramm2.jpg} \\
+    \includegraphics[width=\textwidth]{images-interface/Systemdiagramm3.jpg} \\
     \caption{Model-View-Controller}
 \end{figure}
 Das System kann semantisch in 3 Komponenten gegliedert werden; View, Controller sowie Model. \\
 Die Aufgabe des \textbf{Views}, bzw. des Web-Interfaces ist es dabei eine interaktive, grafische Benutzeroberfläche für die Interaktion mit Mallob bereitzustellen. \\
-Der \textbf{Controller}, bzw. API sowie Backend (Anfragen gehen über API an das Backend) sind für die Kommunikation zwischen Datenbank, Mallob und Web-Interface, bzw. Nutzer zuständig. \\
-Das \textbf{Model} ist für das Bearbeiten sowie halten der Daten zuständig. Dabei hält die Datenbank die Daten des Systems (Siehe 6 Produkt-Daten [TODO verlinken]) und Mallob ist Mallob.
+Der \textbf{Controller}, bzw. API sowie Backend (Anfragen gehen über API an das Backend) sind für die Kommunikation zwischen Datenbank, Mallob und Web-Interface, bzw. Nutzer zuständig. Das Mallob-Interface ist im Backend implementiert und für die Kommunikation zwischen der Backend-Logik und einer laufenden Mallob-Instanz zuständig.\\
+Das \textbf{Model} ist für das Bearbeiten sowie halten der Daten zuständig. Dabei hält die Datenbank die Daten des Systems (Siehe 6 Produkt-Daten [TODO verlinken]) und Mallob ist Mallob. \\
+\textbf{Extern} liegt die laufende Mallob-Instanz. Mallob ist nicht Teil unseres Systems. Unser System kommuniziert lediglich mit Mallob.
 
 \pagebreak
 
@@ -23,11 +24,7 @@ Das \textbf{Model} ist für das Bearbeiten sowie halten der Daten zuständig. Da
 \end{figure}
 
 
-%\begin{center}
-%    \includegraphics[scale=0.6]{images-interface/Login_register_3_screenshot.jpg} \\
-%    Anwendungsfalldiagramm 1: Registrierung und Login von Nutzern
-%\end{center}
-Registriert sich ein Nutzer, so wird seine Registrierunganfrage von einem Administrator verifiziert. Die Datenbank speichert die Nutzerdaten.% [TODO : Verlinken 6-Produkt-Daten] \\
+Registriert sich ein Nutzer, so wird seine Registrierunganfrage von einem Administrator verifiziert. Die Datenbank speichert die \hyperref[PD:Nutzerdaten]{Nutzerdaten}.\\
 Möchte sich ein registrierter Nutzer im Web-Interface anmelden, so werden die Nutzerdaten aus der Datenbank geholt und mit den eingegebenen Daten verglichen. \\
 Stellt ein registrierter Nutzer eine Anfrage über API mit seinem Token, wird auch hier der Token aus der Datenbank geholt und verglichen.
 \begin{figure}[H]
@@ -40,17 +37,7 @@ Jede Anfrage an die API wird für eine gewisse Zeit gespeichert, um sie später 
 
 \pagebreak
 
-%---------------------------TODO : Entscheiden zwischen 1: und 2:
-%---------------1:
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=\textwidth]{images-interface/Submit-View_screenshot.jpg}
-%    \caption{Einreichen und einsehen von Jobs}
-%\end{figure}
-%Reicht ein Nutzer ein Job ein, so wird dieser (je nach Konfiguration) von Mallob bearbeitet. Mallob gibt dabei Rückmeldung über den Job-Status, also entweder das Ergebnis des Jobs, oder ob ein Fehler aufgetreten ist. Dieser Status wird in der Datenbank gespeichert. \\
-%Möchte ein Nutzer einen Job einsehen, so ist es wichtig das dieser bereits eingereicht wurde. Um ein Job einsehen zu können werden zunächst die angeforderten Job-Daten aus der Datenbank geholt und dann vorbereitet an den Nutzer geschickt.
 
-%------------2:
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{images-interface/Submit-abort-view-screenshot.jpg}
@@ -74,7 +61,7 @@ Möchte ein Nutzer einen Job einsehen, so ist es wichtig das dieser bereits eing
     \includegraphics[width=\textwidth]{images-interface/Mallob-visualisierung.jpg}
     \caption{Mallob-Statistiken abrufen}
 \end{figure}
-Möchte ein Nutzer Mallob-Statisteiken abrufen, so holt das System zum einen Bereits vergagene Events aus der Datenbank um hieraus Statistiken sowie Visualisierung vorzubereiten. Des weiteren wird live der Output-Log von Mallob ausgelesen, um Echtzeitdiagnostik sowie Echtzeit-Visualisierung für den Nutzer anzubieten. 
+Möchte ein Nutzer Mallob-Statisteiken abrufen, so holt das System bereits vergangene Events aus der Datenbank um hieraus Statistiken sowie Visualisierung vorzubereiten. Des weiteren wird live der Output-Log von Mallob ausgelesen, um Echtzeitdiagnostik sowie Echtzeit-Visualisierung für den Nutzer anzubieten. 
 
 
 \pagebreak

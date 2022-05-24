@@ -1,0 +1,32 @@
+\section{Begrifflichkeiten}
+%Erklärung von Begrifflichkeiten, die nicht von uns stammen (von mallob)
+\subsection{Jobs}
+
+Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus der Job-Konfiguration und der Job—Beschreibung.
+Jeder Job besitzt eigene Parameter, die bei der Bearbeitung durch Mallob beachtet werden. 
+Diese Parameter bilden zusammen die Job-Konfiguration.
+
+Die Parameter sind:
+\begin{tabular}{lL{0.6\textwidth}l}
+        Name & Beschreibung & Notwendig\\
+        \\
+        name & Der Name des Jobs & Ja\\
+        priority & Die Prioriät des Jobs & Ja\\
+        application & Das Anwendungsfeld des Jobs & Ja\\ 
+        max-demand & Die maximaler Anzahl paralleler Prozesse, die dieser Job nutzen kann & Nein\\
+        wallclock-limit & Zeitliches Ausführungsbudget des Jobs & Nein\\
+        cpu-limit & Corestudnen-Ausführungsbudget des Jobs & Nein\\
+        arrival & Frühester Bearbeitungsbeginn in Sekunden seit Start von Mallob & Nein\\
+        dependencies & Jobs, die abgeschlossen sein müssen, bevor dieser Job beginnt & Nein\\
+        incremental & Handelt es sich um einen Job mit mehreren Revisionen oder Inkrementen? &  Nein\\
+        precursor & Vorgänger-Job bei inkrementellen Jobs & Nein\\
+        % TODO: files hier auch?
+        content-mode & Text- oder Binärformat der Beschreibung & Nein\\
+        % TODO: literals und assumptions?
+    \end{tabular} 
+
+
+
+\subsection{Inkrementelle Jobs}
+
+\subsection{Inhalt der Konfigurationsdatei}

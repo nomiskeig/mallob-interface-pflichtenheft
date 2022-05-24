@@ -1,0 +1,252 @@
+  
+    %-----------------API - Registrierung von Nutzern
+
+%    \phantomsection
+%    \label{FA:API:Registrierung von Nutzern}
+%    \item[F1000] \textbf{Registrierung von Nutzern} \\ % sollte doch noch drin sein, nur halt als wunschkriterium?
+%    
+%    \begin{FA}
+%        \textbf{Ziel: } & Registrierung über die API ist möglich \\
+%        \textbf{Vorbedingung:} &  -keine- \\
+%        \textbf{Nachbedingung (Erfolg):} &  Ein vorläufiges Konto wurde für den Nutzer erstellt und der Nutzer hat eine Bestätigung erhalten \\
+%        \textbf{Nachbedingung (Fehlschlag):} &  Der Nutzer ist nicht registriert und hat eine Fehlermeldung erhalten \\
+%        \textbf{Akteure:} & Nutzer\\
+%        \textbf{Auslösendes Ereignis:} & Nutzer möchte das System verwenden \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Nutzer schickt eine Anfrage an die API, die seine \hyperref[PD:Registrierungsdaten]{Registrierungsdaten} enthält
+%        \item[2.] Vorläufiges Konto wird erstellt
+%        \item[2.1.a] Wenn die Registrierung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+%        \item[2.1.b] Wenn die Registrierung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+%        \item[3.] Verifizierung des Kontos durch Administrator, gemäß \hyperref[FA:API:Verifizierung von Nutzern]{F1020} 
+%    \end{FAList}
+    
+    
+    %----------------API- Verifizierung von Nutzerkonten
+%    \phantomsection
+%    \label{FA:API:Verifizierung von Nutzern}
+%    \item[F1010] \textbf{Verifizierung von vorläufigen Nutzerkonten}\\
+%    
+%    \begin{FA}
+%        \textbf{Ziel:} & Ein Administrator kann ein vorläufiges Konto verifizieren. \\
+%        \textbf{Vorbedingung:} & Ein Nutzer hat sich gemäß \hyperref[FA:API:Registrierung von Nutzern]{F1000} registriert und somit vorläufiges Nutzerkonto erstellt. Der Administrator hat sich gemäß \hyperref[FA:API:Authentifizieren von %Nutzern]{F1010} authentifiziert. \\
+%        \textbf{Nachbedingung (Erfolg):} & Das Konto des Nutzers ist verifiziert. \\
+%        \textbf{Nachbedingung (Fehlschlag):} & Das Konto des Nutzers ist nicht verifiziert \\
+%        \textbf{Akteure:} & Administrator \\
+%        \textbf{Auslösendes Ereignis:} & Der Administrator möchte vorläufige Nutzerkonten verifizieren \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList}
+%        \item[1.] Der Administrator schickt eine Anfrage an die API, welche die ID der nichtverifizierte Nutzerkonten enthält
+%        \item[2.] Die Anfrage wird von der API verarbeitet und das Nutzerkonto wird verifiziert
+%        \item[3.a.] Wenn die Verifizierung des Kontos erfolgreich war, so wird das vorläufige Knoto zu einem regulären Nutzerkonto und der Nutzer erhält Zugriff auf alle Funktionen, gemäß seinen Rechten.
+%        \item[3.b.] Wenn die Authentifizierung nicht erfolgreich war, wird eine Fehlermeldung an den Administrator zurückgegeben
+%    \end{FAList}
+    
+    
+        
+   %-----------------API - Erhalt von nichtverifizierten Nutzerkonten
+   % \phantomsection
+   % \label{FA:API:Erhalt von vorlaeufigen Nutzerkonten} % fällt mit der registrierung raus
+   % \item[F1010] \textbf{Abfragen von vorläufigen Nutzerkonten}\\
+   % 
+   % \begin{FA}
+   %     \textbf{Ziel:} & Ein Administrator kann die aktuellen vorläufigen Nutzerkonten abrufen\\
+   %     \textbf{Vorbedingung:} & Keine \\
+   %     \textbf{Nachbedingung (Erfolg):} & Der Administrator hat hat eine Liste von vorläufigen Nutzerkonten erhalten \\
+   %     \textbf{Nachbedingung (Fehlschlag):} & Der Administrator hat eine Fehlermeldung erhalten \\
+   %      \textbf{Akteure:} & Administrator \\
+   %     \textbf{Auslösendes Ereignis:} & Administrator möchte alle vorläufigen Nutzerkonten einsehen \\
+   % \end{FA}
+   % \textbf{Beschreibung:}
+   % \begin{FAList}
+   %     \item[1.] Der Administrator schickt eine Anfrage um alle vorläufigen, also nicht-verifizierten, Nutzerkonten einzusehen.
+   %     \item[2.] Die Anfrage wird von der API verarbeitet und die Liste wird an den Anfragesteller gesendet.
+   %     \item[3.] Im Falle eines Fehlers wird eine Fehlermeldung gesendet
+   %     \item[4.] Sind keine vorläufigen Nutzerkonten erstellt worden, so wird dies als Meldung gesendet
+   % \end{FAList}
+    
+    
+    %-------------API - Ändern von Nutzerdaten   müssen wir nicht machen!!
+%   \phantomsection
+%   \label{FA:API:Aeandern von Nutzerdaten} 
+%    \item[F1020] \textbf{Ändern von Nutzerdaten} \\
+%    \begin{FA}
+%        \textbf{Ziel:} & Ein Nutzer kann seinen Nutzernamen und Passwort ändern \\
+%        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert (siehe F20) \\
+%        \textbf{Nachbedingung (Erfolg):} & Die Nutzerdaten des Nutzers sind geändert und der Nutzer hat eine Bestätigung erhalten  \\
+%        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer hat eine Fehlermeldung erhalten \\
+%        \textbf{Akteure:} & Der Nutzer\\
+%        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte seine Nutzerdaten ändern \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Nutzer schickt eine Anfrage an die API mit seinem neuen Nutzernamen und Passwort
+%        \item[2.] Die Nutzerdaten werden von der API aktualisiert
+%        \item[3.a.] Wenn die Änderung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+%        \item[3.b.] Wenn die Änderung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+%    \end{FAList}
+    
+    
+    %--------------API - Löschen eines Nutzers   Müssen wir auch nicht machen!!
+%   \phantomsection
+%    \label{FA:API:Loeschen eines Nutzers} 
+%    \item[F1020] \textbf{Löschen eines Nutzers} \\
+%    \begin{FA}
+%        \textbf{Ziel:} & Ein Nutzer kann von einem Administrator gelöscht werden \\
+%        \textbf{Vorbedingung:} & Der zu löschende Nutzer muss registriert sein \\
+%        \textbf{Nachbedingung (Erfolg):} & Der Nutzer ist gelöscht und der Administrator hat eine Bestätigung erhalten \\
+%        \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer ist noch vorhanden und der Administrator hat eine Fehlermeldung erhalten \\
+%        \textbf{Akteure:} & Der Administrator \\
+%        \textbf{Auslösendes Ereignis:} & Der Administrator möchte einen Nutzer entfernen \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Administrator schickt eine Anfrage an die API mit dem Nutzernamen des zu löschenden Nutzers
+%        \item[2.] Der Nutzer wird aus den registrierten Nutzern entfernt
+%        \item[3.a.] Wenn das Löschen des Nutzers erfolgreich war, wird eine Bestätigung an den Administrator zurückgegeben
+%        \item[3.b.] Wenn das Löschen des Nutzers nicht erfolgreich war, wird eine Fehlermeldung an den Administrator zurückgegeben
+%    \end{FAList}
+
+    
+    %-----------------API - Zurückgeben von Ergebnissen
+    %\phantomsection
+    %\label{FA:API:Zurueckgeben von Ergebnissen} 
+    %\item[F1040] \textbf{Zurückgeben von Ergebnissen} \\
+    %\begin{FA}
+    %    \textbf{Ziel:} & Der Nutzer erhält auf jede Anfrage eine Antwort \\
+    %    \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und hat eine Anfrage gestellt  \\
+    %    \textbf{Nachbedingung (Erfolg):} & Der Nutzer bekommt das als Antwort, was er angefragt hat \\
+    %    \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer bekommt eine Fehlermeldung \\
+    %    \textbf{Akteure:} & Nutzer \\
+    %    \textbf{Auslösendes Ergebnis:} & Der Nutzer möchte eine Antwort auf eine Anfrage an die API \\
+    %\end{FA}
+    %\textbf{Beschreibung:}
+    %\begin{FAList}
+    %%In dieser Anforderung soll es ja darum gehen, dass ein Nutzer auf jede Anfrage eine Antwort erhält. Die Beschreibung und Anforderungsname ist deshalb etwas Irreführend, weil es um "Ergebinsse" geht. Irgendwas müssen wir da ändern
+    %        \item[1.a] Bei erfolgreicher Berechnung eines Jobs, wird das Ergebnis an den Nutzer zurückgegeben
+    %        \item[1.b] Wenn die maximale Bearbeitungszeit des eingereichten Jobs erreicht wurde und kein Ergebnis gefunden, wird eine Statistik über die bereits verrichtete Arbeit an den Nutzer gegeben
+    %        \item[1.c] Wenn während der Bearbeitung des eingereichten Jobs ein Fehler auftritt, wird eine aussagekräftige  Fehlermeldung an den Nutzer zurückgegeben.
+    %        \item[1.d] Es ist möglich das Ergebnis bzw. den Status (in Bearbeitung, Bearbeitet, Fehler) abzufragen. Die Antwort enthält dabei alle Informationen zum Status des Jobs, wie das Ergebnis oder eventuelle Fehlermeldung 
+    %\end{FAList}
+    
+        
+    
+    %----------------API - Löschen von einem oder mehreren abgeschlossenen Jobs
+    
+    %\item[F10] \textbf{Löschen von abgeschlossenen Jobs} \\
+%    \begin{FA}
+%        \textbf{Ziel:} & Der Nutzer kann einen oder mehrere abgeschlossene Jobs aus der Liste der gespeicherten Jobs entfernen \\
+%        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert und die gewünschten Jobs sind bereits abgeschlossen \\
+%        \textbf{Nachbedingung (Erfolg):} & der Job wurde gelöscht und der Nutzer hat eine Bestätigung erhalten \\
+%        \textbf{Nachbedingung (Fehlschlag):} & der Nutzer hat eine Fehlermeldung erhalten  \\
+%        \textbf{Akteure:} & der Nutzer \\
+%        \textbf{Auslösendes Ereignis:} & der Nutzer möchte einen oder mehrere abgeschlossene Jobs aus der Liste der gespeicherten Jobs entfernen \\
+%    \end{FA}
+%    \textbf{Beschreibung:}
+%    \begin{FAList} 
+%        \item[1.] Der Nutzer schickt eine Anfrage an die API mit einer Liste von Job-IDs
+%        \item[2.] Die Jobs werden aus der Liste der gespeicherten Jobs entfernt
+%        \item[3.a.] Wenn das Löschen erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+%        \item[3.b.] Wenn das Löschen nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+%    \end{FAList}
+    \phantomsection
+    \label{FA:API:Aendern der Pro eines Nutzers} 
+    \item[F1130] \textbf{Ändern der Priorität eines Nutzers} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Administrator kann die Priorität eines beliebigen Nutzers ändern \\
+        \textbf{Vorbedingung:} & Der Nutzer ist authentifiziert \\
+        \textbf{Nachbedingung (Erfolg):} & Die Priorität des Nutzers wurde geändert \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die Priorität des Nutzers bleibt gleich und der Administrator erhält eine Fehlermeldung \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Priorität eines Nutzers erhöhen oder senken \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Der Administrator schickt eine Anfrage an die API mit dem Nutzernamen und der neuen Priorität
+        \item[2.] Die Priorität des entsprechenden Nutzers wird aktualisiert
+        \item[3.a.] Wenn die Änderung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+        \item[3.b.] Wenn die Änderung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+    \end{FAList}
+    
+    
+    \phantomsection
+    \label{FA:API:Aktualisieren von Einstellungen und Plugins}  
+     \item[F1140] \textbf{Aktualisieren von Einstellungen und Plugins} \\
+    \begin{FA}
+        \textbf{Ziel:} & Die API bietet eine Möglichkeit, die Konfigurationsdatei und Plugins neu einzulesen.\\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  & Einstellung werden entsprechend der Konfigurationsdatei angepasst und Plugins wurden erneut eingelesen.\\
+        \textbf{Nachbedingung (Fehlschlag):} & Es wird eine Fehlermeldung zurückgegeben. Es kann auch vorkommen, das entsprechend nur die Einstellungen geändert werden oder nur die Plugins erneut eingelesen werden. \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Einstellungen ändern oder die Plugins einlesen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Schicken der entsprechenden API-Anfrage.
+    \end{FAList} 
+    
+    
+    
+    
+    -- webinterface
+    
+    \phantomsection
+    \label{FA:Web-Interface:Registrieren} 
+    \item[F2010] \textbf{Registrieren} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Kunde ist in der Lage, ein neues Konto zu erstellen.\\
+        \textbf{Vorbedingung:} &  Der Kunde ist nicht angemeldet. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Ein vorläufiges Konto wird für den Kunden erstellt und er wird zur \hyperref[pages:job-table]{Job-Tabelle} weitergeleitet. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Das Konto kann nicht erstellt werden und es wird eine Fehlermeldung angezeigt. \\
+        \textbf{Akteure:} & Person, welche ein neues Konto erstellen möchte. \\
+        \textbf{Auslösendes Ereignis:} &  Die Person möchte ein neues Konto erstellen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Aufrufen des Web-Interfaces
+        \item[2.] Auswählen der Schaltfläche \enquote{register}
+        \item[3.] Weiterleitung zur \hyperref[pages:register]{Registerung}
+        \item[2.] Eingabe des gewünschten Nutzernames
+        \item[3.] Eingabe des gewünschten Passwortes
+        \item[4.] Eingabe der Wiederholung des Passwortes
+        \item[5.] Bestätigung der Eingabe mittels der Schaltfläche \enquote{register}
+    \end{FAList}
+    
+    
+     \phantomsection
+    \label{FA:Web-Interface:Verifizieren eines Kontos} 
+   \item[F2100] \textbf{Verifizieren eines Kontos} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein vorläufiges Konto kann verifiziert werden. \\
+        \textbf{Vorbedingung:} &  Ein vorläufiges Konto existiert. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Das vorläufige Konto wird zum regulären Konto. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Das vorläufige Konto  wird nicht verändert. \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Ein Kunde hat sich erfolgreich registriert. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zum \hyperref[pages:admin]{Adminstratoren-Seite} 
+        \item[2a.] Bestätigung des Kontos in der Liste über die entsprechende Schaltfläche
+        \item[2b.] Keine Bestätigung des Kontos in der Liste über die entsprechende Schaltfläche.
+    \end{FAList}
+    
+        \phantomsection
+    \label{FA:Web-Interface:Aktualisieren} 
+    \item[F2130] \textbf{Aktualisieren von Einstellungen und Plugins} \\
+    \begin{FA}
+        \textbf{Ziel:} & Das Web-Interface bietet eine Möglichkeit, die Konfigurationsdatei und Plugins neu einzulesen.\\
+        \textbf{Vorbedingung:} & - \\
+        \textbf{Nachbedingung (Erfolg):}  & Einstellung werden entsprechend der Konfigurationsdatei angepasst und Plugins wurden erneut eingelesen.\\
+        \textbf{Nachbedingung (Fehlschlag):} & Es wird eine Fehlermeldung angezeigt. Es kann auch vorkommen, das entsprechend nur die Einstellungen geändert werden oder nur die Plugins erneut eingelesen werden. \\
+        \textbf{Akteure:} & Administrator \\
+        \textbf{Auslösendes Ereignis:} & Der Administrator möchte die Einstellungen ändern oder die Plugins einlesen \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zu Administratoren-Seite
+        \item[2.] Betätigung der ensprechenden Schaltfläche
+    \end{FAList}
+    
