@@ -19,8 +19,8 @@
 %\end{itemize}
 
 \section{Zielbestimmung}
-Dieses Programm ermöglicht es Nutzern, einfacher mit \href{https://github.com/domschrei/mallob}{Mallob} zu interagieren. Diese Interaktion kann auf zwei Wege erfolgen:
-Einerseits wird eine REST-API für die Interaktion angeboten. Anderseits gibt es aber auch ein benutzerfreundliches Web-Interface, welches die API nutzt und somit eine graphische Oberfläche für diese darstellt.
+\textit{Fallob} ermöglicht es Nutzern, einfacher mit \href{https://github.com/domschrei/mallob}{Mallob} zu interagieren. Diese Interaktion kann auf zwei Wege erfolgen:
+Einerseits wird eine REST-API für die Interaktion angeboten. Anderseits gibt es aber auch ein benutzerfreundliches Web-Interface, welches die API nutzt und somit eine graphische Oberfläche für diese darstellt. Auf beide Wege können eigene Jobs verwaltet werden. Darüber hinaus bietet das Web-Interface auch eine Visualisierung des Systems.
 
 
 \subsection{Musskriterien}
@@ -42,13 +42,21 @@ Einerseits wird eine REST-API für die Interaktion angeboten. Anderseits gibt es
             \item Authentifizieren von Nutzern
             %\item Registrierung von neuen Nutzern
             \item Tabellarische Übersicht  der Jobs
-            \item Job einreichen
-            \item Jobs abbrechen
-                    \item Aktuellen Status des Jobs betrachten
-                    \item Auflisten der eigenen Jobs
-            \item Einsehen der eigenen Aufträge und derer Ergebnisse
+                \begin{itemize}[noitemsep]
+                    \item Abbrechen mehrerer Jobs auf einmal
+                    \item Herunterladen von mehreren Ergebnissen auf einmal
+                \end{itemize}
+            \item Job über Eingabemaske einreichen
+                \begin{itemize}[noitemsep]
+                    \item Einreichen der Job-Beschreibung über ein Eingabe-Feld
+                    \item Einreichen der Job-Beschreibung durch Hochladen einer entsprechenden Datei
+                \end{itemize}
+            \item Job abbrechen
+            \item Aktuellen Status des Jobs betrachten
+            \item Job-Seite um Details von Jobs anzusehen
             \item Herunterladen der Ergebnisse der Jobs
-            \item Anzeigen von aufgetretenen Fehlern
+            \item Anzeigen von aufgetretenen Fehlern bei Nutzern
+            \item Anzeigen von Warnungen von Mallob im Administratoren-Bereich 
             %\item Verifizierungsmöglichkeit von neuen Nutzern für Administratoren 
             
                       
@@ -56,10 +64,17 @@ Einerseits wird eine REST-API für die Interaktion angeboten. Anderseits gibt es
     \subsubsection{Visualisierung}    
         \begin{itemize}[noitemsep]
             \item Das Web-Interface enthält eine Visualisierung des System-Zustands
-            \item Wenn die Live-Ansicht ausgewählt ist, wird die Visualisierung automatisch aktualisiert
-            \item Darstellen eines bestimmten vergangenen Zeitpunktes bei der Visualisierung
-            \item Ändern der Wiedergabegeschwindigkeit bei der Visualisierung
-            \item Einsehen von Details zu einem aktiven Job in der Visualisierung
+                \begin{itemize}[noitemsep]
+                    \item Darstellung der Prozesse als Punkte, ein Punkt je Prozess %TODO: Ranks? oder PEs? oder ganz anderes Word?
+                    \item Färbung der Punkte entsprechend dem zugehörigen Job
+                    \item Verbinden der Punkte entsprechend der Position im Binärbaum des Jobs
+                    \item Dynamische Größe der Punkte und Verbindungen entsprechend der Position im Binärbaum des Jobs
+                \end{itemize}
+            \item Automatische Aktualisierung der Visualisierung, wenn die Live-Ansicht ausgewählt ist
+            %\item Wenn die Live-Ansicht ausgewählt ist, wird die Visualisierung automatisch aktualisiert
+            \item Darstellen eines bestimmten vergangenen Zeitpunktes
+            \item Ändern der Wiedergabegeschwindigkeit
+            \item Einsehen von Details zu einem aktiven Job in einem separatem Feld 
             %\item Darstellung der PE als Punkte %TODO: Ranks? oder PEs? oder ganz anderes Word?
             %\item Färbung der Punkte entsprechend dem zugehörigen Job
             %\item Verbinden der Punkte entsprechend der Position im Binärbaum des Jobs
@@ -76,14 +91,17 @@ Einerseits wird eine REST-API für die Interaktion angeboten. Anderseits gibt es
     \begin{itemize}[noitemsep]
         %\item Speichern von Jobdaten für Statistiken -> Irgendwie redundaten, da wir eh schon jobdaten speichern
         \item Möglichkeit für Administratoren, Mallob zu starten, beenden oder neuzustarten
+        \item Registrierung von Nutzern über die API
+        \item Registrierung von Nutzern über das Web-Interface
         \item Sortieren der Job-Tabelle im Web-Interface
+        \item Möglichkeit zum Neustart von abgebrochenen oder abgeschlossenen Jobs
         \item Eingabemaske für die Eingabe der Job-Beschreibung im Web-Interface
-        \item Diagnosemöglichkeit für Administratoren
+        \item Einreichen der Job-Beschreibung über eine URL, die auf die Job-Beschreibung zeigt
+        \item Diagnosemöglichkeit für Administratoren im Web-Interface
         \item Nutzer benachrichtigen, falls Mallob abstürzen sollte
-        
         \item Darstellung des vollständigen Binärbaums des Jobs in der Visualisierung
         \item Schnittstelle für Plugins in Web-Interface
-        \item Entwicklung eines Beispielhaften Plugins
+        \item Entwicklung eines beispielhaften Plugins
     \end{itemize}
     
 \subsection{Abgrenzungskriterien}

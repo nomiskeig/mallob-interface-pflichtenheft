@@ -45,6 +45,28 @@
 
 \begin{itemize}[nosep]
     \setlength\itemsep{4em}
+    
+    
+    \phantomsection
+   \label{FA:API:Registrierung von Nutzern}
+    \item[F1000] \textbf{Registrierung von Nutzern} \\ % sollte doch noch drin sein, nur halt als wunschkriterium?
+    
+    \begin{FA}
+        \textbf{Ziel: } & Registrierung über die API ist möglich \\
+        \textbf{Vorbedingung:} &  -keine- \\
+        \textbf{Nachbedingung (Erfolg):} &  Ein vorläufiges Konto wurde für den Nutzer erstellt und der Nutzer hat eine Bestätigung erhalten \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Der Nutzer ist nicht registriert und hat eine Fehlermeldung erhalten \\
+        \textbf{Akteure:} & Nutzer\\
+        \textbf{Auslösendes Ereignis:} & Nutzer möchte das System verwenden \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Der Nutzer schickt eine Anfrage an die API, die seine \hyperref[PD:Registrierungsdaten]{Registrierungsdaten} enthält
+        \item[2.] Vorläufiges Konto wird erstellt
+        \item[2.1.a] Wenn die Registrierung erfolgreich war, wird eine Bestätigung an den Nutzer zurückgegeben
+        \item[2.1.b] Wenn die Registrierung nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben
+        \item[3.] Verifizierung des Kontos durch Administrator, gemäß \hyperref[FA:API:Verifizierung von Nutzern]{F1020} 
+    \end{FAList}
   
     %-----------------API - Authentifizierung von Nutzern
     \phantomsection
@@ -88,7 +110,7 @@
             \item[1.b.] Der Nutzer schickt eine Anfrage an die API, die ebenfalls die Job-Konfiguration des Jobs als auch die Job-Beschreibung enthält, wobei in diesem Fall beides in  einer einzelnen Datei spezifiziert wird
             \item[1.c.] Der Nutzer schickt eine Anfrage an die API, die ebenfalls die Job-Konfiguration und einen Link  zu einer Datei enthält, in der die Job-Beschreibung spezifiziert ist
             \item[1.d.] Der Nutzer schickt eine Anfrage an die API, die eine Referenz auf einen bereits eingereichten Job enthält, der nochmal ausgeführt werden soll
-            \item[2.] Der eingereichte Job wird Mallob bearbeitet
+            \item[2.] Der eingereichte Job wird von Mallob bearbeitet
             \item[3.a.] Wenn die Bearbeitung erfolgreich war, wird das Ergebnis an den Nutzer zurückgegeben
             \item[3.b.] Wenn die mittels \hyperref[FA:System:Einstellungen festlegen]{F4000} spezifizierte maximale Bearbeitungszeit erreicht wird, ohne dass ein Ergebnis gefunden wurde, wird eine Statistik über die bereits verrichtete Arbeit an den Nutzer zurückgegeben
             \item[3.c.] Wenn während der Bearbeitung ein Fehler auftritt, wird eine Fehlermeldung an den Nutzer zurückgegeben
@@ -383,7 +405,27 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
     \end{FAList}
     
     
- 
+   \phantomsection
+    \label{FA:Web-Interface:Registrieren} 
+    \item[F2010] \textbf{Registrieren} \\
+    \begin{FA}
+        \textbf{Ziel:} & Ein Kunde ist in der Lage, ein neues Konto zu erstellen.\\
+        \textbf{Vorbedingung:} &  Der Kunde ist nicht angemeldet. \\
+        \textbf{Nachbedingung (Erfolg):}  &  Ein vorläufiges Konto wird für den Kunden erstellt und er wird zur \hyperref[pages:job-table]{Job-Tabelle} weitergeleitet. \\
+        \textbf{Nachbedingung (Fehlschlag):} &  Das Konto kann nicht erstellt werden und es wird eine Fehlermeldung angezeigt. \\
+        \textbf{Akteure:} & Person, welche ein neues Konto erstellen möchte. \\
+        \textbf{Auslösendes Ereignis:} &  Die Person möchte ein neues Konto erstellen. \\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList}
+        \item[1.] Aufrufen des Web-Interfaces
+        \item[2.] Auswählen der Schaltfläche \enquote{register}
+        \item[3.] Weiterleitung zur \hyperref[pages:register]{Registerung}
+        \item[2.] Eingabe des gewünschten Nutzernames
+        \item[3.] Eingabe des gewünschten Passwortes
+        \item[4.] Eingabe der Wiederholung des Passwortes
+        \item[5.] Bestätigung der Eingabe mittels der Schaltfläche \enquote{register}
+    \end{FAList}
     
     
    
@@ -585,6 +627,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
         \item[2.] Die Fehlermeldungen und Warnungen werden im Web-Interface angezeigt
     \end{FAList}
     
+    \item[F2120] \textbf{Anzeigen von Diagnose-Daten}
     
     \phantomsection
     \label{FA:Web-Interface:Verwalten von Malllob}
@@ -625,7 +668,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
         \textbf{Vorbedingung:} &  Der Nutzer ist angemeldet und besitzt mindestens einen Job. \\
         \textbf{Nachbedingung (Erfolg):}  &  Der Nutzer kann Informationen zum gewünschten Job einsehen. \\
         \textbf{Nachbedingung (Fehlschlag):} &  Eine Fehlermeldung wird angezeigt. \\
-        \textbf{Akteure:} & Nutzer, Admin \\
+        \textbf{Akteure:} & Nutzer \\
         \textbf{Auslösendes Ereignis:} & Nutzer möchte Informationen zu einem Job einsehen. \\
     \end{FA}
     \textbf{Beschreibung:}
@@ -654,21 +697,39 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
     
     
     \phantomsection
-    \label{FA:Web-Interface:Verwalten von Spalten}
-    \item[F2150] \textbf{Verwalten von Spalten in der Job-Tabelle} \\
+    \label{FA:Web-Interface:Hinzufügen von Spalten}
+    \item[F2150] \textbf{Hinzufügen von Spalten in der Job-Tabelle} \\
     \begin{FA}
-        \textbf{Ziel:} & Es können Spalten zur Job-Tabelle hinzugefügt oder entfernt werden \\
+        \textbf{Ziel:} & Es können Spalten zur Job-Tabelle hinzugefügt werden \\
         \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein \\
-        \textbf{Nachbedingung (Erfolg):} & Die gewünschte Spalte wurde zur Job-Tabelle hinzugefügt oder entfernt \\
-        \textbf{Nachbedingung (Fehlschlag):} & Die gewünschte Spalte wurde nicht hinzugefügt oder nicht entfernt \\
+        \textbf{Nachbedingung (Erfolg):} & Die gewünschte Spalte wurde zur Job-Tabelle hinzugefügt  \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die gewünschte Spalte wurde nicht hinzugefügt \\
         \textbf{Akteure:} & Nutzer \\
-        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte eine Spalte zur Job-Tabelle hinzufügen oder entfernen \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte eine Spalte zur Job-Tabelle hinzufügen \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
         \item[1.] Navigation zur Job-Tabelle
         \item[2.] Anklicken des Dropdown-Menüs
-        \item[3.] Durch Anklicken auswählen, ob die Spalte zur Job-Tabelle hinzugefügt oder entfernt werden soll
+        \item[3.] Durch Anklicken auswählen, welches Attribut als Spalte hinzugefügt werden soll
+    \end{FAList}
+    
+    
+    \phantomsection
+    \label{FA:Web-Interface:Entfernen von Spalten}
+    \item[F2150] \textbf{Entfernen von Spalten in der Job-Tabelle} \\
+    \begin{FA}
+        \textbf{Ziel:} & Es können Spalten aus der Job-Tabelle entfernt werden \\
+        \textbf{Vorbedingung:} & Der Nutzer muss im Web-Interface angemeldet sein und die es wurde mindestens eine Spalte mittels \hyperref[FA:Web-Interface:Hinzufügen von Spalten]{F1111} hinzugefügt \\
+        \textbf{Nachbedingung (Erfolg):} & Die gewünschte Spalte wurde aus der Job-Tabelle entfernt \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die gewünschte Spalte wurde nicht aus der Job-Tabelle entfernt \\
+        \textbf{Akteure:} & Nutzer \\
+        \textbf{Auslösendes Ereignis:} & Der Nutzer möchte eine angezeigte Spalte aus der Tabelle löschen\\
+    \end{FA}
+    \textbf{Beschreibung:}
+    \begin{FAList} 
+        \item[1.] Navigation zur Job-Tabelle
+        \item[2.] Klicken des \enquote{x}-Symbols in der entsprechenden Spalte
     \end{FAList}
     
     \phantomsection
@@ -698,17 +759,18 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
     \begin{FA}
         \textbf{Ziel:} & Das Web-Interface kann extern erstelle Plugins anzeigen. \\
         \textbf{Vorbedingung:} & - \\
-        \textbf{Nachbedingung (Erfolg):}  &  Plugins werden in der Navigations-Leiste angezeigt und können asugewählt werden.\\
+        \textbf{Nachbedingung (Erfolg):}  &  Plugins werden als Dropdown-Menü in der Navigations-Leiste angezeigt und können ausgewählt werden.\\
         \textbf{Nachbedingung (Fehlschlag):} & Plugins werden nicht angezeigt. \\
         \textbf{Akteure:} & Nutzer \\
-        \textbf{Auslösendes Ereignis:} &  Ein Plugin wurde eingelesen\\
+        \textbf{Auslösendes Ereignis:} &  Mindestens Plugin wurde eingelesen\\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Einlesen von Plugins durch \hyperref[FA:System:Einstellungen festlegen]{F4000} oder \hyperref[FA:Web-Interface:Aktualisieren]{F2080} oder \hyperref[FA:API:Aktualisieren von Einstellungen und Plugins]{F1170}
-        
+        \item[1.] Einlesen von Plugins durch \hyperref[FA:System:Einstellungen festlegen]{F4000}
+        \item[2.] Anzeigen eines Eintrags für Plugins in der Navigations-Leiste
     \end{FAList} 
     
+
 
     \phantomsection
     \label{FA:Web-Interface:Abmelden} 
@@ -718,7 +780,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
         \textbf{Vorbedingung:} & Der Nutzer ist angemeldet. \\
         \textbf{Nachbedingung (Erfolg):}  & Der Nutzer ist abgemeldet und wird zur Login-Seite weitergeleitet. \\
         \textbf{Nachbedingung (Fehlschlag):} & Der Nutzer ist weiterhin angemeldet und eine Fehlermeldung wird angezeigt. \\
-        \textbf{Akteure:} & Nutzer, Administrator\\
+        \textbf{Akteure:} & Nutzer\\
         \textbf{Auslösendes Ereignis:} & Nutzer möchte sich Abmelden \\
     \end{FA}
     \textbf{Beschreibung:}
@@ -762,7 +824,6 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
         \item[3.b.] Wenn die Visualisierung nicht erfolgreich geladen wurde, wird eine Fehlermeldung im Web-Interface angezeigt 
     \end{FAList}
     
-    \item[F3010] \textbf{Ändern des Zeitpunktes der Visualisierung}
     
     
     %---------------Visualisierung - Anzeigen des Binärbaumes für einen Job
@@ -869,6 +930,8 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
         \item[3.] Die Visualisierung wird ab dem gewählten Zeitpunkt abgespielt
     \end{FAList}
     
+    \item \textbf{Anzeigen von Details zu einem Job}
+    
 \end{itemize}
 
 
@@ -906,9 +969,9 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das Web-Interfac
     \item[F4010] \textbf{Einlesen von Plugins bei Systemstart} \\
     \begin{FA}
         \textbf{Ziel:} & Das System kann extern erstellte Plugins einlesen. \\
-        \textbf{Vorbedingung:} & Es liegen ein einzulesenede Plugins vor \\
-        \textbf{Nachbedingung (Erfolg):}  & Die Plugins werden eingelesen und entsprechende Schaltflächen erscheinen in der Navigations-Leiste des Web-Interfaces \\
-        \textbf{Nachbedingung (Fehlschlag):} & Ein oder mehrere Plugins konnten nicht eingelesen werden, diese sind nicht im Web-Interface verfügbar und auf der \hyperref[pages:admin]{Administratoren-Seite} werden mittels \hyperref[A:Web-Interface:Anzeigen von Warungen und Fehlermeldungen]{F2110} \\
+        \textbf{Vorbedingung:} & Es liegen ein einzulesende Plugins vor \\
+        \textbf{Nachbedingung (Erfolg):}  & Die Plugins wurden eingelesen. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Ein oder mehrere Plugins konnten nicht eingelesen werden und auf der \hyperref[pages:admin]{Administratoren-Seite} werden mittels \hyperref[A:Web-Interface:Anzeigen von Warungen und Fehlermeldungen]{F2110} \\
         \textbf{Akteure:} & System \\
         \textbf{Auslösendes Ereignis:} & Starten des Systems \\
     \end{FA}

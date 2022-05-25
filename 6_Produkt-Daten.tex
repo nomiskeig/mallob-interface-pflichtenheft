@@ -1,41 +1,41 @@
+\label{PD}
 \section{Produktdaten}
 
 
 \label{PD:Registrierungsdaten}
 \subsection{Registrierungsdaten}
-Die Registrierungsdaten sind diejenigen Daten, die ein Nutzer angeben muss, um sich registrieren zu können. Diese Daten werden gespeichert, bis das Konto durch einen Administrator authentifiziert wurde.
-\begin{itemize}
+Die Registrierungsdaten sind diejenigen Daten, die ein Nutzer angeben muss, um sich registrieren zu können. Diese Daten werden gespeichert, bis das Konto durch einen Administrator verifiziert wurde.
+\begin{itemize}[noitemsep]
     \item Nutzername
-    \item Passwort
+    \item verschlüsseltes Passwort
     \item E-Mail
 \end{itemize}
 
 \label{PD:Nutzerdaten}
 \subsection{Nutzerdaten}
 Nutzerdaten sind alle nutzerspezifischen Daten, die über den Nutzer dauerhaft oder temporär gespeichert werden.
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item Nutzername
-    \item Passwort
-    \item Authentifizierungs-Token
+    \item verschlüsseltes Passwort
     \item E-Mail
-    \item API-Requests
-    \item Eingereichte Jobs
+    \item API-Requests %[TODO: warum]
+    \item Eingereichte Jobs (so lange, wie in der Konfigurationsdatei definiert)
+    \item Spalten, die der Nutzer in der \hyperref[pages:job-table]{Job-Tabelle} ausgewählt hat
 \end{itemize}
 
 
 
 \subsection{Job-Daten}
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item Job-Konfiguration
     \item Job-Beschreibung
-    \item Ergebnis
+    \item Ergebnis des Jobs
+    \item Job-ID
+    \item Zughöriger Nutzer
+    \item Status des Jobs
 \end{itemize}
 
 \subsection{Mallob-Daten}
 \begin{itemize}
-    \item Relevante Inhalte des Mallob-Outputstream 
-    \begin{itemize}
-        \item So lange, wie in der Konfigurationsdatei spezifiziert
-    \end{itemize}
-    
+    \item Relevante Inhalte des Mallob-Outputstream (so lange, wie in der Konfigurationsdatei definiert.)
 \end{itemize}

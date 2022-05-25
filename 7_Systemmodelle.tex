@@ -4,13 +4,13 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Systemdiagramm3.jpg} \\
+    \includegraphics[width=\textwidth]{images-interface/Diagramme/Systemdiagramm3.jpg} \\
     \caption{Model-View-Controller}
 \end{figure}
 Das System kann semantisch in 3 Komponenten gegliedert werden; View, Controller sowie Model. \\
 Die Aufgabe des \textbf{Views}, bzw. des Web-Interfaces ist es dabei eine interaktive, grafische Benutzeroberfläche für die Interaktion mit Mallob bereitzustellen. \\
 Der \textbf{Controller}, bzw. API sowie Backend (Anfragen gehen über API an das Backend) sind für die Kommunikation zwischen Datenbank, Mallob und Web-Interface, bzw. Nutzer zuständig. Das Mallob-Interface ist im Backend implementiert und für die Kommunikation zwischen der Backend-Logik und einer laufenden Mallob-Instanz zuständig.\\
-Das \textbf{Model} ist für das Bearbeiten sowie halten der Daten zuständig. Dabei hält die Datenbank die Daten des Systems (Siehe 6 Produkt-Daten [TODO verlinken]) und Mallob ist Mallob. \\
+Im \textbf{Model} hält eine Datenbank die \hyperref[PD]{Daten des Systems} und Mallob ist Mallob. \\
 \textbf{Extern} liegt die laufende Mallob-Instanz. Mallob ist nicht Teil unseres Systems. Unser System kommuniziert lediglich mit Mallob.
 
 \pagebreak
@@ -19,7 +19,7 @@ Das \textbf{Model} ist für das Bearbeiten sowie halten der Daten zuständig. Da
 
 \begin{figure}[H]
     \centering    
-    \includegraphics[width=\textwidth]{images-interface/Login_register_3_screenshot.jpg} 
+    \includegraphics[width=\textwidth]{images-interface/Diagramme/Login_register_3_screenshot.jpg} 
     \caption{Registrierung von Nutzern}
 \end{figure}
 
@@ -29,7 +29,7 @@ Möchte sich ein registrierter Nutzer im Web-Interface anmelden, so werden die N
 Stellt ein registrierter Nutzer eine Anfrage über API mit seinem Token, wird auch hier der Token aus der Datenbank geholt und verglichen.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Request_authntification_screenshot.jpg}
+    \includegraphics[width=\textwidth]{images-interface/Diagramme/Request_authntification_screenshot.jpg}
     \caption{Authentifizierung von API-Anfragen}
 \end{figure}
 Jede Anfrage an die API muss authentifiziert werden. Dies geschieht, indem der Token, der mit der Anfrage geschickt wurde, mit dem in der Datenbank gespeichertem Token abgeglichen wird. Wurde eine Anfrage verifiziert, also sichergestellt, das der Nutzer diese auch ausführen darf, so wird sie weiterverarbeitet.\\
@@ -37,10 +37,10 @@ Jede Anfrage an die API wird für eine gewisse Zeit gespeichert, um sie später 
 
 \pagebreak
 
-
+https://www.overleaf.com/project
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Submit-abort-view-screenshot.jpg}
+    \includegraphics[width=\textwidth]{images-interface/Diagramme/Submit-abort-view-screenshot.jpg}
     \caption{Einreichen, Abbrechen und Einsehen von Jobs}
 \end{figure}
 
@@ -58,10 +58,10 @@ Möchte ein Nutzer einen Job einsehen, so ist es wichtig das dieser bereits eing
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Mallob-visualisierung.jpg}
-    \caption{Mallob-Statistiken abrufen}
+    \includegraphics[width=\textwidth]{images-interface/Diagramme/visualisierungsdaten_anwendungsfaelle.jpg}
+    \caption{Mallob-Visualisierungsdaten abrufen}
 \end{figure}
-Möchte ein Nutzer Mallob-Statisteiken abrufen, so holt das System bereits vergangene Events aus der Datenbank um hieraus Statistiken sowie Visualisierung vorzubereiten. Des weiteren wird live der Output-Log von Mallob ausgelesen, um Echtzeitdiagnostik sowie Echtzeit-Visualisierung für den Nutzer anzubieten. 
+Möchte ein Nutzer Mallob-Visualisierungsdaten abrufen, so holt das System bereits vergangene Events aus der Datenbank um hieraus die Visualisierung vorzubereiten. Des weiteren wird live der Outputstream der Logdatei von Mallob ausgelesen, um Echtzeit-Visualisierung für den Nutzer anzubieten. 
 
 
 \pagebreak

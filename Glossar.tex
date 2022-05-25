@@ -5,14 +5,14 @@
 \newglossaryentry{Job}{
     name=Job,
     plural=Jobs,
-    description={Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus der Job-Konfiguration und der Job—Beschreibung.}
+    description={Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus der \gls{Job-Konfiguration} und der \gls{Job-Beschreibung}}
 }
 
 \newglossaryentry{Job-Konfiguration}{
     name=Job-Konfiguration,
     plural=Job-Konfigurationen,
     description={
-    Die Job-Konfiguration beinhaltet alle Parameter des Jobs, welche bei der Bearbeitung berücksichtigt werden.\\
+    Die Job-Konfiguration beinhaltet alle Parameter des Jobs, welche bei der Bearbeitung berücksichtigt werden. Sie sind in den \hyperref[B:Job]{Begrifflichkeiten} näher erläutert
     }
 }
 
@@ -20,6 +20,11 @@
     name=Job-Beschreibung,
     plural=Job-Beschreibungen,
     description={Die Job-Beschreibung ist der Teil des Jobs, der das eigentliche Problem darstellt.}
+}
+
+\newglossaryentry{Job-Informationen}{
+    name=Job-Informationen,
+    description={Die Job-Informationen enthalten die \gls{Job-Konfiguration} und den Einreiche-Zeitpunkt, den Zustand des Jobs, die Informationen die Mallob über den Job bereitstellt und die Job-ID. Sie enthält nicht die Job-Beschreibung und nicht das Ergebnis des Jobs.}
 }
 
 
@@ -103,4 +108,10 @@
 \newglossaryentry{Bearbeitungszeit}{
 name=Bearbeitungszeit,
 description= {tt}%[todo]
+}
+
+\newglossaryentry{Binaerbaum}{
+    name=Binärbaum,
+    plural=Binärbäume,
+    description={...}
 }
