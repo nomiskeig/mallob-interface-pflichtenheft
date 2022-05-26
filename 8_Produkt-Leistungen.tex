@@ -4,34 +4,30 @@
 %ProduktleistungenSofern 
 %an einzelne Funktionen des Programms besondere Anforderungen in Bezug auf die Zeit oder die Genauigkeit gestellt werden, sollten diese in diesem Kapitel dargestellt werden. Dabei sollten Sie prüfen, ob die zu erbringenden Leistungen mit den in Punkt 5 genannten Angaben  realisierbar sind.
 %
-%
-%
-%
-%
 
 \begin{itemize}
-    \item Die maximale Anzahl paralleler Jobs wird mittels der Konfigurationsdatei festgelegt (eher auf der Anzahl der nicht besetzten Kernen begrenzt). 
+    \item Die maximale Anzahl paralleler Jobs wird mittels der \gls{Konfigurationsdatei} festgelegt (eher auf der Anzahl der nicht besetzten Kernen begrenzt). 
     \item Die maximale Anzahl der Jobs ist begrenzt auf der Anzahl der Prozessen.
-    \item Die Visualisierung ist performant, um einen beliebigen Zeitpunkt zu betrachten, wird maximal eine Sekunde benötigt, um diesen zu laden. 
-    \item Das Web-Interface funktioniert auch bei kleineren Bildschirmen, wie etwa einem Handy-Bildschirm.
-    % \item Dem Nutzer stehen verschiedene Filter zum Sortieren der Jobs zur Verfügung. [Keine Produktleistung]
-    %\item Es werden verständliche Fehlermeldungen dem Nutzer gezeigt, sowohl beim Registrieren/Anmelden, als auch bei Einreichung und Visualisierung von den Jobs. [Keine Produktleistung]
-    \item Die einzugebenden Optionen im Interface beim Hinzufügen von Jobs sind in der Konfigurationsdatei definiert, wobei eine Änderung dieser keine neue Kompilierung des Programms erfordert, sondern nur ein Neustart.
+    \item Die Visualisierung ist performant; um einen beliebigen Zeitpunkt zu betrachten, wird maximal eine Sekunde benötigt, um diesen zu laden. 
+    \item Das \gls{Web-Interface} funktioniert auch bei kleineren Bildschirmen, wie etwa einem Handy-Bildschirm.
+    % \item Dem \gls{Nutzer} stehen verschiedene Filter zum Sortieren der Jobs zur Verfügung. [Keine Produktleistung]
+    %\item Es werden verständliche Fehlermeldungen dem \gls{Nutzer} gezeigt, sowohl beim Registrieren/Anmelden, als auch bei Einreichung und Visualisierung von den Jobs. [Keine Produktleistung]
+    \item Die einzugebenden Optionen im Interface beim Hinzufügen von Jobs sind in der \gls{Konfigurationsdatei} definiert, wobei eine Änderung dieser keine neue Kompilierung des Programms erfordert, sondern nur ein Neustart.
     \item Bei Eingabe im Interface erfolgt schon im Frontend elementare Kontrolle der Daten, was den Benutzer momentan über Fehler bei der Eingabe informiert.
-   % \item Admins können mit den Kunden in Kontakt treten (per Email?). [Das ist eher FA, nicht produktleistung] (Vielleicht so formuliert: Nutzer werden nur per E-mail kontaktiert)
+   % \item Admins können mit den Kunden in Kontakt treten (per Email?). [Das ist eher FA, nicht produktleistung] (Vielleicht so formuliert: \gls{Nutzer} werden nur per E-mail kontaktiert)
     \item Passwörter müssen mindestens 8-stellig sein.
     %\item Die Genehmigung einer Registrierung ist anhand der Länge der Warteschlange berechnet? [keine ahnung, was hier gemint ist]
-    \item Die maxmimale Länge der Warteschlange mit Registrierungen ist mittels der Konfigurationsdatei festgelegt.
-    \item Die maximale Anzahl an Nutzer ist von der Konfigurationsdatei festgelegt. %(Vielleicht könnte auch durch die Speicherkapazität des Servers beschränkt sein) --> macht denke ich keinen Sinn das zu beschränken, am ende vom tag igbt eh ein Admin die Konten erst frei
-    \item Die maximale Anzahl gespeicherter Jobs pro Nutzer ist mittels der Konfigurationsdatei festgelegt. 
-    \item Die gespeicherte Jobs werden automatisch nach einer von der Konfigurationsdatei spezifizierten Zeitraum gelöscht.
+    \item Die maxmimale Länge der Warteschlange mit Registrierungen ist mittels der \gls{Konfigurationsdatei} festgelegt.
+    \item Die maximale Anzahl an \gls{Nutzer} ist von der \gls{Konfigurationsdatei} festgelegt. %(Vielleicht könnte auch durch die Speicherkapazität des Servers beschränkt sein) --> macht denke ich keinen Sinn das zu beschränken, am ende vom tag igbt eh ein Admin die Konten erst frei
+    \item Die maximale Anzahl gespeicherter Jobs pro \gls{Nutzer} ist mittels der \gls{Konfigurationsdatei} festgelegt. 
+    \item Die gespeicherte Jobs werden automatisch nach einer von der \gls{Konfigurationsdatei} spezifizierten Zeitraum gelöscht.
     \item Benutzernamen sind eindeutig und bestehen aus 4 bis 25 Zeichen.
-    \item Der Authentifizierungstoken ist gültig für 60 Tage, d.h der Nutzer muss nach 60 Tage sich wieder anmelden. %(nach dem Standard) (Kann auch davon abhangig sein, wie oft der Nutzer Jobs einreicht oder vom Konfiguarationsdatei festgelegt werden)
-    \item Die maximale Bearbeitungszeit eines Jobs ist von Mallob bestimmt, damit auch die maximale Wartezeit für einen Nutzer, bis sein Job bearbeitet wird.
-    %\item Die maximale Große der Job-Beschreibung ist von der Konfigurationsdatei festgelegt. --> sollte keine beschränkung geben
-    \item Jedes neue Benutzerkonto besitzt das gleiche Basispriorität, die zusammen mit dem maximalen Priorität mittels der Konfigurationsdatei festgelegt ist.
-    \item Der Nutzer erhält auf jede Anfrage eine Antwort.
-    \item Das Web-Interface antwortet immer innerhalb einer Sekunde. %(nach dem Standard) (Vielleicht auch das API?)
-    \item Jede Anfrage an die API soll binnen fünf Sekunden beantwortet werden.
+    \item Der authentifizierungs-\gls{Token} ist gültig für 60 Tage, d.h der \gls{Nutzer} muss nach 60 Tage sich wieder anmelden. %(nach dem Standard) (Kann auch davon abhangig sein, wie oft der \gls{Nutzer} Jobs einreicht oder vom Konfiguarationsdatei festgelegt werden)
+    \item Die globale maximale Bearbeitungszeit der Jobs ist von \gls{Konfigurationsdatei} festgelegt, aber der \gls{Nutzer} kann die maximale Bearbeitungszeit für sein Job festlegen, bis auf den globalen Maximum.
+    %\item Die maximale Große der Job-Beschreibung ist von der \gls{Konfigurationsdatei} festgelegt. --> sollte keine beschränkung geben
+    \item Jedes neue \gls{Nutzerkonto} besitzt das gleiche Basispriorität, die zusammen mit dem maximalen Priorität mittels der \gls{Konfigurationsdatei} festgelegt ist.
+    \item Der \gls{Nutzer} erhält auf jede Anfrage eine Antwort.
+    \item Das \gls{Web-Interface} antwortet immer innerhalb einer Sekunde. %(nach dem Standard) (Vielleicht auch das API?)
+    \item Jede Anfrage an die \gls{API} soll binnen fünf Sekunden beantwortet werden.
     
 \end{itemize}

@@ -2,54 +2,59 @@
 
 \makenoidxglossaries
 
-\newglossaryentry{Job}{
-    name=Job,
-    plural=Jobs,
-    description={Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus der \gls{Job-Konfiguration} und der \gls{Job-Beschreibung}}
-}
-
-\newglossaryentry{Job-Konfiguration}{
-    name=Job-Konfiguration,
-    plural=Job-Konfigurationen,
-    description={
-    Die Job-Konfiguration beinhaltet alle Parameter des Jobs, welche bei der Bearbeitung berücksichtigt werden. Sie sind in den \hyperref[B:Job]{Begrifflichkeiten} näher erläutert
-    }
-}
-
-\newglossaryentry{Job-Beschreibung}{
-    name=Job-Beschreibung,
-    plural=Job-Beschreibungen,
-    description={Die Job-Beschreibung ist der Teil des Jobs, der das eigentliche Problem darstellt.}
-}
-
-\newglossaryentry{Job-Informationen}{
-    name=Job-Informationen,
-    description={Die Job-Informationen enthalten die \gls{Job-Konfiguration} und den Einreiche-Zeitpunkt, den Zustand des Jobs, die Informationen die Mallob über den Job bereitstellt und die Job-ID. Sie enthält nicht die Job-Beschreibung und nicht das Ergebnis des Jobs.}
-}
+%\newglossaryentry{Job}{
+%    name=Job,
+%    plural=Jobs,
+%    description={Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus Sicht des Nutzers aus der \gls{Job-Konfiguration} und der \gls{Job-Beschreibung}}
+%}
+%
+%\newglossaryentry{Job-Konfiguration}{
+%    name=Job-Konfiguration,
+%    plural=Job-Konfigurationen,
+%    description={
+%    Die Job-Konfiguration beinhaltet alle Parameter des Jobs, welche bei der Bearbeitung berücksichtigt werden. Sie sind in den \hyperref[B:Job]{Begrifflichkeiten} näher erläutert
+%    }
+%}
+%
+%\newglossaryentry{Job-Beschreibung}{
+%    name=Job-Beschreibung,
+%    plural=Job-Beschreibungen,
+%    description={Die Job-Beschreibung ist der Teil des Jobs, der das eigentliche Problem darstellt}
+%}
+%
+%\newglossaryentry{Job-Informationen}{
+%    name=Job-Informationen,
+%    description={Die Job-Informationen enthalten die \gls{Job-Konfiguration} und den Einreiche-Zeitpunkt, den Zustand des Jobs, die Informationen die Mallob über den Job bereitstellt und die Job-ID. Sie enthält nicht die Job-Beschreibung und nicht das rohe Ergebnis des Jobs}
+%}
+%
+%\newglossaryentry{Job-Updates}{
+%    name=Job-Updates,
+%    description={Job-Updates sind jene Informationen eines Jobs, die für die Visualisierung des Systems benötigt werden. Dazu gehören die Informationen, wie Mallob den Job gerade auf die Kerne verteilt hat und wie sich der \gls{Binaerbaum} des Jobs verändert}
+%}
 
 
 \newglossaryentry{Nutzer}{
     name=Nutzer,
     plural=Nutzer,
-    description={Ein Nutzer ist eine Person, welche sich registriert hat und die mit dem System interagiert.}
+    description={Ein Nutzer ist eine Person, welche sich registriert hat und die mit dem System interagiert}
 }
 
 
 \newglossaryentry{Nutzerkonto}{
     name=Nutzerkonto,
     plural=Nutzerkonten,
-    description={Ein Nutzerkonto ist ein im System durch einen Nutzer registriertes und durch einen Administrator verifiziertes Konto.}
+    description={Ein Nutzerkonto ist ein im System durch einen Nutzer registriertes und durch einen Administrator verifiziertes Konto}
 }
 
 \newglossaryentry{Administrator}{
     name=Administrator,
     plural=Administratoren,
-    description={Administratoren sind Nutzer mit mehr Rechten zur Verwaltung des Systems. Sie haben dennoch alle Möglichkeiten, die auch ein Nutzer hat, welcher kein Administrator ist.}
+    description={Administratoren sind Nutzer mit mehr Rechten zur Verwaltung des Systems. Sie haben dennoch alle Möglichkeiten, die auch ein Nutzer hat, welcher kein Administrator ist}
 }
 
 \newglossaryentry{Web-Interface}{
     name=Web-Interface,
-    description={Mit Web-Interface wird die Webseite referenziert, die der Nutzer im Internet aufrufen kann}
+    description={Mit Web-Interface wird die Webseite von \textit{Fallob} referenziert, die der Nutzer im Internet aufrufen kann}
 }
 \newglossaryentry{API}{
     name=API,
@@ -59,16 +64,16 @@
 
 \newglossaryentry{Konfigurationsdatei}{
     name=Konfigurationsdatei,
-    description={Eine Datei in einem spezifischen Format, die vom System eingelesen wird. Darin werden bestimmte Werte definiert, die dann vom System verwendet werden, wie etwa die maximale Anzahl der parallelen Prozesse pro Job.}
+    description={Eine Datei in einem spezifischen Format, die vom System eingelesen wird. Darin werden bestimmte Werte definiert, die dann vom System verwendet werden}
 }
 \newglossaryentry{System-Administrator}{
     name=System-Administrator,
-    description={Eine Person, die die Ausführungsumgebung des Systems verwaltet. Verantwortlich für das Starten und Beenden des Systems.}
+    description={Eine Person, die die Ausführungsumgebung des Systems verwaltet. Verantwortlich für das Starten und Beenden des Systems}
 }
 
 \newglossaryentry{Token}{
     name=Token,
-    description={Ein Token (sog. Bearer-Token), kann benutzt werden, um sich gegenüber einer API zu authentifizieren. Der Token verweist auf nur genau einen Nutzer. Dieser Token kann von jedem benutzt werden, der ihn besitzt (deswegen Bearer-Token). Der Token wird für jeden Nutzer bei der Registrierung generiert, sodass niemals zwei Nutzer denselben Token haben. Für den Nutzer ist es wichtig den Token, wie seine Anmeldedaten, geheim zu halten, bzw. nur authorisierten Personen mitzuteilen.}
+    description={Ein Token (sog. Bearer-Token), kann benutzt werden, um sich gegenüber einer API zu authentifizieren. Der Token verweist auf nur genau einen Nutzer. Dieser Token kann von jedem benutzt werden, der ihn besitzt (deswegen Bearer-Token). Der Token wird für jeden Nutzer bei der Registrierung generiert, sodass niemals zwei Nutzer denselben Token haben. Für den Nutzer ist es wichtig den Token, wie seine Anmeldedaten, geheim zu halten, bzw. nur authorisierten Personen mitzuteilen}
 }
 
 %\newglossaryentry{Anfrage}{
@@ -80,28 +85,27 @@
 \newglossaryentry{Datenbank}{
     name=Datenbank,
     plural=Datenbanken,
-    description={Eine Datenbank ist ein System, welches zur Datenspeicherung und Verwaltung genutzt wird. Die Hauptaufgabe einer Datenbank besteht darin, vordefinierte Daten zu speichern und schnellen Zugriff auf die Daten zu erlangen.}
+    description={Eine Datenbank ist ein System, welches zur Datenspeicherung und Verwaltung genutzt wird. Die Hauptaufgabe einer Datenbank besteht darin, vordefinierte Daten zu speichern und schnellen Zugriff auf die Daten zu erlangen}
 }
 
 \newglossaryentry{Output-Log}{
-    name=Datenbank,
-    plural=Datenbanken,
-    description={Eine Datenbank ist ein System, welches zur Datenspeicherung und Verwaltung genutzt wird. Die Hauptaufgabe einer Datenbank besteht darin, vordefinierte Daten zu speichern und schnellen Zugriff auf die Daten zu erlangen.}
-}
+    name=Output-Log,
+    description={}
+    }
 
 \newglossaryentry{Stream}{
     name=Stream,
-    description={Ein Stream von Daten ist eine andauernde eingehende oder ausgehende Menge von Daten.}
+    description={Ein Stream von Daten ist eine andauernde eingehende oder ausgehende Menge von Daten}
 }
 
 \newglossaryentry{Log-Datei}{
     name=Log-Datei,
-    description={Eine Log-Datei ist eine Datei, welche Log-Daten speichert. Log-Daten sind Meta-Daten, welche gewisse Ereignisse festhalten sollen. Im Kontext von Mallob beispielsweise das Eingehen eines Jobs.}
+    description={Eine Log-Datei ist eine Datei, welche Log-Daten speichert. Log-Daten sind Meta-Daten, welche gewisse Ereignisse festhalten sollen. Im Kontext von Mallob beispielsweise das Eingehen eines Jobs}
 }
 
-\newglossaryentry{Vorlaeufiges Konto}{
+\newglossaryentry{Vorlaeufiges Nutzeronto}{
     name={Vorläufiges Konto},
-    description={Ein vorläufiges Konto sind Konten, die neu erstellt wurden und noch nicht durch einen \gls{Administrator} verifiziert wurden. Ein solches Konto eingeschränkt, es könnten noch keine Jobs in Auftrag gegeben werden.}
+    description={Ein vorläufiges Konto sind Konten, die neu erstellt wurden und noch nicht durch einen \gls{Administrator} verifiziert wurden. Ein solches Konto eingeschränkt, es könnten noch keine Jobs in Auftrag gegeben werden}
 }
 
     
@@ -113,5 +117,36 @@ description= {tt}%[todo]
 \newglossaryentry{Binaerbaum}{
     name=Binärbaum,
     plural=Binärbäume,
-    description={...}
+    description={Binärbaume sind Graphen, die eine spezielle Baumstruktur aufweisen, bei welcher jeder Knoten maximal zwei Kinder besitzt. In diesem Kontext wird stellt die Verteilung eines Jobs auf dem Kernen eine solche Binärbaumstruktur dar}
+}
+
+\newglossaryentry{Dropdown-Menue}{
+    name=Dropdown-Menü,
+    plural=Dropdown-Menüs,
+    description={}
+}
+
+\newglossaryentry{URL}{
+    name=URL,
+    plural=URLs,
+    description={}
+}
+
+
+%--------------neue glossareinträge ab 26.05.2022
+
+
+\newglossaryentry{Model-View-Controller}{
+    name=Model-View-Controller,
+    description={Model-View-Controller beschreibt ein Konzept aus der Softwaretechnik, nachdem eine Software in drei Komponenten aufgeteilt wird.}
+    }
+    
+\newglossaryentry{API-Anfrage}{
+    name=
+}
+
+\newglossaryentry{Test}{
+    name=URL,
+    plural=URLs,
+    description={}
 }

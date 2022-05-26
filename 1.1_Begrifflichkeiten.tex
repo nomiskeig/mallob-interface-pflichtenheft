@@ -3,11 +3,15 @@
 \label{B:Jobs}
 \subsection{Jobs}
 
-Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus der Job-Konfiguration und der Job—Beschreibung.
+Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus Sicht des Nutzers aus der Job-Konfiguration und der Job—Beschreibung.
 Jeder Job besitzt eigene Parameter, die bei der Bearbeitung durch Mallob beachtet werden. 
 Diese Parameter bilden zusammen die Job-Konfiguration.
 
 Die Parameter sind:
+
+\subsection{Job-Konfiguration}
+
+
 \begin{tabular}{lL{0.6\textwidth}l}
         Name & Beschreibung & Notwendig\\
         \\
@@ -26,8 +30,19 @@ Die Parameter sind:
         % TODO: literals und assumptions?
     \end{tabular} 
 
+\subsection{Job-Informationen}
+Job-Informationen sind alle Informationen über einen Job, die nicht von der internen Bearbeitung des Jobs durch Mallob abhängen. 
 
 
-\subsection{Inkrementelle Jobs}
+\subsection{Event}
+Ein Event ist eine Veränderung im internen Systemzustand von Mallob, z.B. Ein Prozess beginnt mit der Bearbeitung eines Jobs, oder ein Prozess beginnt mit der Bearbeitung eines anderen Jobs als zuvor.
 
-\subsection{Inhalt der Konfigurationsdatei}
+
+\subsection{Job-Details}
+Job-Details werden aus Job-Events abgeleitet und sind somit Informationen, die nur die interne Verarbeitung von Mallob betreffen, zum Beispiel wie viele Prozesse arbeiten an einem Job? Welche Prozesse arbeiten an einem Job?
+
+
+\subsection{Konfigurationsdatei}
+Die Konfigurationsdatei beinhaltet globale Einstellungen für \textit{Fallob}.
+
+
