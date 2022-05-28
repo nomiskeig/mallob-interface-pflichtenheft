@@ -10,7 +10,7 @@
     
     \item[P110] Die maximale Anzahl \hyperref[B:Jobs]{Jobs}, die ein Nutzer gleichzeitig in Bearbeitung haben kann, ist beschränkt.
     
-    \item[P120] Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der Visualisierung darzustellen, muss linear in der Anzahl der zu ladenden Events sein.
+    \item[P120] Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der Visualisierung darzustellen, muss linear in der Anzahl der zu ladenden \hyperref[B:Event]{Events} sein.
     
     \item[P130] (Wunschbedingung)  Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der Visualisierung darzustellen, muss konstant sein, unabhängig vom gewählten Zeitpunkt.
     
@@ -26,19 +26,21 @@
     
     \item[P190] Die gespeicherten \hyperref[B:Jobs]{Jobs} werden automatisch nach einem spezifizierten Zeitraum gelöscht.
 
-    \item[P200] Die Größe der Job-Beschreibung, die man im Web-Interface eingeben kann, ist beschränkt.
+    \item[P200] Die Größe der \hyperref[B:Job-Beschreibung]{Job-Beschreibung}, die man im Web-Interface eingeben kann, ist beschränkt.
 
     
     \item[P210] Jedes \gls{Nutzerkonto} besitzt nach Registrierung die gleiche Priorität. Diese kann vom kann vom \gls{System-Administrator} geändert werden.
     
     
-    \item[P220] Der \gls{Nutzer} erhält auf jede API-Anfrage außer \hyperref[FA:API:Andauernde Abfrage des Ergebnises eines Jobs]{F1110} unmittelbar eine  Antwort.
+    \item[P220] Der \gls{Nutzer} erhält auf jede \gls{API}-Anfrage außer \hyperref[FA:API:Andauernde Abfrage des Ergebnisses eines Jobs]{F1110} unmittelbar eine  Antwort.
     
     \item[P230] Muss in der \hyperref[pages:visualization]{Visualisierung} zu viel angezeigt werden, so wird die Qualität herabgestuft, um weiterhin eine performante Darstellung zu ermöglichen. Dies geschieht beispielsweise durch das weglassen von Verbindungen zwischen den Prozessen.
     
     \item[P240] Daten über Jobs, die nicht dem angemeldetem Nutzer gehören, werden stehts pseudomynisiert ausgegeben und dargestellt. Ist ein Administrator  angemeldet, so werden die Daten nicht pseudomynisiert.
     
     \item[P250] Es ist möglich, die Job-Seite direkt über eine passende \gls{URL} aufzurufen.
+    
+    \item[P260] Die maximale Geschwindigkeit der Visualisierung ist das zweihundertfache.
 
     
 \end{itemize}

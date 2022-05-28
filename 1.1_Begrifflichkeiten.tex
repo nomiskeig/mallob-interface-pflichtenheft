@@ -19,7 +19,7 @@ Die Job-Konfiguration besteht aus folgenden Parametern: \\
         application & Das Anwendungsfeld des Jobs & Ja\\ 
         max-demand & Die maximaler Anzahl paralleler Prozesse, die dieser Job nutzen kann & Nein\\
         wallclock-limit & Zeitliches Ausführungsbudget des Jobs & Nein\\
-        cpu-limit & Corestudnen-Ausführungsbudget des Jobs & Nein\\
+        cpu-limit & Corestunden-Ausführungsbudget des Jobs & Nein\\
         arrival & Frühester Bearbeitungsbeginn in Sekunden seit Start von Mallob & Nein\\
         dependencies & Jobs, die abgeschlossen sein müssen, bevor dieser Job beginnt & Nein\\
         incremental & Handelt es sich um einen Job mit mehreren Revisionen oder Inkrementen? &  Nein\\
@@ -33,9 +33,11 @@ Die Job-Konfiguration besteht aus folgenden Parametern: \\
 \subsection{Job-Beschreibung}
 \label{B:Job-Beschreibung}
 Die Job-Beschreibung enthält die Daten, die das eigentliche Problem beschreiben, das von Mallob gelöst werden soll. Ein Beispiel wäre eine Instanz von \gls{SAT}.
+
 \subsection{Job-Ergebnis}
 \label{B:Job-Ergebnis}
 Das Job-Ergebnis enthält nur das rohe Ergebnis des Jobs, nicht noch etwaige Meta-Informationen, die Mallob mit dem Ergebnis liefert.
+
 \subsection{Job-Informationen}
 \label{B:Job-Informationen}
 Job-Informationen sind alle Informationen über einen Job, die nicht von der internen Bearbeitung des Jobs durch Mallob abhängen und nicht das Ergebnis des Jobs sind, wie etwa die Job-Konfiguration, die Job-Beschreibung, der Einreichezeitpunkt des Jobs, den Job-Status und die Meta-Daten des Ergebnisses, wenn diese vorhanden sind. Diese Meta-Daten werden von Mallob mit dem eigentlich Ergebnis geliefert und sie enthalten beispielsweise Informationen darüber, wie viel Zeit der Job zum Lösen in Anspruch genommen hat.
@@ -54,7 +56,7 @@ Der Systemzustand setzt sich aus den Job-Details aller Jobs im System zusammen.
 
 \subsection{Job-Typ}
 \label{B:Job-Typ}
-Der Job-Typ beschreibt das die Art des Problems, welches der Job lösen soll. Der Standard-Typ für jeden Job ist SAT.
+Der Job-Typ beschreibt die Art des Problems, welches der Job lösen soll. Der Standard-Typ für jeden Job ist SAT.
 
 \subsection{Job-Status}
 \label{B:Job-Status}

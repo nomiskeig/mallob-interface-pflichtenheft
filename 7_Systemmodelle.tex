@@ -46,9 +46,9 @@ Jede Anfrage an die \gls{API} wird für eine gewisse Zeit gespeichert, um sie sp
     \caption{Einreichen, Abbrechen und Einsehen von \hyperref[B:Jobs]{Jobs}}
 \end{figure}
 
-Reicht ein \gls{Nutzer} ein \hyperref[B:Jobs]{Job} ein, so wird dieser (je nach Konfiguration) von Mallob bearbeitet. Mallob gibt dabei Rückmeldung über den Job-Status, also entweder das Ergebnis des \hyperref[B:Jobs]{Jobs}, oder ob ein Fehler aufgetreten ist. Dieser Status wird in der \gls{Datenbank} gespeichert. \\
+Reicht ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} ein, so wird dieser (je nach Konfiguration) von Mallob bearbeitet. Mallob gibt dabei Rückmeldung über den Job-Status, also entweder das \hyperref[B:Job-Ergebnis]{Ergebnis} des \hyperref[B:Jobs]{Jobs}, oder ob ein Fehler aufgetreten ist. Dieser Status wird in der \gls{Datenbank} gespeichert. \\
 Ein \gls{Nutzer} kann die Bearbeitung eines \hyperref[B:Jobs]{Jobs}, der gerade von Mallob berechnet wird, abbrechen. Die berechneten Zwischenergebnisse werden dann gespeichert und können später abgerufen werden. \\
-Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einsehen, so ist es wichtig das dieser bereits eingereicht wurde. Um ein \hyperref[B:Jobs]{Job} einsehen zu können werden zunächst die angeforderten \hyperref[B:Job-Informationen]{Job-Informationen} aus der \gls{Datenbank} geholt und dann vorbereitet an den \gls{Nutzer} geschickt.
+Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einsehen, so ist es wichtig, dass dieser bereits eingereicht wurde. Um ein \hyperref[B:Jobs]{Job} einsehen zu können werden zunächst die angeforderten \hyperref[B:Job-Informationen]{Job-Informationen} aus der \gls{Datenbank} geholt und dann vorbereitet an den \gls{Nutzer} geschickt.
 
 
 %\begin{center}
@@ -62,7 +62,7 @@ Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einsehen, so ist es wichti
     \includegraphics[width=\textwidth]{images-interface/Diagramme/visualisierungsdaten_anwendungsfaelle.jpg}
     \caption{Mallob-Visualisierungsdaten abrufen}
 \end{figure}
-Möchte ein \gls{Nutzer} Mallob-Visualisierungsdaten abrufen, so holt das System bereits vergangene Events aus der \gls{Datenbank}, um daraus die Daten für die Visualisierung vorzubereiten. Des weiteren wird live der Output-\gls{Stream} der \gls{Log-Datei} von Mallob ausgelesen, um Echtzeit-Visualisierung für den \gls{Nutzer} anzubieten. 
+Möchte ein \gls{Nutzer} Mallob-Visualisierungsdaten abrufen, so holt das System bereits vergangene \hyperref[B:Event]{Events} aus der \gls{Datenbank}, um daraus die Daten für die Visualisierung vorzubereiten. Des weiteren wird live der Output-\gls{Stream} der \gls{Log-Datei} von Mallob ausgelesen, um die Echtzeit-Visualisierung für den \gls{Nutzer} anzubieten. 
 
 
 \pagebreak
@@ -75,7 +75,7 @@ Möchte ein \gls{Nutzer} Mallob-Visualisierungsdaten abrufen, so holt das System
     \label{fig:login_activity}
     
 \end{figure}
-Ein \gls{Nutzer} muss sich anmelden, um die Funktionen des \gls{Web-Interface}s zu benutzen. Zuerst gibt der \gls{Nutzer} über die Eingabe-Maske seinen Nutzernamen und Passwort ein und klickt auf die Schaltfläche \enquote{login}, wobei das \gls{Web-Interface} seine Anfrage zur Authentifizierung an die \gls{API} schickt. Die \gls{API} überprüft die Daten und hat zwei Möglichkeiten: Entweder existiert der \gls{Nutzer} mit diesen Anmelde-Daten im System, er wird authentifiziert und das \gls{Web-Interface} leitet ihn zur Job-Tabelle weiter, oder die Anmelde-Anfrage wird abgelehnt und das \gls{Web-Interface} zeigt dem \gls{Nutzer} eine Fehlermeldung.
+Ein \gls{Nutzer} muss sich anmelden, um die Funktionen des \gls{Web-Interface}s zu benutzen. Zuerst gibt der \gls{Nutzer} über die Eingabe-Maske seinen Nutzernamen und Passwort ein und klickt auf die Schaltfläche \enquote{Login}, wobei das \gls{Web-Interface} seine Anfrage zur Authentifizierung an die \gls{API} schickt. Die \gls{API} überprüft die Daten und hat zwei Möglichkeiten: Entweder existiert der \gls{Nutzer} mit diesen Anmelde-Daten im System, er wird authentifiziert und das \gls{Web-Interface} leitet ihn zur \hyperref[pages:job-table]{Job-Tabelle} weiter, oder die Anmelde-Anfrage wird abgelehnt und das \gls{Web-Interface} zeigt dem \gls{Nutzer} eine Fehlermeldung.
 
 
 \begin{figure}[H]
@@ -83,7 +83,7 @@ Ein \gls{Nutzer} muss sich anmelden, um die Funktionen des \gls{Web-Interface}s 
     \includegraphics[width=\textwidth]{images-interface/v3_aktivitaetsdiagramme/Job_einreichen_v11.pdf}
     \caption{Einreichen eines \hyperref[B:Jobs]{Jobs} über das \gls{Web-Interface}}
 \end{figure}
-Möchte ein \gls{Nutzer} \hyperref[B:Jobs]{Jobs} einreichen, muss er angemeldet sein. Zunächst wählt er die Schaltfläche \enquote{submit job}. Daraufhin zeigt das \gls{Web-Interface} eine \hyperref[pages:submit-job]{Eingabe-Maske} angezeigt. Hier muss er die notwendigen Optionen eingeben, die gewünschten optionalen Optionen auswählen und die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} auf genau eine der drei Weisen übergeben. Über ein \gls{Dropdown-Menue}, wählt er zwischen direkter Eingabe, hochladen einer Datei, die die Beschreibung enthält oder Angabe einer URL. Nach Bestätigung der Eingabe wird das Format der Eingaben vom \gls{Web-Interface} überprüft. Falls das Format inkorrekt war, muss der \gls{Nutzer} die inkorrekte Eingabe verändern, andernfalls kann der \gls{Nutzer} die Eingaben bestätigen, was seine \hyperref[B:Jobs]{Job} über das \gls{Web-Interface} zu Mallob schickt. Mallob überprüft die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} und die \hyperref[B:Job-Konfiguration]{Job-Konfiguration}. Falls diese fehlerhaft sind, wird eine Fehlermeldung vom \gls{Web-Interface} angezeigt. Falls die Daten des \hyperref[B:Jobs]{Jobs} vom \gls{Nutzer} im korrekten Format eingegeben wurden, wird eine Bestätigung zur \hyperref[B:Jobs]{Job}-Bearbeitung vom \gls{Web-Interface} zurückgegeben.
+Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einreichen, muss er angemeldet sein. Zunächst wählt er die Schaltfläche \enquote{submit job}. Daraufhin zeigt das \gls{Web-Interface} eine \hyperref[pages:submit-job]{Eingabe-Maske} an. Hier muss er die notwendigen Parameter eingeben, die gewünschten optionalen Parameter auswählen und die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über genau eine der drei Möglichkeiten übergeben. Über ein \gls{Dropdown-Menue}, wählt er dafür zwischen direkter Eingabe, Hochladen einer Datei, die die Beschreibung enthält oder Angabe einer URL. Nach Bestätigung der Eingabe wird das Format der Eingaben vom \gls{Web-Interface} überprüft. Falls das Format inkorrekt war, muss der \gls{Nutzer} die inkorrekte Eingabe verändern, andernfalls kann der \gls{Nutzer} die Eingaben bestätigen, was seine \hyperref[B:Jobs]{Job} über das \gls{Web-Interface} zu Mallob schickt. Mallob überprüft die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} und die \hyperref[B:Job-Konfiguration]{Job-Konfiguration}. Falls diese fehlerhaft sind, wird eine Fehlermeldung vom \gls{Web-Interface} angezeigt. Falls die Daten des \hyperref[B:Jobs]{Jobs} vom \gls{Nutzer} im korrekten Format eingegeben wurden, wird eine Bestätigung zur \hyperref[B:Jobs]{Job}-Bearbeitung vom \gls{Web-Interface} zurückgegeben.
 
 \begin{figure}[H]
     \centering
@@ -95,10 +95,10 @@ Hier werden die verschiedene Wege zum Einsehen der \hyperref[B:Job-Informationen
 \begin{enumerate}
    
 
-\item Der \gls{Nutzer} gibt die URL einer Job-Seite im Browser ein und wird auf diese weitergeleitet, wo ihm die \hyperref[B:Job-Informationen]{Job-Informationen} angezeigt werden.
+\item Der \gls{Nutzer} gibt die URL einer Job-Seite im Browser ein und wird auf diese weitergeleitet, auf welcher ihm die \hyperref[B:Job-Informationen]{Job-Informationen} angezeigt werden.
 
 %[TODO]  : was ist der satz bei 2.? Was ist PE
-\item Der \gls{Nutzer} klickt die Schaltfläche \enquote{Visualization} an. Danach klickt er auf einen Prozess und es werden die Details dazu angezeigt. Dann klickt er auf die Schaltfläche \enquote{open job page}, was ihn zur Job-Seite weiterleitet und ihm da die \hyperref[B:Job-Informationen]{Job-Informationen} anzeigt werden.
+\item Der \gls{Nutzer} klickt die Schaltfläche \enquote{Visualization} an. Danach klickt er auf einen Prozess und es werden die \hyperref[B:Job-Details]{Details} dazu angezeigt. Dann klickt er auf die Schaltfläche \enquote{open job page}, was ihn zur Job-Seite weiterleitet und ihm da die \hyperref[B:Job-Informationen]{Job-Informationen} anzeigt werden.
 
-\item Der \gls{Nutzer} navigiert zur Job-Tabelle, die seine eingereichten \hyperref[B:Jobs]{Jobs} enthält. Hier kann er entweder ein Attribut aus dem \gls{Dropdown-Menue} auswählen, welches dann in der Tabelle als Spalte angezeigt wird, oder er klickt einen der angezeigten \hyperref[B:Jobs]{Jobs} an und die \hyperref[B:Job-Informationen]{Job-Informationen} werden in einem nebenstehenden Fenster angezeigt. Hier kann man ebenfalls die Schaltfläche \enquote{open job page} wählen, was ihn zu Job-Seite weiterleitet und da die \hyperref[B:Job-Informationen]{Job-Informationen} anzeigt.
+\item Der \gls{Nutzer} navigiert zur \hyperref[pages:job-table]{Job-Tabelle}, die seine eingereichten \hyperref[B:Jobs]{Jobs} enthält. Hier kann er entweder ein Attribut aus dem \gls{Dropdown-Menue} auswählen, welches dann in der Tabelle als Spalte angezeigt wird, oder er klickt einen der angezeigten \hyperref[B:Jobs]{Jobs} an und die \hyperref[B:Job-Informationen]{Job-Informationen} werden in einem nebenstehenden Fenster angezeigt. Hier kann man ebenfalls die Schaltfläche \enquote{open job page} wählen, was ihn zu Job-Seite weiterleitet und da die \hyperref[B:Job-Informationen]{Job-Informationen} anzeigt.
 \end{enumerate}
