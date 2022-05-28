@@ -1,6 +1,7 @@
 % https://en.wikibooks.org/wiki/LaTeX/Glossary
 
-\makenoidxglossaries
+%\makenoidxglossaries
+\makeglossaries
 
 %\newglossaryentry{Job}{
 %    name=Job,
@@ -71,8 +72,8 @@
     description={Eine Person, die die Ausführungsumgebung des Systems verwaltet. Verantwortlich für das Starten und Beenden des Systems}
 }
 
-\newglossaryentry{Token}{
-    name=Token,
+\newglossaryentry{Authentifizierungstoken}{
+    name=Authentifizierungstoken,
     description={Ein Token (sog. Bearer-Token), kann benutzt werden, um sich gegenüber einer API zu authentifizieren. Der Token verweist auf nur genau einen Nutzer. Dieser Token kann von jedem benutzt werden, der ihn besitzt (deswegen Bearer-Token). Der Token wird für jeden Nutzer bei der Registrierung generiert, sodass niemals zwei Nutzer denselben Token haben. Für den Nutzer ist es wichtig den Token, wie seine Anmeldedaten, geheim zu halten, bzw. nur authorisierten Personen mitzuteilen}
 }
 
@@ -103,7 +104,7 @@
     description={Eine Log-Datei ist eine Datei, welche Log-Daten speichert. Log-Daten sind Meta-Daten, welche gewisse Ereignisse festhalten sollen. Im Kontext von Mallob beispielsweise das Eingehen eines Jobs}
 }
 
-\newglossaryentry{Vorlaeufiges Nutzeronto}{
+\newglossaryentry{Vorlaeufiges Nutzerkonto}{
     name={Vorläufiges Konto},
     description={Ein vorläufiges Konto sind Konten, die neu erstellt wurden und noch nicht durch einen \gls{Administrator} verifiziert wurden. Ein solches Konto eingeschränkt, es könnten noch keine Jobs in Auftrag gegeben werden}
 }
@@ -114,39 +115,107 @@ name=Bearbeitungszeit,
 description= {tt}%[todo]
 }
 
-\newglossaryentry{Binaerbaum}{
-    name=Binärbaum,
-    plural=Binärbäume,
-    description={Binärbaume sind Graphen, die eine spezielle Baumstruktur aufweisen, bei welcher jeder Knoten maximal zwei Kinder besitzt. In diesem Kontext wird stellt die Verteilung eines Jobs auf dem Kernen eine solche Binärbaumstruktur dar}
-}
 
 \newglossaryentry{Dropdown-Menue}{
     name=Dropdown-Menü,
     plural=Dropdown-Menüs,
-    description={}
+    description={Das Dropdown-Menü ist eine spezielle Form eines Auswahlmenüs. Nach dem Klick auf einen entsprechenden Button oder durch die Berührung mit dem Mauszeiger erscheint eine Auswahlliste auf dem Bildschirm. Durch einen weiteren Klick auf den gewünschten Menüpunkt wird dieser aufgerufen}
 }
 
 \newglossaryentry{URL}{
     name=URL,
     plural=URLs,
-    description={}
+    description={Die URL (Uniform Resource Locator) ist die Adresse einer einzelnen Webseite}
 }
 
 
 %--------------neue glossareinträge ab 26.05.2022
 
+\newglossaryentry{Checkbox}{
+    name=Checkbox,
+    plural={Checkboxen},
+    description={Eine Checkbox ist ein Kästchen, welches 'gecheckt' werden kann, also betätigt oder nicht betätigt. Im falle des clickens einer Checkbox wird ein Haken in die Checkbox gesetzt (die Checkbox ist bestätigt), welcher bestehen bleibt, bis die checkbox ein weiteres mal geklickt wird (Checkbox ist nicht mehr bestätigt)}
+}
+
+\newglossaryentry{Nutzername}{
+    name=Nutzername,
+    plural=Nutzernamen,
+    description={Der Nutzername ist derjenige Name, mit dem sich ein \gls{Nutzer} im System registriert und mit dem er auch referenziert wird.}
+}
+
 
 \newglossaryentry{Model-View-Controller}{
     name=Model-View-Controller,
-    description={Model-View-Controller beschreibt ein Konzept aus der Softwaretechnik, nachdem eine Software in drei Komponenten aufgeteilt wird.}
+    description={Model-View-Controller beschreibt ein Konzept aus der Softwaretechnik, nachdem eine Software in drei Komponenten aufgeteilt wird}
     }
     
 \newglossaryentry{API-Anfrage}{
-    name=
+    name= API-Anfrage,
+    description={Eine API-Anfrage ist die Benutzung der API durch einen Nutzer}%TODO : was??
 }
 
-\newglossaryentry{Test}{
-    name=URL,
-    plural=URLs,
-    description={}
+\newglossaryentry{Testueberdeckung}{
+    name=Testüberdeckung,
+    plural=Testüberdeckungen,
+    description={Die Testüberdeckung eines Programmes beschreibt den prozentualen Anteil der Codezeilen, die durch mindestens einen Testfall überprüft werden}
+}
+
+
+\newglossaryentry{Betriebssystem}{
+    name=Betriebssystem,
+    plural=Betriebssysteme,
+    description={Ein Betriebssystem ist eine Software, die eine Schnittstelle zwischen der Hard- und Software des Computers herstellt und das Ausführen von Programmen ermöglicht}
+}
+
+\newglossaryentry{k-Means}{
+    name={k-Means},
+    description={Ein k-Means Algorithmus ist ein verfahren zur Vektorquantisierung, das auch zur Clusteranalyse verwendet wird. Dabei wird aus einer Menge von ähnlichen Objekten eine vorher bekannte Anzahl von k Gruppen gebildet}
+}
+
+\newglossaryentry{SAT}{
+    name=SAT,
+    description={SAT steht für Statisfyability und beschreibt ein NP-Schweres Problem. Eine SAT-Probleminstanz besteht aus einer Klauselmenge $C$ und einer Variablenmenge $V$. Eine Erfüllende Lösung für eine SAT-Instanz weißt jeder Variable $v \in V$ eine Belegung $b \in \{0,1\}$ zu, sodass alle Klauseln erfüllt sind}
+}
+
+\newglossaryentry{NP-schweres Problem}{
+    name={NP-schweres Problem},
+    plural={NP-schwere Probleme},
+    description={NP-Schwere bezeichnet die Eigenschaft eines algorithmischen Problems, mindestens so schwer lösbar zu sein, wie die Probleme der Klasse NP. Die Klasse NP beinhaltet Probleme, für deren Lösung keine Algorithmen in Polynomialzeit bekannt sind} 
+}
+
+
+\newglossaryentry{Versionsverwaltung}{
+    name=Versionsverwaltung,
+    plural=Versionsverwaltungen,
+    description={Eine Versionsverwaltung ist ein Programm, das zur Erfassung von Änderungen an Dokumenten oder Dateien verwendet wird. Es ist somit möglich, Änderungen rückgängig zu machen und alte Versionen wiederherzustellen}
+}
+
+\newglossaryentry{Systemzustand}{
+    name=Systemzustand,
+    description={Der Systemzustand beschreibt die Aktuelle Einstellung des Systems. Jede Einstellung, jede gespiecherte Variable}
+}
+
+\newglossaryentry{Prozess}{
+    name=Prozess,
+    plural=Prozesse,
+    description={Ein Prozess, auch Programminstanz genannt, ist ein Computerprogramm zur Laufzeit. Genauer ist ein Prozess die konkrete Instanziierung eines Programms}
+}
+
+\newglossaryentry{Binaerbaum}{
+    name={Binärbaum},
+    plural={Binärbäume},
+    description={Ein Binärbaum ist, im Sinne der Graphentheorie, ein zusammenhängender, kreisfreier Graph, welcher für jeden Knoten höchstens Ausgansgrad 2 aufweist. In unserem Fall sprechen wir speziell von balancierten Binär-Bäumen, dass heißt, dass die Höhe des Baumes (die maximal mögliche Länge eines Weges, der in der Wurzel endet), durch $c*log(n)$ beschränkt ist (dabei ist $c$ eine Konstante und $n$ die Anzahl der Elemente im Baum)}
+}
+
+\newglossaryentry{Teilbaum}{
+    name={Teilbaum},
+    plural={Binär-Bäume},
+    description={Ein Teilbaum ist, im Sinne der Graphentheorie, ein Baum, dessen Wurzel ein Konten eines anderen Baumes ist}
+}
+
+
+\newglossaryentry{Plugin}{
+    name=Plugin, 
+    plural=Plugins,
+    description={Ein Plug-In ist ein Softwareprogramm, auf das von anderen Softwareanwendungen zugegriffen werden kann, um deren Funktionalität zu erweitern}
 }
