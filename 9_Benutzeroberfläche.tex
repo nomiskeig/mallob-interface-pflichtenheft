@@ -1,7 +1,7 @@
 \section{Benutzeroberfläche}
 %[TODO: remove this link] https://tex.stackexchange.com/questions/442077/is-it-possible-to-use-svg-images-with-overleaf
 
-Bei den Abbildungen handelt sich hier lediglich um Entwürfe des Web-Interfaces. Dementsprechend sind Änderungen im Design vorbehalten. Das finale Produkt kann also von diesen Entwürfen abweichen.\\
+Bei den Abbildungen handelt sich hier lediglich um Entwürfe des \gls{Web-Interface}s. Dementsprechend sind Änderungen im Design vorbehalten. Das finale Produkt kann also von diesen Entwürfen abweichen.\\
 Man beachte, dass in den Entwürfen auch Funktionalität zu sehen ist, welche aus Wunschkriterien stammen. Diese sind hier nicht gesondert markiert oder hervorgehoben. Die auf diesen Entwürfen enthaltenen Markierungen (Kreise mit Zahlen und rotem Rand) dienen lediglich zur Lokalisierung der Erläuterungen und werden nicht im finalen Produkt enthalten sein.
 \subsection{Anmeldung}
 \label{pages:login}
@@ -82,7 +82,7 @@ Der Inhalt des nebenstehenden Fensters stimmt mit dem der \hyperref[pages:job-pa
     \caption{Alternative Ansicht der Job-Tabelle}
 \end{figure}
 Bei dieser alternativen Ansicht der \hyperref[pages:job-table]{Job-Tabelle} werden beim Anklicken eines \hyperref[B:Jobs]{Jobs} die \hyperref[B:Job-Informationen]{Job-Informationen} in einem aufgeklapptem Fenster unterhalb der Zeile des angeklickten \hyperref[B:Jobs]{Jobs} angezeigt. Der Informationsgehalt und die Funktionalität dieser Ansicht ist identisch mit der  \hyperref[pages:job-table-default]{Standard-Ansicht}. \\
-Diese alternative Ansicht kann somit auch immer genutzt werden, wenn die \hyperref[pages:job-table]{Job-Tabelle} referenziert wird, nur eben mit dem Unterschied, das die Information eines angeklickten \hyperref[B:Jobs]{Jobs} im aufgeklappten Fenster angezeigt werden.
+Diese alternative Ansicht kann somit auch immer genutzt werden, wenn die \hyperref[pages:job-table]{Job-Tabelle} referenziert wird, nur eben mit dem Unterschied, das die \hyperref[B:Job-Informationen]{Information} eines angeklickten \hyperref[B:Jobs]{Jobs} im aufgeklappten Fenster angezeigt werden.
 Zu jedem Zeitpunkt ist immer nur maximal ein \hyperref[B:Jobs]{Job} aufgeklappt. Sollte bereits ein \hyperref[B:Jobs]{Job} aufgeklappt sein, so wird er wieder eingeklappt, wenn ein anderer aufgeklappt wird.\\
 
 
@@ -114,12 +114,13 @@ Auf dieser Seite können neue \hyperref[B:Jobs]{Jobs} eingereicht werden. Es gib
     \caption{Info-Seite eines \hyperref[B:Jobs]{Jobs}}
     \label{fig:job-page}
 \end{figure}
-Diese Seite bietet eine Übersicht über einen einzelnen \hyperref[B:Jobs]{Job}. Es werden die \hyperref[B:Job-Konfiguration]{Job-Konfiguration}, die \hyperref[B:Job-Beschreibung]{Job-Beschreibung}, die Abhängigkeiten, der Zeitpunkt des Einreichens und der aktuelle \hyperref[B:Job-Status]{Status} angezeigt. Weiterhin besteht die die Möglichkeit, das \hyperref[B:Job-Ergebnis]{Ergebnis} eines abgeschlossenen \hyperref[B:Jobs]{Jobs} herunterzuladen. Man gelangt zu dieser Seite gemäß \hyperref[FA:Web-Interface:Einsehen von Job-Informationen]{F2140}.
+Diese Seite bietet eine Übersicht über einen einzelnen \hyperref[B:Jobs]{Job}. Es werden die \hyperref[B:Job-Konfiguration]{Job-Konfiguration}, die \hyperref[B:Job-Beschreibung]{Job-Beschreibung}, die Abhängigkeiten, der Zeitpunkt des Einreichens und der aktuelle \hyperref[B:Job-Status]{Status} angezeigt. Weiterhin besteht die die Möglichkeit, das \hyperref[B:Job-Ergebnis]{Ergebnis} eines abgeschlossenen \hyperref[B:Jobs]{Jobs} herunterzuladen.
 
 \textbf{Erläuterungen}
 \begin{itemize}
     \item[1)] Hier werden möglicherweise noch weitere, für diesen \hyperref[B:Jobs]{Job} gewählte optionale Parameter angezeigt.
-    \item[2)] Über diese Schaltfläche kann das \hyperref[B:Job-Ergebnis]{Ergebnis} gemäß \hyperref[FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses]{F2040} heruntergeladen werden. Man beachte, dass diese Schaltfläche nur bei abgeschlossenen \hyperref[B:Jobs]{Jobs} verfügbar ist. Bei laufenden \hyperref[B:Jobs]{Jobs} bietet sie die Möglichkeit, den \hyperref[B:Jobs]{Job} gemäß \hyperref[FA:Web-Interface:Abbruch eines einzelnen Jobs]{F2020} abzubrechen. Bei abgebrochenen \hyperref[B:Jobs]{Jobs} bietet sie die Möglichkeit, den \hyperref[B:Jobs]{Job} gemäß \hyperref[Neustart eines abgebrochenen Jobs]{F2130} neuzustarten.
+    \item[2)] Über diese Schaltfläche kann das \hyperref[B:Job-Ergebnis]{Ergebnis} gemäß \hyperref[FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses]{F2040} heruntergeladen werden. Man beachte, dass diese Schaltfläche nur bei abgeschlossenen \hyperref[B:Jobs]{Jobs} verfügbar ist. Bei laufenden \hyperref[B:Jobs]{Jobs} bietet sie die Möglichkeit, den \hyperref[B:Jobs]{Job} gemäß \hyperref[FA:Web-Interface:Abbruch eines einzelnen Jobs]{F2020} abzubrechen. Bei abgebrochenen \hyperref[B:Jobs]{Jobs} bietet sie die Möglichkeit, den \hyperref[B:Jobs]{Job} gemäß \hyperref[FA:Web-Interface:Neustart]{F2130} neuzustarten
+    \item[3)] Hier wird die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} angezeigt. Wurde diese ursprünglich nicht direkt über das Textfeld eingegeben, so wird hier stattdessen eine Schaltfläche zum Herunterladen der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} angezeigt.
 \end{itemize}
 
 \newpage
@@ -128,16 +129,30 @@ Diese Seite bietet eine Übersicht über einen einzelnen \hyperref[B:Jobs]{Job}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{images-interface/v6_interface/visualization_page_6.pdf}
-    \caption{Visualisierung des Systems}
+    \caption{Visualisierung des Systems und Anzeigen von Details}
     \label{fig:visualization-page}
 \end{figure}
-Diese Seite visualisiert den \hyperref[B:Systemzustand]{Systemzustand}. Im linken Fenster ist die Ansicht der \glspl{Prozess} und zugeordneten \hyperref[B:Jobs]{Jobs} zu sehen. Das Fenster rechts ist zunächst leer. Es wird, wie hier zu sehen, erst mit \hyperref[B:Job-Informationen]{Job-Informationen} gefüllt, wenn der \gls{Nutzer} auf einen Prozess im Fenster links klickt. Dann werden zu diesem einen Prozess der Rank, die Größe des \glslink{Binaerbaum}{Binärbaumes}, die Größe des ausgewählten \glslink{Teilbaum}{Teilbaumes} und Informationen über den \gls{Nutzer} angezeigt.\\
+Auf dieser Seite befindet sich im linken Fenster die Visualisierung des \hyperref[B:Systemzustand]{Systemzustandes}. Das Fenster rechts ist zunächst leer. Es wird, wie hier zu sehen, erst mit \hyperref[B:Job-Details]{Job-Details} gefüllt, wenn der \gls{Nutzer} auf einen Prozess im Fenster links klickt. Dann werden zu diesem einen Prozess der Rank, die Größe des \glslink{Binaerbaum}{Binärbaumes}, die Größe des ausgewählten \glslink{Teilbaum}{Teilbaumes} und Informationen über den \gls{Nutzer} angezeigt.\\
+
+\textbf{Elemente der Visualisierung}
+
+\phantomsection
+\label{vis:appearance}
+\begin{itemize}[noitemsep]
+        \item Es werden alle aktiven \hyperref[B:Jobs]{Jobs} im System angezeigt.
+        \item Die \glslink{Prozess}{Prozesse} werden als einzelne Punkte dargestellt, ein Punkt je \gls{Prozess}.
+        \item Jeder \hyperref[B:Jobs]{Job} bekommt eine eigene Farbe, alle \glslink{Prozess}{Prozesse}, die diesen \hyperref[B:Jobs]{Job} bearbeiten, werden gleich gefärbt.
+        \hyperref[B:Jobs]{Jobs} von anderen Nutzern werden grau dargestellt, außer ein \gls{Administrator} ist angemeldet.
+        \item Die Punkte werden entsprechend der Position im \glslink{Binaerbaum}{Binärbaum} des \hyperref[B:Jobs]{Jobs} verbunden.
+        \item Die Größe der Punkte und Verbindungen entspricht der Position im \glslink{Binaerbaum}{Binärbaum} des  \hyperref[B:Jobs]{Jobs}.
+\end{itemize}
+
 
 \textbf{Erläuterungen}
 \begin{itemize}
-    \item[1)] Verwendet Mallob mehr \glspl{Prozess} als auf dieser Seite angezeigt werden können, so erscheint eine Scrollbar, mithilfe derer die Ansicht vertikal verschoben werden kann.
-    \item[2)] Hier findet die eigentliche Visualisierung gemäß \hyperref[FA:Web-Interface:Verifizieren eines Kontos]{FA3000} statt. In diesem Falle ist ein \gls{Administrator} angemeldet (erkennbar daran, dass die Schaltfläche \enquote{Administration} in der Navigations-Leiste sichtbar ist), daher sind alle \hyperref[B:Jobs]{Jobs} farbig und nicht in Grautönen. Für einen nicht-\gls{Administrator} werden \hyperref[B:Jobs]{Jobs} von anderen Nutzern pseudonymisiert und grau angezeigt.
-    \item[3)] Hier wird gemäß \hyperref[FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job]{FA3010} der \gls{Binaerbaum} aus ausgewählten \hyperref[B:Jobs]{Jobs} angezeigt.
+    \item[1)] Verwendet \gls{Mallob} mehr \glspl{Prozess} als auf dieser Seite angezeigt werden können, so erscheint eine Scrollbar, mithilfe derer die Ansicht vertikal verschoben werden kann.
+    \item[2)] Hier findet die eigentliche Visualisierung gemäß \hyperref[FA:Visualisierung:Anzeigen des Systemzustandes]{FA3000} statt. In diesem Falle ist ein \gls{Administrator} angemeldet (erkennbar daran, dass die Schaltfläche \enquote{Administration} in der Navigations-Leiste sichtbar ist), daher sind alle \hyperref[B:Jobs]{Jobs} farbig und nicht in Grautönen. Für einen nicht-\gls{Administrator} werden \hyperref[B:Jobs]{Jobs} von anderen Nutzern pseudonymisiert und grau angezeigt.
+    \item[3)] Hier wird gemäß \hyperref[FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job]{FA3060} der \gls{Binaerbaum} des ausgewählten \hyperref[B:Jobs]{Jobs} angezeigt.
     \item[4)] Informationen über den \gls{Nutzer}, dem der \hyperref[B:Jobs]{Job} gehört. Wird nur angezeigt, da ein \gls{Administrator} angemeldet ist.
 \end{itemize}
 
@@ -173,9 +188,9 @@ Diese Seite dient der Verwaltung des Systems. Sie ist nur für angemeldete \glsp
 
 \textbf{Erläuterungen}
 \begin{itemize}
-    \item[1)] Hier wird kann die Instanz von Mallob verwaltet.
-    \item[2)] Hier werden gemäß \hyperref[FA:Web-Interface:Anzeigen von Warungen und Fehlermeldungen]{FA2110} Warnungen und Fehlermeldungen angezeigt, die Mallob ausgibt.
-    \item[3)] Hier werden gemäß \hyperref[FA:Web-Interface:Anzeigen von Diagnosedaten]{F2165} Diagnose-Daten angezeigt.
+    \item[1)] Hier kann die Instanz von \gls{Mallob} verwaltet werden.
+    \item[2)] Hier werden gemäß \hyperref[FA:Web-Interface:Anzeigen von Warnungen und Fehlermeldungen]{F2070} Warnungen und Fehlermeldungen angezeigt, die \gls{Mallob} ausgibt.
+    \item[3)] Hier werden gemäß \hyperref[FA:Web-Interface:Anzeigen von Diagnosedaten]{F2165} der Graph der Auslastung angezeigt.
 \end{itemize}
 
 %\newpage

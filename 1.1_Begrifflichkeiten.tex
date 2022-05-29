@@ -1,14 +1,14 @@
 \section{Begrifflichkeiten}
-%Erklärung von Begrifflichkeiten, die nicht von uns stammen (von mallob)
+%Erklärung von Begrifflichkeiten, die nicht von uns stammen (von \gls{Mallob})
 
 \subsection{Jobs}
 \label{B:Jobs}
-
-Jobs sind die Instanzen, die von Mallob verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus Sicht des \glslink{Nutzer}{Nutzers} aus der Job-Konfiguration und der Job-Beschreibung.
+i
+Jobs sind die Instanzen, die von \gls{Mallob} verarbeitet werden. Ein einzelner Job stellt ein einzelnes zu lösendes Problem dar. Ein Job besteht aus Sicht des \glslink{Nutzer}{Nutzers} aus der Job-Konfiguration und der Job-Beschreibung.
 
 \subsection{Job-Konfiguration}
 \label{B:Job-Konfiguration}
-Die Job-Konfiguration besteht aus Parametern, welche von Mallob bei der Bearbeitung des Jobs beachtet werden. Die notwendigen Parameter müssen immer genannt werden.\\
+Die Job-Konfiguration besteht aus Parametern, welche von \gls{Mallob} bei der Bearbeitung des Jobs beachtet werden. Die notwendigen Parameter müssen immer genannt werden.\\
 Die Job-Konfiguration besteht aus folgenden Parametern: \\
 
 \begin{tabular}{lL{0.6\textwidth}l}
@@ -17,10 +17,10 @@ Die Job-Konfiguration besteht aus folgenden Parametern: \\
         name & Der Name des Jobs & Ja\\
         priority & Die Prioriät des Jobs & Ja\\
         application & Das Anwendungsfeld des Jobs & Ja\\ 
-        max-demand & Die maximaler Anzahl paralleler Prozesse, die dieser Job nutzen kann & Nein\\
+        max-demand & Die maximaler Anzahl paralleler \glslink{Prozess}{Prozesse}, die dieser Job nutzen kann & Nein\\
         wallclock-limit & Zeitliches Ausführungsbudget des Jobs & Nein\\
         cpu-limit & Corestunden-Ausführungsbudget des Jobs & Nein\\
-        arrival & Frühester Bearbeitungsbeginn in Sekunden seit Start von Mallob & Nein\\
+        arrival & Frühester Bearbeitungsbeginn in Sekunden seit Start von \gls{Mallob} & Nein\\
         dependencies & Jobs, die abgeschlossen sein müssen, bevor dieser Job beginnt & Nein\\
         incremental & Handelt es sich um einen Job mit mehreren Revisionen oder Inkrementen? &  Nein\\
         precursor & Vorgänger-Job bei inkrementellen Jobs & Nein\\
@@ -32,23 +32,23 @@ Die Job-Konfiguration besteht aus folgenden Parametern: \\
     
 \subsection{Job-Beschreibung}
 \label{B:Job-Beschreibung}
-Die Job-Beschreibung enthält die Daten, die das eigentliche Problem beschreiben, das von Mallob gelöst werden soll. Ein Beispiel wäre eine Instanz von \gls{SAT}.
+Die Job-Beschreibung enthält die Daten, die das eigentliche Problem beschreiben, das von \gls{Mallob} gelöst werden soll. Ein Beispiel wäre eine Instanz von \gls{SAT}.
 
 \subsection{Job-Ergebnis}
 \label{B:Job-Ergebnis}
-Das Job-Ergebnis enthält nur das rohe Ergebnis des Jobs, nicht noch etwaige Meta-Informationen, die Mallob mit dem Ergebnis liefert.
+Das Job-Ergebnis enthält nur das rohe Ergebnis des Jobs, nicht noch etwaige Meta-Informationen, die \gls{Mallob} mit dem Ergebnis liefert.
 
 \subsection{Job-Informationen}
 \label{B:Job-Informationen}
-Job-Informationen sind alle Informationen über einen Job, die nicht von der internen Bearbeitung des Jobs durch Mallob abhängen und nicht das Ergebnis des Jobs sind, wie etwa die Job-Konfiguration, die Job-Beschreibung, der Einreichezeitpunkt des Jobs, den Job-Status und die Meta-Daten des Ergebnisses, wenn diese vorhanden sind. Diese Meta-Daten werden von Mallob mit dem eigentlich Ergebnis geliefert und sie enthalten beispielsweise Informationen darüber, wie viel Zeit der Job zum Lösen in Anspruch genommen hat.
+Job-Informationen sind alle Informationen über einen Job, die nicht von der internen Bearbeitung des Jobs durch \gls{Mallob} abhängen und nicht das Ergebnis des Jobs sind, wie etwa die Job-Konfiguration, die Job-Beschreibung, der Einreichezeitpunkt des Jobs, den Job-Status und die Meta-Daten des Ergebnisses, wenn diese vorhanden sind. Diese Meta-Daten werden von \gls{Mallob} mit dem eigentlich Ergebnis geliefert und sie enthalten beispielsweise Informationen darüber, wie viel Zeit der Job zum Lösen in Anspruch genommen hat.
 
 \subsection{Event}
 \label{B:Event}
-Ein Event ist eine Veränderung im internen Systemzustand von Mallob, z.B. ein Prozess beginnt mit der Bearbeitung eines Jobs, oder ein Prozess beginnt mit der Bearbeitung eines anderen Jobs als zuvor. 
+Ein Event ist eine Veränderung im internen Systemzustand von \gls{Mallob}, z.B. ein \gls{Prozess} beginnt mit der Bearbeitung eines Jobs, oder ein \gls{Prozess} beginnt mit der Bearbeitung eines anderen Jobs als zuvor. 
 
 \subsection{Job-Details}
 \label{B:Job-Details}
-Job-Details werden aus Job-Events abgeleitet und sind somit Informationen, die nur die interne Verarbeitung von Mallob betreffen, zum Beispiel wie viele Prozesse gerade an einem Job arbeiten und welche Prozesse gerade an einem Job arbeiten. 
+Job-Details werden aus Job-Events abgeleitet und sind somit Informationen, die nur die interne Verarbeitung von \gls{Mallob} betreffen, zum Beispiel wie viele \glslink{Prozess}{Prozesse} gerade an einem Job arbeiten und welche \glslink{Prozess}{Prozesse} gerade an einem Job arbeiten. 
 
 \subsection{Systemzustand}
 \label{B:Systemzustand}
@@ -56,11 +56,11 @@ Der Systemzustand setzt sich aus den Job-Details aller Jobs im System zusammen.
 
 \subsection{Job-Typ}
 \label{B:Job-Typ}
-Der Job-Typ beschreibt die Art des Problems, welches der Job lösen soll. Der Standard-Typ für jeden Job ist SAT.
+Der Job-Typ beschreibt die Art des Problems, welches der Job lösen soll. Der Standard-Typ für jeden Job ist \gls{SAT}.
 
 \subsection{Job-Status}
 \label{B:Job-Status}
-Der Status eines Jobs beschreibt seinen aktuellen Zustand: 
+Der Status eines Jobs beschreibt seinen aktuellen Zustand. Folgende Zustände sind möglich:
 \begin{itemize}[noitemsep]
     \item In Bearbeitung
     \item Abgeschlossen
@@ -70,3 +70,4 @@ Der Status eines Jobs beschreibt seinen aktuellen Zustand:
 \subsection{Job-ID}
 \label{B:Job-ID}
 Die Job-ID ist eine Referenz auf den Job. Die Job-ID ist immer eindeutig.
+

@@ -1,62 +1,60 @@
 \section{Testfälle und Testszenarien}
-Für jede Funktion existiert mindestens ein atomarer Testfall. Neben jedem Testfall wird aufgelistet, welche Funktion dieser abdeckt. Die Testfälle werden, wie die korrespondierenden Anforderungen, in \gls{API}-Testfälle, \gls{Web-Interface}-Testfälle und Visualisierung-Testfälle unterschieden.
+Für jede Funktion existiert mindestens ein atomarer Testfall. Neben jedem Testfall steht, welche Funktion dieser abdeckt. Die Testfälle werden, wie die korrespondierenden Anforderungen, in \gls{API}-Testfälle, \gls{Web-Interface}-Testfälle und Visualisierung-Testfälle unterschieden.
 
 \subsection{API-Testfälle}
 
 
 \begin{itemize}
 
-    \item[\textbf{T1010}] (gewünscht) Einen neuen \gls{Nutzer} registrieren. (F1150)
+    \item[\textbf{T1000}] (gewünscht) Einen neuen \gls{Nutzer} registrieren. (\hyperref[FA:API:Registrierung von Nutzern]{F1150})
     
-    \item[T1020] \textbf{Einen \gls{Nutzer} authentifizieren.} (F1000)
+    \item[\textbf{T1010}] Einen \gls{Nutzer} authentifizieren. (\hyperref[FA:API:Authentifizieren von Nutzern]{F1000})
     
-    \item[T1021] \textbf{Einen \gls{Administrator} authentifizieren.} (F1000)
+    \item[\textbf{T1011}] Einen \gls{Administrator} authentifizieren. (\hyperref[FA:API:Authentifizieren von Nutzern]{F1000})
     
-    \item[T1022] \textbf{Einen \gls{Nutzer} mit fehlerhaften Zugangsdaten authentifizieren.} (F1000)
+    \item[\textbf{T1012}] Einen \gls{Nutzer} mit fehlerhaften Zugangsdaten authentifizieren. (\hyperref[FA:API:Authentifizieren von Nutzern]{F1000})
     
-    \item[T1030] \textbf{Einen \hyperref[B:Jobs]{Job} mit separater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.} (F1010)
+    \item[\textbf{T1020}] Einen \hyperref[B:Jobs]{Job} mit separater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. (\hyperref[FA:API:Einreichen von Jobs]{F1010})
     
-    \item[T1031] \textbf{Einen \hyperref[B:Jobs]{Job} mit enthaltener \hyperref[B:Job-Beschreibung]{Job-Beschreibung} einreichen.} (F1010)
+    \item[\textbf{T1021}] Einen \hyperref[B:Jobs]{Job} mit enthaltener \hyperref[B:Job-Beschreibung]{Job-Beschreibung} einreichen. (\hyperref[FA:API:Einreichen von Jobs]{F1010})
     
-    \item[T1032] (gewünscht) \textbf{Einen \hyperref[B:Jobs]{Job} mit einem Link, der auf eine \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei verweist, einreichen.} (F1010)
+    \item[\textbf{T1022}] (gewünscht) Einen \hyperref[B:Jobs]{Job} mit einem Link, der auf eine \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei verweist, einreichen. (\hyperref[FA:API:Einreichen von Jobs]{F1010})
     
-    \item[T1033] (gewünscht)\textbf{Einen bereits eingereichten aber abgebrochenen \hyperref[B:Jobs]{Job} mit einer Referenz auf Diesen erneut einreichen.} (F1010)
+    \item[\textbf{T1023}] (gewünscht) Einen bereits eingereichten aber abgebrochenen \hyperref[B:Jobs]{Job} mit einer Referenz auf diesen erneut einreichen. (\hyperref[FA:API:Einreichen von Jobs]{F1010})
     
-    \item[T1034] \textbf{Einen fehlerhaften \hyperref[B:Jobs]{Job} einreichen.} (F1010)
+    \item[\textbf{T1024}] Einen fehlerhaften \hyperref[B:Jobs]{Job} einreichen. (\hyperref[FA:API:Einreichen von Jobs]{F1010})
     
-    \item[T1040] \textbf{Einen eingereichten \hyperref[B:Jobs]{Job} abbrechen.} (F1020)
+    \item[\textbf{T1030}] Einen eingereichten \hyperref[B:Jobs]{Job} abbrechen. (\hyperref[FA:API:Abbrechen von eingereichten Jobs]{F1020})
     
-    \item[T1060] (gewünscht) \textbf{Mallob starten.} (F1120)
+    \item[\textbf{T1040}] (gewünscht) \gls{Mallob} starten. (\hyperref[FA:API:Starten von \gls{Mallob}]{F1120})
     
-    \item[T1070] (gewünscht) \textbf{Mallob stoppen.} (F1130)
+    \item[\textbf{T1050}] (gewünscht) \gls{Mallob} stoppen. (\hyperref[FA:API:Stoppen von \gls{Mallob}]{F1130})
     
-    \item[T1080] (gewünscht) \textbf{Mallob neustarten.} (F1140)
+    \item[\textbf{T1060}] (gewünscht) \gls{Mallob} neustarten. (\hyperref[FA:API:Neustart von \gls{Mallob}]{F1140})
     
-    \item[T1100] \textbf{Information über einen \hyperref[B:Jobs]{Job} abfragen.} (F1030)
+    \item[\textbf{T1070}] Information über einen \hyperref[B:Jobs]{Job} abfragen. (\hyperref[FA:API:Abfragen der Informationenen von Jobs]{F1030})
     
-    \item[T1101] \textbf{Informationen über mehrere \hyperref[B:Jobs]{Jobs} abfragen.} (F1030)
+    \item[\textbf{T1071}] Informationen über mehrere \hyperref[B:Jobs]{Jobs} abfragen. (\hyperref[FA:API:Abfragen der Informationenen von Jobs]{F1030})
     
-    \item[T1110] \textbf{Ergebnis von einem bearbeiteten \hyperref[B:Jobs]{Job} ausgeben.} (F1060)
+    \item[\textbf{T1080}] Ergebnis von einem bearbeiteten \hyperref[B:Jobs]{Job} ausgeben. (\hyperref[FA:API:Ausgeben des Ergebnisses für eine oder mehrere Jobs]{F1060})
     
-    \item[T1111] \textbf{Ergebnisse von mehreren bearbeiteten \hyperref[B:Jobs]{Jobs} ausgeben.} (F1060)
+    \item[\textbf{T1081}] Ergebnisse von mehreren bearbeiteten \hyperref[B:Jobs]{Jobs} ausgeben. (\hyperref[FA:API:Ausgeben des Ergebnisses für eine oder mehrere Jobs]{F1060})
     
-    \item[T1120] \textbf{\hyperref[B:Job-Beschreibung]{Job-Beschreibung} von einem eingereichten \hyperref[B:Jobs]{Job} ausgeben.} (F1070)
+    \item[\textbf{T1090}] \hyperref[B:Job-Beschreibung]{Job-Beschreibung} von einem eingereichten \hyperref[B:Jobs]{Job} ausgeben. (\hyperref[FA:API:Ausgeben der Job-Beschreibung]{F1070})
     
-    \item[T1121] \textbf{\hyperref[B:Job-Beschreibung]{Job-Beschreibungen} von mehreren eingereichten \hyperref[B:Jobs]{Jobs} ausgeben.} (F1070)
+    \item[\textbf{T1091}] \hyperref[B:Job-Beschreibung]{Job-Beschreibungen} von mehreren eingereichten \hyperref[B:Jobs]{Jobs} ausgeben. (\hyperref[FA:API:Ausgeben der Job-Beschreibung]{F1070})
     
-    \item[T1130] \textbf{Informationen über Mallob durch einen \gls{Administrator} abfragen.} (F1080)
+    \item[\textbf{T1100}] Informationen über \gls{Mallob} durch einen \gls{Administrator} abfragen. (\hyperref[FA:API:Abfragen der Informationen von \gls{Mallob}]{F1080})
     
-    \item[T1140] \textbf{Einen \hyperref[B:Event]{Event}-\gls{Stream} von Mallob ausgeben.} (F1090)
+    \item[\textbf{T1110}] Einen \hyperref[B:Event]{Event}-\gls{Stream} von \gls{Mallob} ausgeben. (\hyperref[FA:API:Ausgeben eines Event-Streams von \gls{Mallob}]{F1090})
+
+    \item[\textbf{T1120}] Einstellungen abrufen. (\hyperref[FA:API:Abrufen von Einstellungen]{F1100})
     
-%    \item[T1150] \textbf{Priorität eines Nutzers durch einen \gls{Administrator} ändern.} (F1140)
+    \item[\textbf{T1130}] Systemzustand ausgeben. (\hyperref[FA:API:Ausgeben eines Systemzustandes]{F1040})
     
-    \item[T1160] \textbf{Einstellungen abrufen.} (F1100)
+    \item[\textbf{T1140}] Vergangene Events ausgeben. (\hyperref[FA:API:Ausgeben von vergangenen Events]{F1050})
     
-    \item[T1170] Systemzustand ausgeben. (F1040)
-    
-    \item[T1180] Vergangene Events ausgeben. (F1050)
-    
-    \item[T1190] Job-Status eines Jobs durchgehend abfragen. (F1110)
+    \item[\textbf{T1150}] Job-Status eines Jobs durchgehend abfragen. (\hyperref[FA:API:Andauernde Abfrage des Ergebnisses eines Jobs]{F1110})
     
     
 
@@ -65,373 +63,274 @@ Für jede Funktion existiert mindestens ein atomarer Testfall. Neben jedem Testf
 \subsection{\gls{Web-Interface} Testfälle}
 
 \begin{itemize}
-    \item[T2010] \textbf{\gls{Nutzer} anmelden.} (F2000)
+    \item[\textbf{T2000}] \gls{Nutzer} anmelden. (\hyperref[FA:Web-Interface:Anmelden]{F2000})
     
-    \item[T2011] \textbf{\gls{Administrator} anmelden.} (F2000)
+    \item[\textbf{T2001}] \gls{Administrator} anmelden. (\hyperref[FA:Web-Interface:Anmelden]{F2000})
     
-    \item[T2020] (gewünscht) \textbf{\gls{Nutzer} registrieren.} (F2010)
+    \item[\textbf{T2010}] \hyperref[B:Jobs]{Job} mit zugehöriger \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen. (\hyperref[FA:Web-Interface:Job einreichen]{F2010})
     
-    \item[T2030] \textbf{\hyperref[B:Jobs]{Job} mit zugehöriger \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen.} (F2020)
+    \item[\textbf{T2011}] \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. (\hyperref[FA:Web-Interface:Job einreichen]{F2010})
     
-    \item[T2031] \textbf{\hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.} (F2020)
+    \item[\textbf{T2020}] Einen \hyperref[B:Jobs]{Job} über die Job-Tabelle abbrechen. (\hyperref[FA:Web-Interface:Abbruch eines einzelnen Jobs]{F2020})
     
-    \item[T2032] (gewünscht) \textbf{\hyperref[B:Jobs]{Job} mit Angabe einer \gls{URL} einreichen.} (F2020)
+    \item[\textbf{T2021}] Einen \hyperref[B:Jobs]{Job} über die Job-Seite abbrechen. (\hyperref[FA:Web-Interface:Abbruch eines einzelnen Jobs]{F2020})
     
-    \item[T2040] \textbf{Einen \hyperref[B:Jobs]{Job} über die Job-Tabelle abbrechen.} (F2030)
+    \item[\textbf{T2030}] Mehrere \hyperref[B:Jobs]{Jobs} über die Job-Tabelle abbrechen. (\hyperref[FA:Web-Interface:Abbruch mehrerer Jobs auf einmal]{F2030})
     
-    \item[T2041] \textbf{Einen \hyperref[B:Jobs]{Job} über die Job-Seite abbrechen.} (F2040)
+    \item[\textbf{T2040}] Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Tabelle herunterladen. (\hyperref[FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses]{F2040})
     
-    \item[T2050] \textbf{Mehrere \hyperref[B:Jobs]{Jobs} über die Job-Tabelle abbrechen.} (F2040)
+    \item[\textbf{T2041}] Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Seite herunterladen. (\hyperref[FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses]{F2040})
     
-    \item[T2060] (gewünscht) \textbf{Einen abgebrochenen \hyperref[B:Jobs]{Job} über die Job-Tabelle neustarten.} (F2050)
+    \item[\textbf{T2050}] Ergebnis mehrerer \hyperref[B:Jobs]{Jobs} über die Job-Tabelle herunterladen. (\hyperref[FA:Web-Interface:herunterladen mehrerer Ergebnisse auf einmal]{F2050})
     
-    \item[T2061] (gewünscht) \textbf{Einen abgebrochenen \hyperref[B:Jobs]{Job} über die Job-Seite neustarten.} (F2050)
+    \item[\textbf{T2060}] Fehler anzeigen. (\hyperref[FA:Web-Interface:Anzeigen von Fehlern]{F2060})
     
-    \item[T2070] \textbf{Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Tabelle herunterladen.} (F2060)
+    \item[\textbf{T2080}] \hyperref[B:Job-Informationen]{Job-Information} als eigene Spalte in der Job-Tabelle anzeigen. (\hyperref[FA:Web-Interface:Einsehen von Job-Informationen]{F2080})
     
-    \item[T2071] \textbf{Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Seite herunterladen.} (F2060)
+    \item[\textbf{T2081}] \hyperref[B:Job-Informationen]{Job-Information} in nebenstehenden Fenster anzeigen. (\hyperref[FA:Web-Interface:Einsehen von Job-Informationen]{F2080})
     
-    \item[T2080] \textbf{Ergebnis mehrerer \hyperref[B:Jobs]{Jobs} über die Job-Tabelle herunterladen.} (F2070)
+    \item[\textbf{T2082}] \hyperref[B:Job-Informationen]{Job-Information} über Job-Seite anzeigen. (\hyperref[FA:Web-Interface:Einsehen von Job-Informationen]{F2080})
     
-    \item[T2100] (gewünscht) \textbf{Mallob starten.} (F2110)
+    \item[\textbf{T2090}] Spalten in der Job-Tabelle hinzufügen. (\hyperref[FA:Web-Interface:Hinzufügen von Spalten]{F2090})
     
-    \item[T2101] (gewünscht) \textbf{Mallob stoppen.} (F2110)
+    \item[\textbf{T2100}] Spalten von Job-Tabelle entfernen. (\hyperref[FA:Web-Interface:Entfernen von Spalten]{F2100}) 
     
-    \item[T2102] (gewünscht) \textbf{Mallob neustarten.} (F2110)
+    \item[\textbf{T2110}] Job-Tabelle aktualisieren. (\hyperref[FA:Web-Interface:Aktualisieren]{F2105})
     
-    \item[T2120] (gewünscht) \textbf{Plugin einlesen.} (F2120)
+    \item[\textbf{T2120}] \gls{Nutzer} abmelden. (\hyperref[FA:Web-Interface:Abmelden]{F2110})
     
-    \item[T2130] \textbf{\hyperref[B:Job-Informationen]{Job-Information} als eigene Spalte in der Job-Tabelle anzeigen.} (F2130)
+    \item[\textbf{T2130}] (gewünscht) \gls{Nutzer} registrieren. (\hyperref[FA:Web-Interface:Registrierung von Nutzern]{F2120})
     
-    \item[T2131] \hyperref[B:Job-Informationen]{Job-Information} in nebenstehenden Fenster (F2130)
+    \item[\textbf{T2140}] (gewünscht) \hyperref[B:Jobs]{Job} mit Angabe einer \gls{URL} einreichen. (\hyperref[FA:Web-Interface:Job einreichen]{F2010})
     
-    \item[T2132] \textbf{\hyperref[B:Job-Informationen]{Job-Information} über Job-Seite anzeigen.} (F2130)
+    \item[\textbf{T2150}] (gewünscht) Einen abgebrochenen \hyperref[B:Jobs]{Job} über die Job-Tabelle neustarten. (\hyperref[FA:Web-Interface:Neustart]{F2130})
     
-    \item[T2140] \textbf{Spalten in der Job-Tabelle hinzufügen.} (F2140)
+    \item[\textbf{T2151}] (gewünscht) Einen abgebrochenen \hyperref[B:Jobs]{Job} über die Job-Seite neustarten. (\hyperref[FA:Web-Interface:Neustart]{F2130})
     
-    \item[T2141] Spalten von Job-Tabelle entfernen 
+    \item[\textbf{T2160}] (gewünscht) \gls{Mallob} starten. (\hyperref[FA:Web-Interface:Verwalten von Malllob]{F2140})
     
-    \item[T2150] \textbf{Job-Tabelle nach Attributen sortieren.} (F2150)
+    \item[\textbf{T2161}] (gewünscht) \gls{Mallob} stoppen. (\hyperref[FA:Web-Interface:Verwalten von Malllob]{F2140})
     
-    \item[T2160] (gewünscht) \textbf{Plugins anzeigen.} (F2160)
+    \item[\textbf{T2162}] (gewünscht) \gls{Mallob} neustarten. (\hyperref[FA:Web-Interface:Verwalten von Malllob]{F2140})
     
-    \item[T2170] \textbf{\gls{Nutzer} abmelden.} (F2170)
+    \item[\textbf{T2170}] (gewünscht) Job-Tabelle nach Attributen sortieren. (\hyperref[FA:Web-Interface:Sortieren der Tabelle]{F2150})
     
-    \item[T2180] Fehler anzeigen. (Ffehlt)
+    \item[\textbf{T2180}] (gewünscht) Job-Tabelle für den \gls{Administrator} filtern. (\hyperref[FA:Web-Interface:Filtern für Admins]{F2160})
     
-    \item[T2190] Mallob-Warnungen anzeigen (F2070)
+    %Testfall für F2165 "diagnose daten anzeigen"
     
-    \item[T2200] (gewünscht) Job-Tabelle für den \gls{Administrator} filtern (F2160)
+    \item[\textbf{T2190}] (gewünscht) Plugins anzeigen. (\hyperref[FA:Web-Interface:Anzeigen von Plugins]{F2170})
     
 \end{itemize}
 
 \subsection{Visualisierung Testfälle}
 
 \begin{itemize}
-    \item[T3010] \textbf{Einem \gls{Nutzer} den Systemzustand von Mallob anzeigen.} (F3000)
+    \item[\textbf{T3000}] Einem \gls{Nutzer} die Visualisierung anzeigen. (\hyperref[FA:Visualisierung:Anzeigen des Systemzustandes]{F3000})
     
-    \item[T3011] \textbf{Einem \gls{Administrator} den Systemzustand von Mallob anzeigen.} (F3000)
+    \item[\textbf{T3001}] Einem \gls{Administrator} die Visualisierung anzeigen. (\hyperref[FA:Visualisierung:Anzeigen des Systemzustandes]{F3000})
     
-    \item[T3020] (gewünscht) \textbf{\gls{Binaerbaum} für einen \hyperref[B:Jobs]{Job} anzeigen.} (F3010)
+    \item[\textbf{T3010}] \hyperref[B:Job-Details]{Details} eines Jobs anzeigen. (\hyperref[FA:Visualisierung:Anzeigen von Details]{F3010})
     
-    \item[T3030] \textbf{Visualisierung pausieren.} (F3020)
+    \item[\textbf{T3020}] Visualisierung pausieren. (\hyperref[FA:Visualisierung:Pausieren der Visualisierung]{F3020})
     
-    \item[T3040] \textbf{Visualisierung starten.} (F3030)
+    \item[\textbf{T3030}] Visualisierung starten. (\hyperref[FA:Visualisierung:Starten der Visualisierung]{F3030})
     
-    \item[T3050] (gewünscht) \textbf{Geschwindigkeit der Visualisierung einstellen.} (F3040)
+    \item[\textbf{T3040}] Zu beliebigen Zeitpunkt der Visualisierung springen. (\hyperref[FA:Visualisierung:Springen]{F3040})
     
-    \item[T3060] \textbf{Beliebigen Zeitpunkt der Visualisierung auswählen.} (F3050)
+    \item[\textbf{T3050}] (gewünscht) Geschwindigkeit der Visualisierung einstellen. (\hyperref[FA:Visualisierung:Aendern der Wiedergabegeschwindigkeit]{F3050})
+    
+    \item[\textbf{T3060}] (gewünscht) \gls{Binaerbaum} für einen \hyperref[B:Jobs]{Job} anzeigen. (\hyperref[FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job]{F3060})
     
 \end{itemize}
 
 \subsection{System Testfälle}
 
 \begin{itemize}
-    \item[T4010] Konfigurationsdatei korrekt einlesen
+    \item[\textbf{T4000}] Konfigurationsdatei korrekt einlesen. (\hyperref[FA:System:Einstellungen festlegen]{F4000})
     
-    \item[T4020] Plugins einlesen
-    
-    
+
 \end{itemize}
 
 \subsection{Testszenarien}
+Die Testszenarien mit einem * enthalten Tests für gewünschte Funktionalität.
 
 \subsubsection{Testszenario 1: Einen Job einreichen - API}
-Ein neuer \gls{Nutzer} möchte sich registrieren/authentifizieren und darauf hin einen \hyperref[B:Jobs]{Job} einreichen. Dieser wird aber abgebrochen und anschließend erneut eingereicht. 
+Ein neuer \gls{Nutzer} möchte sich authentifizieren und darauf hin einen \hyperref[B:Jobs]{Job} einreichen. Wenn der Job abgeschlossen ist, lässt sich der \gls{Nutzer} das Ergebnis des Jobs ausgeben. Außerdem möchte der \gls{Nutzer} den aktuellen Systemzustand und vergangene Events des Jobs ausgegeben bekommen.
 
 \begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item \textbf{T1010} Einen neuen \gls{Nutzer} registrieren.
-        
-        \item \textbf{T1020} Einen \gls{Nutzer} authentifizieren.
-    \end{enumerate}
+    \item \textbf{T1010} Einen \gls{Nutzer} authentifizieren.
     
-    \item \textbf{T1034} Einen fehlerhaften \hyperref[B:Jobs]{Job} einreichen.
+    \item \textbf{T1024} Einen fehlerhaften \hyperref[B:Jobs]{Job} einreichen.
     
-    \item 2. Punkt beliebig oft wiederholen.
+    \item \textbf{T1300} Einen \hyperref[B:Jobs]{Job} mit separater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. 
     
-    \item 
-    \begin{enumerate}
-        \item \textbf{T1030} Einen \hyperref[B:Jobs]{Job} mit separater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. 
-        
-        \item \textbf{T1031} Einen \hyperref[B:Jobs]{Job} mit enthaltener \hyperref[B:Job-Beschreibung]{Job-Beschreibung} einreichen.
-        
-        \item \textbf{T1032} Einen \hyperref[B:Jobs]{Job} mit einem Link, der auf eine \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei verweist, einreichen.
-    \end{enumerate}
+    \item \textbf{T1030} Einen eingereichten Job abbrechen.
     
-    \item \textbf{T1100} Information über einen \hyperref[B:Jobs]{Job} abfragen.
+    \item \textbf{T1300} Einen \hyperref[B:Jobs]{Job} mit separater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. 
     
-    \item \textbf{T1120} \hyperref[B:Job-Beschreibung]{Job-Beschreibung} von einem eingereichten \hyperref[B:Jobs]{Job} ausgeben.
+    \item \textbf{T1070} Information über einen \hyperref[B:Jobs]{Job} abfragen.
     
-    \item \textbf{T1040} Einen eingereichten \hyperref[B:Jobs]{Job} abbrechen.
+    \item \textbf{T1090} \hyperref[B:Job-Beschreibung]{Job-Beschreibung} von einem eingereichten \hyperref[B:Jobs]{Job} ausgeben.
     
-    \item \textbf{T1033} Einen bereits eingereichten aber abgebrochenen \hyperref[B:Jobs]{Job} mit einer Referenz auf Diesen erneut einreichen.
+    \item \textbf{T1150} Job-Status eines Jobs durchgehend abfragen.
     
-    \item \hyperref[B:Jobs]{Job} wurde fertig bearbeitet.
+    \item \hyperref[B:Jobs]{Job} wurde abgeschlossen 
     
     \item \textbf{T1110} Ergebnis von einem bearbeiteten \hyperref[B:Jobs]{Job} ausgeben. 
+    
+    \item \textbf{T1130} Systemzustand ausgeben. 
+    
+    \item \textbf{T1140} Vergangene Events ausgeben. 
     
 \end{enumerate}
 
 \subsubsection{Testszenario 2: Mehr als einen Job einreichen - API}
-Ein neuer \gls{Nutzer} möchte sich registrieren/authentifizieren und mehr als einen \hyperref[B:Jobs]{Job} einreichen.
+Ein neuer \gls{Nutzer} möchte sich authentifizieren und mehr als einen \hyperref[B:Jobs]{Job} einreichen. Sind die Jobs abgeschlossen, erhält der Nutzer die Ergebnisse der Jobs.
 
 \begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item \textbf{T1010} Einen neuen \gls{Nutzer} registrieren.
         
-        \item \textbf{T1020} Einen \gls{Nutzer} authentifizieren.
-    \end{enumerate}
+    \item \textbf{T1020} Einen \gls{Nutzer} authentifizieren.
     
     \item \textbf{T1034} Einen fehlerhaften \hyperref[B:Jobs]{Job} einreichen.
-    
-    \item 2. Punkt beliebig oft wiederholen.
-    
-    \item 
-    \begin{enumerate}
-        \item \textbf{T1030} Einen \hyperref[B:Jobs]{Job} mit seperater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. 
         
-        \item \textbf{T1031} Einen \hyperref[B:Jobs]{Job} mit enthaltener \hyperref[B:Job-Beschreibung]{Job-Beschreibung} einreichen.
-        
-        \item \textbf{T1032} Einen \hyperref[B:Jobs]{Job} mit einem Link, der auf eine \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei verweist, einreichen.
-    \end{enumerate}
-    
-    \item 4.Punkt beliebig oft bis zur Obergrenze einzureichender \hyperref[B:Jobs]{Jobs} pro \gls{Nutzer} wiederholen
+    \item \textbf{T1031} Einen \hyperref[B:Jobs]{Job} mit enthaltener \hyperref[B:Job-Beschreibung]{Job-Beschreibung} einreichen.
     
     \item \textbf{T1101} \hyperref[B:Job-Informationen]{Informationen} über mehrere \hyperref[B:Jobs]{Jobs} abfragen. 
     
     \item \textbf{T1121} \hyperref[B:Job-Beschreibung]{Job-Beschreibungen} von mehreren eingereichten \hyperref[B:Jobs]{Jobs} ausgeben.
     
-    \item Mindestens 2 \hyperref[B:Jobs]{Jobs} wurden fertig bearbeitet.
+    \item \hyperref[B:Jobs]{Jobs} wurden abgeschlossen.
     
     \item \textbf{T1111} Ergebnisse von mehreren bearbeiteten \hyperref[B:Jobs]{Jobs} ausgeben. 
 \end{enumerate}
 
 \subsubsection{Testszenario 3: Zugriff eines Administrators - API}
-Ein bereits im System verifizierter \gls{Administrator} möchte sich authentifizieren bzw. ein neuer \gls{Administrator} soll registriert werden und darauf hin einige Funktionen ausführen, die nur für einen \gls{Administrator} vorgesehen sind.
+Ein \gls{Administrator} möchte sich authentifizieren, einen Job einreichen und Informationen und Einstellung von \gls{Mallob} abfragen. Ist der Job abgeschlossen, erhält der Administrator das Ergebnis.
 
 \begin{enumerate}
-    \item
-    \begin{enumerate}
-        \item \textbf{T1011} Einen \gls{Nutzer} mit Administrationsrechten registrieren.
         
-        \item \textbf{T1021} Einen \gls{Nutzer} mit Administrationsrechten authentifizieren. 
-    \end{enumerate}
+    \item \textbf{T1011} Einen Administrator authentifizieren. 
     
-    \item \textbf{T1060} Mallob starten.
+    \item \textbf{T1030} Einen \hyperref[B:Jobs]{Job} mit seperater \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen. 
     
-    \item \textbf{T1080} Mallob neustarten.
-    
-    \item \textbf{T1130} \hyperref[B:Job-Informationen]{Informationen} über Mallob durch einen \gls{Administrator} abfragen. 
-    
-    \item \textbf{T1150} Priorität eines Nutzers durch einen \gls{Administrator} ändern. 
+    \item \textbf{T1130} Informationen über \gls{Mallob} durch einen \gls{Administrator} abfragen. 
     
     \item \textbf{T1160} Einstellungen abrufen.
+
+    \item Der Job wurde abgeschlossen.
     
-    \item \textbf{T1170} Einstellungen aktualisieren. 
+    \item \textbf{T1080} Ergebnis von einem bearbeiteten Job ausgeben. 
     
-    \item \textbf{T1180} Plugin neu einlesen.
-    
-    \item \textbf{T1070} Mallob stoppen. 
 \end{enumerate}
 
 \subsubsection{Testszenario 4: Aufrufen des Web-Interfaces und Einreichen eines Jobs - Web-Interface}
-Ein \gls{Nutzer} gelangt über die Anmelde-Maske auf das \gls{Web-Interface}, reicht darüber einen \hyperref[B:Jobs]{Job} ein und greift auf verschiedene Funktionen, die das \gls{Web-Interface} in Bezug auf \hyperref[B:Jobs]{Jobs} anbietet, zu.
+Ein \gls{Nutzer} gelangt über die Anmelde-Maske auf das \gls{Web-Interface}, reicht darüber einen \hyperref[B:Jobs]{Job} ein und greift auf verschiedene Funktionen, die das \gls{Web-Interface} in Bezug auf \hyperref[B:Jobs]{Jobs} anbietet, zu. Daraufhin lässt er sich die Visualisierung, dier das Web-Interface anbietet, anzeigen. Ist der Job, abgeschlossen, lädt der \gls{Nutzer} das Ergebnis herunter.
 
 \begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item \textbf{T2010} \gls{Nutzer} anmelden.
-        
-        \item \textbf{T2020} \gls{Nutzer} registrieren.
-    \end{enumerate}
-    
-    \item 
-    \begin{enumerate}
-        \item \textbf{T2030} \hyperref[B:Jobs]{Job} mit zugehöriger \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen.
-        
-        \item \textbf{T2031} \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.
-        
-        \item \textbf{T2032} \hyperref[B:Jobs]{Job} mit Angabe einer \gls{URL} einreichen.
-    \end{enumerate}
-    
-    \item 
-    \begin{enumerate}
-        \item \textbf{T2040} Einen \hyperref[B:Jobs]{Job} über die Job-Tabelle abbrechen. 
-        
-        \item \textbf{T2041} Einen \hyperref[B:Jobs]{Job} über die Job-Seite abbrechen.
-    \end{enumerate}
-    
-    \item
-    \begin{enumerate}
-        \item \textbf{T2060} Einen abgebrochenen \hyperref[B:Jobs]{Job} über die Job-Tabelle neustarten.
-        
-        \item \textbf{T2061} Einen abgebrochenen \hyperref[B:Jobs]{Job} über die Job-Seite neustarten. 
-    \end{enumerate}
-    
 
-    \item \textbf{T2160} Spalten in der Job-Tabelle auswählen. 
-    
-    \item
-    \begin{enumerate}
-        \item \textbf{T2150} \hyperref[B:Job-Informationen]{Job-Information} als eigene Spalte in der Job-Tabelle anzeigen.
+    \item \textbf{T2010} \gls{Nutzer} anmelden.
         
-        \item \textbf{T2151} \hyperref[B:Job-Informationen]{Job-Information} über aufgeklapptem Fenster anzeigen.
+    \item \textbf{T2030} \hyperref[B:Jobs]{Job} mit zugehöriger\hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen.
+    
+    \item \textbf{T2041} Einen \hyperref[B:Jobs]{Job} über die Job-Seite abbrechen.
+    
+    \item \textbf{T2011} Job mit Upload der Job-Beschreibungs-Datei einreichen. 
+    
+    \item \textbf{T2020} Einen Job über die Job-Tabelle abbrechen. 
+    
+    \item \textbf{T2011} Job mit Upload der Job-Beschreibungs-Datei einreichen. (Aber der Job enthält Fehler)
+    
+    \item \textbf{T2011} Job mit Upload der Job-Beschreibungs-Datei einreichen.
+    
+    \item \textbf{T2060} Fehler anzeigen.
+
+    \item \textbf{T2090} Spalten in der Job-Tabelle hinzufügen.
+    
+    \item \textbf{T2100} Spalten von Job-Tabelle entfernen.
+    
+    \item \textbf{T2150} \hyperref[B:Job-Informationen]{Job-Information} als eigene Spalte in der Job-Tabelle anzeigen.
+        
+    \item \textbf{T2151} \hyperref[B:Job-Informationen]{Job-Information} über nebenstehenden anzeigen.
          
-        \item \textbf{T2152} \hyperref[B:Job-Informationen]{Job-Information} über Job-Seite anzeigen. 
-    \end{enumerate}
+    \item \textbf{T2152} \hyperref[B:Job-Informationen]{Job-Information} über die Job-Seite anzeigen. 
     
-    \item \textbf{T2170} Job-Tabelle nach Attributen sortieren.
+    \item \textbf{T3000} Einem \gls{Nutzer} die Visualisierung anzeigen. 
     
-    \item
-    \begin{enumerate}
-        \item \textbf{T2070} Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Tabelle herunterladen.
+    \item \textbf{T3010} Details eines Jobs anzeigen.
+    
+    \item \textbf{T3040} Zu beliebigen Zeitpunkt der Visualisierung springen.
+    
+    \item \textbf{T3040} Visualisierung starten. 
+    
+    \item \textbf{T3030} Visualisierung pausieren.
+    
+    \item Der \hyperref[B:Jobs]{Job} wurde abgeschlossen.
+    
+    \item \textbf{T2070} Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Tabelle herunterladen.
         
-        \item \textbf{T2071} Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Seite herunterladen. 
-    \end{enumerate}
+    \item \textbf{T2071} Ergebnis eines \hyperref[B:Jobs]{Jobs} über die Job-Seite herunterladen. 
     
     \item \textbf{T2190} \gls{Nutzer} abmelden.
 
 \end{enumerate}
 
 \subsubsection{Testszenario 5: Aufrufen des Web-Interfaces und Einreichen mehrerer Jobs - Web-Interface}
-Ein \gls{Nutzer} gelangt über die Anmelde-Maske auf das \gls{Web-Interface} und reicht mehr als einen \hyperref[B:Jobs]{Job} ein.
+Ein \gls{Nutzer} gelangt über die Anmelde-Maske auf das \gls{Web-Interface} und reicht mehr als einen \hyperref[B:Jobs]{Job} ein. Durch das Aktualisieren der Job-Tabelle schaut er, wann die Jobs abgeschlossen sind und lädt daraufhin das Ergebnis der Jobs herunter.
 
 \begin{enumerate}
-     \item 
-     \begin{enumerate}
-        \item \textbf{T2010} \gls{Nutzer} anmelden.
+     \item \textbf{T2010} \gls{Nutzer} anmelden.
+
+     \item \textbf{T2030} \hyperref[B:Jobs]{Job} mit zugehöriger \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen.
         
-        \item \textbf{T2020} \gls{Nutzer} registrieren.
-     \end{enumerate}
+     \item \textbf{T2031} \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.
      
-     \item 
-     \begin{enumerate}
-        \item \textbf{T2030} \hyperref[B:Jobs]{Job} mit zugehöriger \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen.
-        
-        \item \textbf{T2031} \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.
-        
-        \item \textbf{T2032} \hyperref[B:Jobs]{Job} mit Angabe einer \gls{URL} einreichen.
-     \end{enumerate}
+     \item \textbf{T2030} Mehrere Jobs über die Job-Tabelle abbrechen.
      
-     \item 2.Punkt mindestens einmal wiederholen.
+     \item \textbf{T2031} \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.
      
-     \item Mindestens 2 \hyperref[B:Jobs]{Jobs} sind fertig bearbeitet
+     \item \textbf{T2031} \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.
+     
+     \item \textbf{T2110} Job-Tabelle aktualisieren.
+     
+     \item Der \hyperref[B:Jobs]{Job} ist abgeschlossen
      
      \item \textbf{T2080} Ergebnis mehrerer \hyperref[B:Jobs]{Jobs} herunterladen.
      
      \item \textbf{T2190} \gls{Nutzer} abmelden.
 \end{enumerate}
 
-\subsubsection{Testszenario 6: Einreichen und Abbrechen mehrerer Jobs - Web-Interface}
-Ein \gls{Nutzer} reicht über das \gls{Web-Interface} mehr als einen \hyperref[B:Jobs]{Job} ein und bricht diese wieder ab.
+
+\subsubsection{Testszenario 6: Aufrufen des Web-Interfaces durch einen Administrator - Web-Interface, Visualisierung}
+Ein \gls{Administrator} ruft das \gls{Web-Interface} auf und greift auf die Visualisierung zu.
 
 \begin{enumerate}
-     \item 
-     \begin{enumerate}
-        \item \textbf{T2010} \gls{Nutzer} anmelden.
-        
-        \item \textbf{T2020} \gls{Nutzer} registrieren.
-     \end{enumerate}
-     
-     \item 
-     \begin{enumerate}
-        \item \textbf{T2030} \hyperref[B:Jobs]{Job} mit zugehöriger \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über das Eingabefeld einreichen.
-        
-        \item \textbf{T2031} \hyperref[B:Jobs]{Job} mit Upload der \hyperref[B:Job-Beschreibung]{Job-Beschreibungs}-Datei einreichen.
-        
-        \item \textbf{T2032} \hyperref[B:Jobs]{Job} mit Angabe einer \gls{URL} einreichen.
-     \end{enumerate}
-     
-     \item 2.Punkt mindestens einmal wiederholen.
-     
-     \item \textbf{T2050} Mehrere \hyperref[B:Jobs]{Jobs} abbrechen.
-     
-     \item \textbf{T2190} \gls{Nutzer} abmelden.
-\end{enumerate}
-
-\subsubsection{Testszenario 7: Aufrufen des Web-Interfaces durch einen Administrator - Web-Interface}
-Ein \gls{Administrator} ruft das \gls{Web-Interface} auf, meldet sich an, und greift auf einige Funktionen zu, die nur für einen \gls{Administrator} bestimmt sind.
-
-\begin{enumerate}
-    \item \textbf{T2011} \gls{Administrator} anmelden.
+    \item \textbf{T2001} \gls{Administrator} anmelden.
     
-    \item \textbf{T2100} Mallob starten.
+    \item \textbf{T2011} Job mit Upload der Job-Beschreibungs-Datei einreichen. 
     
-    \item \textbf{T2102} Mallob neustarten.
+    \item \textbf{T3001} Einem Administrator die Visualisierung anzeigen. 
     
-    \item \textbf{T2110} Einstellungen ändern.
+    \item \textbf{T3010} Details eines Jobs anzeigen.
     
-    \item \textbf{T2160} Plugins anzeigen.
+    \item \textbf{T3001} Einem Administrator die Visualisierung anzeigen. 
     
-    \item \textbf{T2120} Plugin einlesen.
-
-    \item \textbf{T2101} Mallob beenden.
+    \item \textbf{T3010} Details eines Jobs anzeigen.
+    
+    \item \textbf{T3040} Zu beliebigen Zeitpunkt der Visualisierung springen.
+    
+    \item \textbf{T3030} Visualisierung starten. 
+    
+    \item \textbf{T3020} Visualisierung pausieren. 
+    
+    \item \textbf{T3030} Visualisierung starten. 
     
     \item \textbf{T2170} \gls{Nutzer} abmelden.
 \end{enumerate}
 
-\subsubsection{Testszenario 8: Einsehen der Visualisierung durch einen Nutzer - Visualisierung}
-Ein \gls{Nutzer} greift auf die verschiedenen Visualisierungen zu einem \hyperref[B:Jobs]{Job} und dem Gesamtzustand von Mallob, die das \gls{Web-Interface} anbietet, zu. Die Vorbedingung für dieses Szenario ist die, dass der \gls{Nutzer} bereits mindestens einen \hyperref[B:Jobs]{Job} eingereicht hat.
+\subsubsection{*Testszenario 7: }
 
-\begin{enumerate}
-    \item \textbf{T2010} \gls{Nutzer} anmelden.
-    
-    \item \textbf{T3010} Einem \gls{Nutzer} den Systemzustand von Mallob anzeigen. 
-    
-    \item \textbf{T3020} \gls{Binaerbaum} für einen \hyperref[B:Jobs]{Job} anzeigen. 
-    
-    \item \textbf{T3060} Beliebigen Zeitpunkt der Visualisierung auswählen.
-    
-    \item \textbf{T3050} Geschwindigkeit der Visualisierung einstellen.
-    
-    \item \textbf{T3040} Visualisierung starten. 
-    
-    \item \textbf{T3030} Visualisierung pausieren.
 
-    \item \textbf{T3040} Visualisierung starten. 
-\end{enumerate}
-
-\subsubsection{Testszenario 9:Einsehen der Visualisierung durch einen Administrator - Visualisierung}
-Ein \gls{Administrator} greift auf die Visualisierung des Gesamtzustands von Mallob zu. Hierbei wird keine Vorbedingung benötigt, da der \gls{Administrator} jeden im System befindlichen \hyperref[B:Jobs]{Job} mit allen Informationen einsehen kann.
-
-\begin{enumerate}
-    \item \textbf{T2011} \gls{Administrator} anmelden.
-    
-    \item \textbf{T3011} Einem \gls{Administrator} den Systemzustand von Mallob anzeigen.
-    
-    \item \textbf{T3060} Beliebigen Zeitpunkt der Visualisierung auswählen.
-    
-    \item \textbf{T3050} Geschwindigkeit der Visualisierung einstellen.
-    
-    \item \textbf{T3040} Visualisierung starten. 
-    
-    \item \textbf{T3030} Visualisierung pausieren.
-
-    \item \textbf{T3040} Visualisierung starten.
-\end{enumerate}
 
 
 

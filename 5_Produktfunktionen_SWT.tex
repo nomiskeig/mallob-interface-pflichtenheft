@@ -38,7 +38,7 @@
     \label{FA:API:Einreichen von Jobs} 
     \item[F1010] \textbf{Einreichen von Jobs} \\
     \begin{FA}
-        \textbf{Ziel:} & Ein \gls{Nutzer} kann einen \hyperref[B:Jobs]{Job} an die \gls{API} übergeben, der von Mallob bearbeitet wird .\\
+        \textbf{Ziel:} & Ein \gls{Nutzer} kann einen \hyperref[B:Jobs]{Job} an die \gls{API} übergeben, der von \gls{Mallob} bearbeitet wird .\\
         \textbf{Vorbedingung:} & Der \gls{Nutzer} hat sich mittels \hyperref[FA:API:Authentifizieren von Nutzern]{F1000} authentifiziert. \\
         \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} erhält eine Bestätigung und der \hyperref[B:Jobs]{Job} wird bearbeitet.\\
         \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Nutzer} erhält eine Fehlermeldung. \\
@@ -51,7 +51,7 @@
             \item[1.b.] Der \gls{Nutzer} schickt eine Anfrage an die \gls{API}, die sowohl die \hyperref[B:Job-Konfiguration]{Job-Konfiguration} des \hyperref[B:Jobs]{Jobs} als auch die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} enthält, wobei in diesem Fall beides in  einer einzelnen Datei spezifiziert wird.
             \item[1.c.] (gewünscht) Der \gls{Nutzer} schickt eine Anfrage an die \gls{API}, die sowohl die \hyperref[B:Job-Konfiguration]{Job-Konfiguration} und einen Link  zu einer Datei enthält, in der die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} spezifiziert ist.
             \item[1.d.] (gewünscht) Der \gls{Nutzer} schickt eine Anfrage an die \gls{API}, die eine Referenz auf einen bereits eingereichten \hyperref[B:Jobs]{Job} enthält, der nochmal ausgeführt werden soll.
-            \item[2.] Der eingereichte \hyperref[B:Jobs]{Job} wird von Mallob bearbeitet.
+            \item[2.] Der eingereichte \hyperref[B:Jobs]{Job} wird von \gls{Mallob} bearbeitet.
     \end{FAList}
     
 
@@ -62,7 +62,7 @@
     \item[F1020] \textbf{Abbrechen von eingereichten Jobs} \\
     \begin{FA}
         \textbf{Ziel:} & Ein \gls{Nutzer} kann einen oder mehrere eingereichte \hyperref[B:Jobs]{Jobs} wieder abbrechen. \\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} hat sich mittels \hyperref[FA:API:Authentifizieren von Nutzern]{F1000} authentifiziert und hat mindestens einen laufenden Job.\\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist authentifiziert und hat mindestens einen laufenden Job.\\
         \textbf{Nachbedingung (Erfolg):} & Die \hyperref[B:Jobs]{Jobs} wurden abgebrochen und der \gls{Nutzer} hat die Teil-\hyperref[B:Job-Ergebnis]{Ergebnisse} der abgebrochenen \hyperref[B:Jobs]{Jobs} erhalten. \\
         \textbf{Nachbedingung (Fehlschlag):} & Die \hyperref[B:Jobs]{Jobs} wurden nicht abgebrochen und der \gls{Nutzer} hat eine Fehlermeldung erhalten.\\
         \textbf{Akteure:} & \gls{Nutzer} \\
@@ -79,25 +79,7 @@
 
     
     
-    %--------------------------API - Abfrage für inkrementelle Jobs
-    %\phantomsection
-    %\label{FA:API:Abfragen der Fertigstellung eines inkrementellen Jobs}  
-    %\item[F1070] \textbf{Abfragen der Fertigstellung eines inkrementellen Jobs} \\
-    %\begin{FA}
-    %    \textbf{Ziel:} & Es wird abgefragt, ob ein inkrementeller \hyperref[B:Jobs]{Job} abgeschlossen ist oder ob Teil-\hyperref[B:Jobs]{Jobs} existieren, die noch bearbeitet werden müssen \\
-    %    \textbf{Vorbedingung:} & Der \gls{Nutzer} ist authentifiziert (siehe F20) es wurde ein inkrementeller \hyperref[B:Jobs]{Job} eingereicht \\
-    %    \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} hat eine Antwort erhalten, ob der \hyperref[B:Jobs]{Job} abgeschlossen ist oder nicht \\
-    %    \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Nutzer} hat eine Fehlermeldung erhalten \\
-    %    \textbf{Akteure:} & \gls{Nutzer} \\
-    %    \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte herausfinden, ob ein inkrementeller \hyperref[B:Jobs]{Job} abgeschlossen ist \\
-    %\end{FA}
-    %\textbf{Beschreibung:}
-    %\begin{FAList} 
-    %    \item[1.] Der \gls{Nutzer} schickt eine Anfrage an die API mit der Job-ID des inkrementellen Jobs, der abgefragt werden soll
-    %    \item[2.] Der Bearbeitungsstand des inkrementellen \hyperref[B:Jobs]{Jobs} wird abgefragt
-    %    \item[3.a] Wenn die Abfrage erfolgreich war, wird das Ergebnis an den \gls{Nutzer} zurückgegeben
-    %    \item[3.b.] Wenn die Abfrage nicht erfolgreich war, wird eine Fehlermeldung an den \gls{Nutzer} zurückgegeben
-    %\end{FAList}
+
     
     
     %--------------------------API - Abfragen der Daten eines einzelnen Jobs
@@ -106,7 +88,7 @@
     \item[F1030] \textbf{Ausgeben der \hyperref[B:Job-Informationen]{Informationen von Jobs}}  \\
     \begin{FA}
         \textbf{Ziel:} & Es können die \hyperref[B:Job-Informationen]{Informationen} von \hyperref[B:Jobs]{Jobs} ohne die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} ausgegeben werden.\\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist gemäß \hyperref[FA:API:Authentifizieren von Nutzern]{F1000} authentifiziert und die gewünschten \hyperref[B:Jobs]{Jobs} wurden bereits eingereicht. \\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist authentifiziert und die gewünschten \hyperref[B:Jobs]{Jobs} wurden bereits eingereicht. \\
         \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} hat die \hyperref[B:Job-Informationen]{Informationen} zu den angefragten \hyperref[B:Jobs]{Jobs} erhalten, aber nicht deren \hyperref[B:Job-Beschreibung]{Job-Beschreibung}en. \\
         \textbf{Nachbedingung (Fehlschlag):} &  Der \gls{Nutzer} hat eine Fehlermeldung erhalten. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
@@ -120,13 +102,33 @@
         \item[3.b.] Wenn die Abfrage nicht erfolgreich war, wird eine Fehlermeldung an den \gls{Nutzer} zurückgegeben.
     \end{FAList}
     
+        %--------------------------API - Abfrage für inkrementelle Jobs
+  % \phantomsection
+  % \label{FA:API:Abfragen der Fertigstellung eines inkrementellen Jobs}  
+  % \item[F1035] \textbf{Abfragen der Fertigstellung eines inkrementellen Jobs} \\
+  % \begin{FA}
+  %     \textbf{Ziel:} & Es kann abgefragt werden, ob ein inkrementeller \hyperref[B:Jobs]{Job} abgeschlossen ist \\
+  %     \textbf{Vorbedingung:} & Der \gls{Nutzer} ist authentifiziert (siehe F20) es wurde ein inkrementeller \hyperref[B:Jobs]{Job} eingereicht \\
+  %     \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} hat eine Antwort erhalten, ob der \hyperref[B:Jobs]{Job} abgeschlossen ist oder nicht \\
+  %     \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Nutzer} hat eine Fehlermeldung erhalten \\
+  %     \textbf{Akteure:} & \gls{Nutzer} \\
+  %     \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte herausfinden, ob ein inkrementeller \hyperref[B:Jobs]{Job} abgeschlossen ist \\
+  % \end{FA}
+  % \textbf{Beschreibung:}
+  % \begin{FAList} 
+  %     \item[1.] Der \gls{Nutzer} schickt eine Anfrage an die API, in welcher er spezifiziert, welchen inkrementellen \hyperref[B:Jobs]{Job} er abfragen möchten.
+  %     \item[2.] Der Bearbeitungsstand des inkrementellen \hyperref[B:Jobs]{Jobs} wird abgefragt
+  %     \item[3.a] Wenn die Abfrage erfolgreich war, wird das Ergebnis an den \gls{Nutzer} zurückgegeben
+  %     \item[3.b.] Wenn die Abfrage nicht erfolgreich war, wird eine Fehlermeldung an den \gls{Nutzer} zurückgegeben
+  % \end{FAList}
+    
     
     \phantomsection
     \label{FA:API:Ausgeben eines Systemzustandes}
     \item[F1040] \textbf{Ausgeben eines \hyperref[B:Systemzustand]{Systemzustands}s} \\
     \begin{FA}
         \textbf{Ziel:} & Es kann ein beliebiger vergangener \hyperref[B:Systemzustand]{Systemzustand} abgefragt werden. \\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist gemäß \hyperref[FA:API:Authentifizieren von Nutzern]{F1010} authentifiziert. \\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist authentifiziert. \\
         \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} hat den gewünschten \hyperref[B:Systemzustand]{Systemzustand} erhalten .\\
         \textbf{Nachbedingung (Fehlschlag):} &  Der \gls{Nutzer} hat eine Fehlermeldung erhalten .\\
         \textbf{Akteure:} & \gls{Nutzer} \\
@@ -146,7 +148,7 @@
     \item[F1050] \textbf{Ausgeben von vergangenen \hyperref[B:Event]{Events}} \\
     \begin{FA}
         \textbf{Ziel:} & Es können vergangene \hyperref[B:Event]{Events} ausgegeben werden.\\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist gemäß \hyperref[FA:API:Authentifizieren von Nutzern]{F1010} authentifiziert und die gewünschten \hyperref[B:Jobs]{Jobs} wurden bereits eingereicht. \\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist authentifiziert und die gewünschten \hyperref[B:Jobs]{Jobs} wurden bereits eingereicht. \\
         \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} hat die gewünschten \hyperref[B:Event]{Events} zu den angefragten \hyperref[B:Jobs]{Jobs} erhalten. \\
         \textbf{Nachbedingung (Fehlschlag):} &  Der \gls{Nutzer} hat eine Fehlermeldung erhalten. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
@@ -154,7 +156,7 @@
     \end{FA}
      \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Der \gls{Nutzer} stellt eine Anfrage an die \gls{API}. In dieser ist spezifiziert, von welchen \hyperref[B:Jobs]{Jobs} \hyperref[B:Event]{Events} ausgegeben werden sollen und aus welcher Zeit diese \hyperref[B:Event]{Events} stammen sollen.  Es steht dem Nutzer frei, ob er \hyperref[B:Event]{Events} zu bestimmten Jobs, allen eigenen \hyperref[B:Jobs]{Jobs} oder allen \hyperref[B:Jobs]{Jobs} im System erhalten möchte.
+        \item[1.] Der \gls{Nutzer} stellt eine Anfrage an die \gls{API}. In dieser ist spezifiziert, von welchen \hyperref[B:Jobs]{Jobs} \hyperref[B:Event]{Events} ausgegeben werden sollen und aus welcher Zeit diese \hyperref[B:Event]{Events} stammen sollen.  Es steht dem \gls{Nutzer} frei, ob er \hyperref[B:Event]{Events} zu bestimmten \hyperref[B:Jobs]{Jobs}, allen eigenen \hyperref[B:Jobs]{Jobs} oder allen \hyperref[B:Jobs]{Jobs} im System erhalten möchte.
         \item[2.] Die entsprechenden \hyperref[B:Event]{Events} werden abgefragt.
     \end{FAList} 
     
@@ -193,43 +195,43 @@
     \textbf{Beschreibung:}
     \begin{FAList} 
         \item[1.] Der \gls{Nutzer} schickt eine Anfrage an die \gls{API}, in der er spezifiziert, von welchen \hyperref[B:Jobs]{Jobs} die Beschreibung zurückgegeben werden soll. Es ist auch möglich, die \hyperref[B:Job-Beschreibung]{Beschreibungen} aller eigenen \hyperref[B:Jobs]{Jobs} abzufragen.
-        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die \hyperref[B:Job-Beschreibung]{Job-Beschreibung}en an den \gls{Nutzer} zurückgegeben. 
+        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die \hyperref[B:Job-Beschreibung]{Job-Beschreibungen} an den \gls{Nutzer} zurückgegeben. 
         \item[2.b.] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den \gls{Nutzer} zurückgegeben. 
     \end{FAList}
     
     
-    %--------------API - Abfragen der Informationen von Mallob
+    %--------------API - Abfragen der Informationen von \gls{Mallob}
     \phantomsection
     \label{FA:API:Abfragen der Informationen von Mallob}  
-    \item[F1080] \textbf{Abfragen der Informationen von Mallob} \\
+    \item[F1080] \textbf{Abfragen von-- Informationen von \gls{Mallob}} \\
     \begin{FA}
-        \textbf{Ziel:} & Der \gls{Administrator} kann den Status und weitere Informationen, unter anderem Warnungen, zu Mallob abrufen. \\
+        \textbf{Ziel:} & Der \gls{Administrator} kann den Status und weitere Informationen, unter anderem Warnungen, zu \gls{Mallob} abrufen. \\
         \textbf{Vorbedingung:} & Der \gls{Administrator} muss authentifiziert sein.\\
-        \textbf{Nachbedingung (Erfolg):} & Der \gls{Administrator} hat die Informationen zu Mallob erhalten. \\
+        \textbf{Nachbedingung (Erfolg):} & Der \gls{Administrator} hat die Informationen zu \gls{Mallob} erhalten. \\
         \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Administrator} hat eine Fehlermeldung erhalten. \\
         \textbf{Akteure:} & \gls{Administrator} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} möchte genauere Informationen zu Mallob haben. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} möchte genauere Informationen zu \gls{Mallob} haben. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
         \item[1.] Der \gls{Administrator} schickt eine entsprechende Anfrage an die \gls{API}.
-        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die Daten an den Nutzer zurückgegeben.
-        \item[2.b.] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den Nutzer zurückgegeben.
+        \item[2.a.] Wenn die Anfrage erfolgreich war, werden die Daten an den \gls{Nutzer} zurückgegeben.
+        \item[2.b.] Wenn die Anfrage nicht erfolgreich war, wird eine Fehlermeldung an den \gls{Nutzer} zurückgegeben.
     \end{FAList}
     
     
-    %-----------API - Ausgeben eines Event-Streams von Mallob
+    %-----------API - Ausgeben eines Event-Streams von \gls{Mallob}
     \phantomsection
 
     \label{FA:API:Ausgeben eines Event-Streams von Mallob}
-    \item[F1090] \textbf{Ausgeben eines \hyperref[B:Event]{Event}-\gls{Stream}s von Mallob} \\
+    \item[F1090] \textbf{Ausgeben eines \hyperref[B:Event]{Event}-\gls{Stream}s von \gls{Mallob}} \\
     \begin{FA}
         \textbf{Ziel:} & Der \gls{Nutzer} hat Zugriff auf einen \hyperref[B:Event]{Event}-\gls{Stream}, über den kontinuierlich die \hyperref[B:Event]{Event}s aller \hyperref[B:Jobs]{Jobs} im System übertragen werden. \\
         \textbf{Vorbedingung:} & Der \gls{Nutzer} muss authentifiziert sein. \\
         \textbf{Nachbedingung (Erfolg):} & Der \gls{Nutzer} hat Zugriff auf den \hyperref[B:Event]{Event}-\gls{Stream}. \\
         \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Nutzer} hat keinen Zugriff und hat eine Fehlermeldung erhalten. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[B:Event]{Events} von Mallob einsehen. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[B:Event]{Events} von \gls{Mallob} einsehen. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
@@ -280,61 +282,61 @@
 
     % --- ab hier wunschkriterium
         
-    %---------------------API - Starten von Mallob
+    %---------------------API - Starten von \gls{Mallob}
     \phantomsection
     \label{FA:API:Starten von Mallob}  
-    \item[F1120] (Wunschkriterium) \textbf{Starten von Mallob} \\
+    \item[F1120] (Wunschkriterium) \textbf{Starten von \gls{Mallob}} \\
     \begin{FA}
-        \textbf{Ziel:} & Die Mallob Instanz kann von einem \gls{Administrator} über die \gls{API} gestartet werden.\\
-        \textbf{Vorbedingung:} & Mallob läuft noch nicht. \\
-        \textbf{Nachbedingung (Erfolg):} & Mallob ist gestartet und der \gls{Administrator} hat eine Bestätigung erhalten. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Mallob ist nicht gestartet und der \gls{Administrator} hat eine Fehlermeldung erhalten.\\
+        \textbf{Ziel:} & Die \gls{Mallob} Instanz kann von einem \gls{Administrator} über die \gls{API} gestartet werden.\\
+        \textbf{Vorbedingung:} & \gls{Mallob} läuft noch nicht. \\
+        \textbf{Nachbedingung (Erfolg):} & \gls{Mallob} ist gestartet und der \gls{Administrator} hat eine Bestätigung erhalten. \\
+        \textbf{Nachbedingung (Fehlschlag):} & \gls{Mallob} ist nicht gestartet und der \gls{Administrator} hat eine Fehlermeldung erhalten.\\
         \textbf{Akteure:} & \gls{Administrator} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} will die Mallob-Instanz starten. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} will die \gls{Mallob}-Instanz starten. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList}
         \item[1.] Der \gls{Administrator} schickt eine Anfrage an die \gls{API}.
-        \item[2.] Die Mallob-Instanz wird gestartet.
+        \item[2.] Die \gls{Mallob}-Instanz wird gestartet.
     \end{FAList}
     
     
-    %---------------------API - Stoppen von Mallob
+    %---------------------API - Stoppen von \gls{Mallob}
     \phantomsection
     \label{FA:API:Stoppen von Mallob}  
-    \item[F1130] (Wunschkriterium) \textbf{Stoppen von Mallob} \\
+    \item[F1130] (Wunschkriterium) \textbf{Stoppen von \gls{Mallob}} \\
     \begin{FA}
-        \textbf{Ziel:} & Die Mallob Instanz kann von einem \gls{Administrator} über die \gls{API} gestoppt werden. \\
-        \textbf{Vorbedingung:} & Die Mallob-Instanz läuft bereits \\
-        \textbf{Nachbedingung (Erfolg):} & Die Mallob-Instanz läuft nicht mehr und der \gls{Administrator} hat eine Bestätigung erhalten. \\
-        \textbf{Nachbedingung (Fehlschlag:} & Die Mallob-Instanz läuft noch und der \gls{Administrator} hat eine Fehlermeldung erhalten. \\
+        \textbf{Ziel:} & Die \gls{Mallob} Instanz kann von einem \gls{Administrator} über die \gls{API} gestoppt werden. \\
+        \textbf{Vorbedingung:} & Die \gls{Mallob}-Instanz läuft bereits \\
+        \textbf{Nachbedingung (Erfolg):} & Die \gls{Mallob}-Instanz läuft nicht mehr und der \gls{Administrator} hat eine Bestätigung erhalten. \\
+        \textbf{Nachbedingung (Fehlschlag:} & Die \gls{Mallob}-Instanz läuft noch und der \gls{Administrator} hat eine Fehlermeldung erhalten. \\
         \textbf{Akteure:} & \gls{Administrator} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} will die Mallob-Instanz stoppen. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} will die \gls{Mallob}-Instanz stoppen. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList}
-        \item[1.] Der Administator schickt eine Anfrage an die \gls{API}.
-        \item[2.] Die Mallob-Instanz wird gestoppt.
+        \item[1.] Der \gls{Administrator} schickt eine Anfrage an die \gls{API}.
+        \item[2.] Die \gls{Mallob}-Instanz wird gestoppt.
     \end{FAList}
     
     
-    %-------------------------------API - Neustart von Mallob
+    %-------------------------------API - Neustart von \gls{Mallob}
     % das könnte man eigentlich aus rausmachen, kann durch stoppen und starten erreicht werden, aber idk
     \phantomsection
     \label{FA:API:Neustart von Mallob}  
-    \item[F1140] (Wunschkriterium) \textbf{Neustart von Mallob} \\
+    \item[F1140] (Wunschkriterium) \textbf{Neustart von \gls{Mallob}} \\
     \begin{FA}
-        \textbf{Ziel:} & Die Mallob Instanz kann von einem \gls{Administrator} über die \gls{API} neu gestartet werden.\\
-        \textbf{Vorbedingung:} & Die Mallob-Instanz läuft bereits. \\
-        \textbf{Nachbedingung (Erfolg):} & Die Mallob-Instanz wurde neu gestartet und der \gls{Administrator} hat eine Bestätigung erhalten. \\
+        \textbf{Ziel:} & Die \gls{Mallob} Instanz kann von einem \gls{Administrator} über die \gls{API} neu gestartet werden.\\
+        \textbf{Vorbedingung:} & Die \gls{Mallob}-Instanz läuft bereits. \\
+        \textbf{Nachbedingung (Erfolg):} & Die \gls{Mallob}-Instanz wurde neu gestartet und der \gls{Administrator} hat eine Bestätigung erhalten. \\
         \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Administrator} hat eine Fehlermeldung erhalten. \\
         \textbf{Akteure:} & \gls{Administrator} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} möchte die Mallob-Instanz neu starten. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} möchte die \gls{Mallob}-Instanz neu starten. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList}
         \item[1.] Der \gls{Administrator} schickt eine Anfrage an die \gls{API}.
-        \item[2.] Die Mallob-Instanz wird neu gestartet.
+        \item[2.] Die \gls{Mallob}-Instanz wird neu gestartet.
     \end{FAList}
     
     %\phantomsection
@@ -351,7 +353,7 @@
     %\textbf{Beschreibung:}
     %\begin{FAList}
     %        \item[1.a.] Der \gls{Nutzer} schickt eine Anfrage an die API, die sowohl die Job-Konfiguration als auch die URL mit der Job-Beschreibung enthält
-    %        \item[2.] Der eingereichte \hyperref[B:Jobs]{Job} wird von Mallob bearbeitet
+    %        \item[2.] Der eingereichte \hyperref[B:Jobs]{Job} wird von \gls{Mallob} bearbeitet
     %\end{FAList}
 
     \phantomsection
@@ -372,7 +374,7 @@
         \item[2.] \glslink{Vorlaeufiges Nutzerkonto}{Vorläufiges Konto} wird erstellt.
         \item[2.1.a] Wenn die Registrierung erfolgreich war, wird eine Bestätigung an den \gls{Nutzer} zurückgegeben.
         \item[2.1.b] Wenn die Registrierung nicht erfolgreich war, wird eine Fehlermeldung an den \gls{Nutzer} zurückgegeben.
-        \item[3.] Verifizierung des Kontos durch \gls{System-Administrator}.
+        \item[3.] Verifizierung des \glslink{Nutzerkonto}{Kontos} durch \gls{System-Administrator}.
     \end{FAList}
 
 
@@ -403,7 +405,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Aufrufen des Web-Interfaces.
+        \item[1.] Aufrufen des \gls{Web-Interface}s.
         \item[2.] Eingabe des Nutzernamens.
         \item[3.] Eingabe des Passwortes.
         \item[4.] Bestätigung durch Betätigung der Schaltfläche \enquote{Log in}.
@@ -425,14 +427,14 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     \begin{FAList} 
         \item[1.] Auswahl entsprechenden Schaltfläche in der Navigationsleiste.
         \item[2.] Weiterleitung zur \hyperref[pages:submit-job]{Seite zum Einreichen von Jobs}.
-        \item[3.] Eingabe der notwendigen Optionen des Jobs.
+        \item[3.] Eingabe der notwendigen Parametern des Jobs.
         \item[4.] Eingabe der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über ein Eingabe-Feld direkt im \gls{Web-Interface}.
         \item[5.] Bestätigung der Eingaben.
     \end{FAList}
     \textbf{Erweiterungen}
     \begin{FAList}
-        \item[3a.] Hinzufügen von gewünschten optionalen Optionen mithilfe des entsprechenden \glslink{Dropdown-Menue}{Dropdown-Menüs}.
-        \item[3b.] Eingabe der optionalen Optionen über die entsprechenden Felder.
+        \item[3a.] Hinzufügen von gewünschten optionalen Parametern mithilfe des entsprechenden \glslink{Dropdown-Menue}{Dropdown-Menüs}.
+        \item[3b.] Eingabe der optionalen Parametern über die entsprechenden Felder.
     \end{FAList}
     \textbf{Alternative 1 zu Schritt 4:}
     \begin{FAList}
@@ -486,7 +488,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Job-Tabelle.
+        \item[1.] Navigation zur \hyperref[pages:job-table]{Job-Tabelle}.
         \item[2.] Setzen eines Kreuzes in der \gls{Checkbox} bei allen Jobs, die Abgebrochen werden sollen.
         \item[3.] Auswahl der entsprechenden Aktion im entsprechenden \gls{Dropdown-Menue}.
         \item[4.] Bestätigung des Abbruchs.
@@ -533,7 +535,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Job-Liste.
+        \item[1.] Navigation zur \hyperref[pages:job-table]{Job-Tabelle}.
         \item[2.] Setzen eines Kreuzes in der \gls{Checkbox} bei allen Jobs, die heruntergeladen werden sollen.
         \item[3.] Auswahl der entsprechenden Action im entsprechenden \gls{Dropdown-Menue}.
         \item[4.] Bestätigung des Herunterladens.
@@ -564,12 +566,12 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     
     \phantomsection
     \label{FA:Web-Interface:Anzeigen von Warnungen und Fehlermeldungen}
-    \item[F2070] \textbf{Anzeigen von Mallob Warnungen} \\
+    \item[F2070] \textbf{Anzeigen von Warnungen von \gls{Mallob}} \\
     \begin{FA}
-        \textbf{Ziel:} & Der \gls{Administrator} kann die Fehlermeldungen und Warnungen einsehen, die von Mallob ausgegeben werden. \\
+        \textbf{Ziel:} & Der \gls{Administrator} kann die Fehlermeldungen und Warnungen einsehen, die von \gls{Mallob} ausgegeben werden. \\
         \textbf{Vorbedingung:} & Der \gls{Administrator} muss angemeldet sein. \\
-        \textbf{Nachbedingung (Erfolg):} & Es werden die Fehlermeldungen und Warnungen von Mallob angezeigt. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Es werde die Fehlermeldungen und Warnungen von Mallob nicht angezeigt. \\
+        \textbf{Nachbedingung (Erfolg):} & Es werden die Fehlermeldungen und Warnungen von \gls{Mallob} angezeigt. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Es werde die Fehlermeldungen und Warnungen von \gls{Mallob} nicht angezeigt. \\
         \textbf{Akteure:} & \gls{Administrator} \\
         \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} öffnet die \hyperref[pages:admin]{Administratoren-Seite}. \\
     \end{FA}
@@ -705,7 +707,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     \end{FAList}
     \textbf{Alternative (gewünscht)}
     \begin{FAList}
-        \item[1.] Die Tabelle wird automatische aktuell gehalten, die  entsprechende Schaltfläche entfällt.
+        \item[1.] Die Tabelle wird automatisch aktuell gehalten, die  entsprechende Schaltfläche entfällt.
     \end{FAList}
     
  
@@ -771,7 +773,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     \begin{FAList} 
         \item[1.] Navigation zur \hyperref[pages:job-table]{Job-Tabelle}.
         \item[2.] Anklicken des neuzustartenden, abgebrochenen Jobs.
-        \item[3.] Auswählen der entsprechenden Schaltfläche im der nebenstehenden Fenster.
+        \item[3.] Auswählen der entsprechenden Schaltfläche im nebenstehenden Fenster.
         \item[4.] Weiterleitung zur \hyperref[pages:submit-job]{Seite zum Einreichen von Jobs}, wobei hier die entsprechenden Optionen bereits wieder ausgefüllt sind.
         \item[5.] Verändern der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} oder der \hyperref[B:Job-Konfiguration]{Job-Konfiguration}.
         \item[6.] Einreichen des Jobs.
@@ -789,30 +791,30 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     
     \phantomsection
     \label{FA:Web-Interface:Verwalten von Malllob}
-    \item[F2140] (Wunschkriterium) \textbf{Verwalten von Mallob} \\
+    \item[F2140] (Wunschkriterium) \textbf{Verwalten von \gls{Mallob}} \\
     \begin{FA}
-        \textbf{Ziel:} & Mallob kann vom \gls{Administrator} gestartet, gestoppt und neu gestartet werden. \\
+        \textbf{Ziel:} & \gls{Mallob} kann vom \gls{Administrator} gestartet, gestoppt und neu gestartet werden. \\
         \textbf{Vorbedingung:} & Der \gls{Administrator} muss im \gls{Web-Interface} angemeldet sein. \\
-        \textbf{Nachbedingung (Erfolg):} & Mallob ist gestartet, gestoppt oder neu gestartet. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Mallob ist nicht gestartet, gestoppt oder neu gestartet. \\
+        \textbf{Nachbedingung (Erfolg):} & \gls{Mallob} ist gestartet, gestoppt oder neu gestartet. \\
+        \textbf{Nachbedingung (Fehlschlag):} & \gls{Mallob} ist nicht gestartet, gestoppt oder neu gestartet. \\
         \textbf{Akteure:} & \gls{Administrator} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} will Mallob starten, stoppen oder neu starten. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} will \gls{Mallob} starten, stoppen oder neu starten. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
         \item[1.] Navigation zur \hyperref[pages:admin]{Administratoren-Seite}.
-        \item[2.] Anklicken des Knopfes \enquote{start mallob} .
-        \item[3.] Mallob wird gestartet.
+        \item[2.] Anklicken des Knopfes \enquote{start \gls{Mallob}} .
+        \item[3.] \gls{Mallob} wird gestartet.
     \end{FAList}
     \textbf{Alternative 1 zu den Schritten 2 bis 3:}
     \begin{FAList}
-        \item[2.] Anklicken des Knopfes \enquote{stop mallob}.
-        \item[3.] Mallob wird gestoppt.
+        \item[2.] Anklicken des Knopfes \enquote{stop \gls{Mallob}}.
+        \item[3.] \gls{Mallob} wird gestoppt.
     \end{FAList}
     \textbf{Alternative 2 zu den Schritten 2 bis 3:}
     \begin{FAList}
-        \item[2.] Anklicken des Knopfes \enquote{restart mallob}.
-        \item[3.] Mallob wird neu gestartet.
+        \item[2.] Anklicken des Knopfes \enquote{restart \gls{Mallob}}.
+        \item[3.] \gls{Mallob} wird neu gestartet.
     \end{FAList}
     
     
@@ -854,36 +856,35 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
     
 
        \label{FA:Web-Interface:Anzeigen von Diagnosedaten}
-    \item[F2165] (Wunschkriterium) \textbf{Anzeigen von Diagnosedaten} \\
+    \item[F2165] (Wunschkriterium) \textbf{Anzeigen von eines Graphen der Systemauslastung} \\
     \begin{FA}
-        \textbf{Ziel:} & Adminstratoren können Diagnosedaten von Mallob einsehen. \\
+        \textbf{Ziel:} & Ein \gls{Administrator} kann die Auslastung von \gls{Mallob} als Graph einsehen. \\
         \textbf{Vorbedingung:} & Ein \gls{Administrator} ist angemeldet. \\
-        \textbf{Nachbedingung (Erfolg):} & Diagnosedaten werden angezeigt. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Diagnosedaten werden nicht angezeigt. \\
+        \textbf{Nachbedingung (Erfolg):} & Der Graph wird angezeigt. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Der Graph wird nicht angezeigt. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
         \textbf{Auslösendes Ereignis:} & Der \gls{Administrator} öffnet die \hyperref[pages:admin]{Administratoren-Seite}.\\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
         \item[1.] Navigation zur \hyperref[pages:admin]{Administratoren-Seite}.
-        \item[2.] Die Diagnosedaten werden angezeigt.
+        \item[2.] Der Graph wird angezeigt.
     \end{FAList}
     
     \phantomsection
     \label{FA:Web-Interface:Anzeigen von Plugins}
     \item[F2170] (Wunschkriterium) \textbf{Anzeigen von Plugins} \\
     \begin{FA}
-        \textbf{Ziel:} & Das \gls{Web-Interface} kann extern erstelle Plugins anzeigen. \\
+        \textbf{Ziel:} & Das \gls{Web-Interface} kann extern erstelle \glslink{Plugin}{Plugins} anzeigen. \\
         \textbf{Vorbedingung:} & - \\
         \textbf{Nachbedingung (Erfolg):}  &  Plugins werden als Dropdown-Menü in der Navigations-Leiste angezeigt und können ausgewählt werden.\\
         \textbf{Nachbedingung (Fehlschlag):} & Plugins werden nicht angezeigt. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} &  Mindestens ein Plugin wurde durch \hyperref[FA:System:Einlesen von Plugins bei Systemstart]{F4010} eingelesen\\
+        \textbf{Auslösendes Ereignis:} &  Das \gls{Web-Interface} wird aufgerufen und Plugins liegen vor.\\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Einlesen von Plugins durch \hyperref[FA:System:Einlesen von Plugins bei Systemstart]{F4010}
-        \item[2.] Anzeigen eines Eintrags für Plugins in der Navigations-Leiste, welcher es ermöglicht, die \hyperref[pages:plugin]{Seiten der Plugins} aufzurufen.
+        \item[1.] Anzeigen eines Eintrags für Plugins in der Navigations-Leiste, welcher es ermöglicht, die \hyperref[pages:plugin]{Seiten der Plugins} aufzurufen.
     \end{FAList}
     
     
@@ -893,8 +894,8 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf das \gls{Web-Int
 %-------------------------------------------------------------------
 \pagebreak
 
-\subsection{Visualisierung}
-Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
+\subsection{\hyperref[pages:visualization]{Visualisierung}}
+Die \hyperref[pages:visualization]{Visualisierung} findet \gls{Web-Interface} statt und ist nur dort einsehbar.
 
 
 \begin{itemize}
@@ -908,18 +909,18 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
     \label{FA:Visualisierung:Anzeigen des Systemzustandes}
     \item[F3000] \textbf{Anzeigen des aktuellen \hyperref[B:Systemzustand]{Systemzustands}} \\
     \begin{FA}
-        \textbf{Ziel:} & Das \gls{Web-Interface} bietet eine Visualisierung des aktuellen \hyperref[B:Systemzustand]{Systemzustands} von Mallob. \\
+        \textbf{Ziel:} & Das \gls{Web-Interface} bietet eine \hyperref[pages:visualization]{Visualisierung} des aktuellen \hyperref[B:Systemzustand]{Systemzustands} von \gls{Mallob}, die sich automatisch aktualisiert. \\
         \textbf{Vorbedingung:} & Der \gls{Nutzer} muss im \gls{Web-Interface} angemeldet sein. \\
-        \textbf{Nachbedingung (Erfolg):} & Der \hyperref[B:Systemzustand]{Systemzustand} von Mallob wird im \gls{Web-Interface} angezeigt. \\
+        \textbf{Nachbedingung (Erfolg):} & Der \hyperref[B:Systemzustand]{Systemzustand} von \gls{Mallob} wird im \gls{Web-Interface} angezeigt. \\
         \textbf{Nachbedingung (Fehlschlag):} &  Es wird eine Fehlermeldung im \gls{Web-Interface} angezeigt.\\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die Visualisierung des \hyperref[B:Systemzustand]{Systemzustands} ansehen. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[pages:visualization]{Visualisierung} des \hyperref[B:Systemzustand]{Systemzustands} ansehen. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung im \gls{Web-Interface}.
-        \item[2.a.] Wenn die Visualisierung erfolgreich geladen wurde, wird diese im \gls{Web-Interface} angezeigt  .
-        \item[3.b.] Wenn die Visualisierung nicht erfolgreich geladen wurde, wird eine Fehlermeldung im \gls{Web-Interface} angezeigt.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung} im \gls{Web-Interface}.
+        \item[2.a.] Wenn die \hyperref[pages:visualization]{Visualisierung} erfolgreich geladen wurde, wird diese im \gls{Web-Interface} angezeigt. Die \hyperref[pages:visualization]{Visualisierung} wird automatisch aktualisiert, außer es wird mittels \hyperref[FA:Visualisierung:Springen]{F3040} ein vergangener Zeitpunkt angezeigt, oder die Visualisierung ist mittels \hyperref[FA:Visualisierung:Pausieren der Visualisierung]{Pausiert}
+        \item[3.b.] Wenn die \hyperref[pages:visualization]{Visualisierung} nicht erfolgreich geladen wurde, wird eine Fehlermeldung im \gls{Web-Interface} angezeigt.
     \end{FAList}
     
     
@@ -929,39 +930,39 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
     \label{FA:Visualisierung:Anzeigen von Details} 
     \item[F3010] \textbf{Anzeigen von \hyperref[B:Job-Details]{Job-Details}} \\
     \begin{FA}
-        \textbf{Ziel:} & Durch Anklicken eines \hyperref[B:Jobs]{Jobs} in der Visualisierung können \hyperref[B:Job-Details]{Details} zum \hyperref[B:Jobs]{Job} eingesehen werden. \\
+        \textbf{Ziel:} & Durch Anklicken eines \hyperref[B:Jobs]{Jobs} in der \hyperref[pages:visualization]{Visualisierung} können \hyperref[B:Job-Details]{Details} zum \hyperref[B:Jobs]{Job} eingesehen werden. \\
         \textbf{Vorbedingung:} & Der \gls{Nutzer} ist im \gls{Web-Interface} angemeldet. \\
         \textbf{Nachbedingung (Erfolg):} & Es werden \hyperref[B:Job-Details]{Details} zum ausgewählten \hyperref[B:Jobs]{Jobs} angezeigt. \\
         \textbf{Nachbedingung (Fehlschlag):} & Es wird eine Fehlermeldung angezeigt und es werden keine \hyperref[B:Job-Details]{Details} angezeigt.\\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[B:Job-Details]{Details} eines \hyperref[B:Jobs]{Job} in der Visualisierung einsehen. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[B:Job-Details]{Details} eines \hyperref[B:Jobs]{Job} in der \hyperref[pages:visualization]{Visualisierung} einsehen. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung im \gls{Web-Interface}.
-        \item[2.] Anklicken eines \hyperref[B:Jobs]{Jobs} im linken Fenster der Visualisierung.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung} im \gls{Web-Interface}.
+        \item[2.] Anklicken eines \hyperref[B:Jobs]{Jobs} in der \hyperref[pages:visualization]{Visualisierung}.
         \item[3] Die \hyperref[B:Job-Details]{Details} werden im rechten Fenster angezeigt. Ist der \hyperref[B:Jobs]{Job} keiner der eigenen und der \gls{Nutzer} kein \gls{Administrator}, so werden die Datails pseudonymisiert dargestellt. Ebenso werden beiden Schaltflächen nicht angezeigt.
-    \end{FAList}
+    \end{FAList}i
 
     
     
     %-----------------Visualisierung - Pausieren der Visualisierung
     \phantomsection
     \label{FA:Visualisierung:Pausieren der Visualisierung} 
-    \item[F3020] \textbf{Pausieren der Visualisierung} \\
+    \item[F3020] \textbf{Pausieren der \hyperref[pages:visualization]{Visualisierung}} \\
     \begin{FA}
-        \textbf{Ziel:} & Die Visualisierung kann pausiert werden. \\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} muss im \gls{Web-Interface} angemeldet sein und die ist  die Visualisierung läuft bereits. \\
-        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung ist pausiert und wird nicht mehr aktualisiert \\
-        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung ist nicht pausiert und läuft weiter. \\
+        \textbf{Ziel:} & Die \hyperref[pages:visualization]{Visualisierung} kann pausiert werden. \\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} muss im \gls{Web-Interface} angemeldet sein und die ist  die \hyperref[pages:visualization]{Visualisierung} läuft bereits. \\
+        \textbf{Nachbedingung (Erfolg):} & Die \hyperref[pages:visualization]{Visualisierung} ist pausiert und wird nicht mehr aktualisiert \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die \hyperref[pages:visualization]{Visualisierung} ist nicht pausiert und läuft weiter. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die Visualisierung pausieren. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[pages:visualization]{Visualisierung} pausieren. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung im \gls{Web-Interface}.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung} im \gls{Web-Interface}.
         \item[2.] Anklicken der Pause-Taste.
-        \item[3.] Die Visualisierung pausiert und wird nicht mehr aktualisiert.
+        \item[3.] Die \hyperref[pages:visualization]{Visualisierung} pausiert und wird nicht mehr aktualisiert.
     \end{FAList}
     
     
@@ -970,18 +971,18 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
     \label{FA:Visualisierung:Starten der Visualisierung} 
     \item[F3030] \textbf{Starten der Visualisierung} \\
     \begin{FA}
-        \textbf{Ziel:} & Die Visualisierung kann nach dem pausieren wieder gestartet werden. \\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist im \gls{Web-Interface} angemeldet und die Visualisierung ist bereits pausiert. \\
-        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung läuft wieder und wird aktualisiert. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung ist weiterhin pausiert. \\
+        \textbf{Ziel:} & Die \hyperref[pages:visualization]{Visualisierung} kann nach dem pausieren wieder gestartet werden. \\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} ist im \gls{Web-Interface} angemeldet und die \hyperref[pages:visualization]{Visualisierung} ist bereits pausiert. \\
+        \textbf{Nachbedingung (Erfolg):} & Die \hyperref[pages:visualization]{Visualisierung} läuft wieder und wird aktualisiert. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die \hyperref[pages:visualization]{Visualisierung} ist weiterhin pausiert. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die Visualisierung wieder starten.\\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[pages:visualization]{Visualisierung} wieder starten.\\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung im \gls{Web-Interface}.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung} im \gls{Web-Interface}.
         \item[2.] Anklicken der Wiedergabe-Taste.
-        \item[3.] Die Visualisierung startet und wird wieder aktualisiert.
+        \item[3.] Die \hyperref[pages:visualization]{Visualisierung} startet und wird wieder aktualisiert.
     \end{FAList}
     
     
@@ -991,20 +992,20 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
     %-------------Visualisierung - Springen zu einem bestimmten Zeitpunkt
     \phantomsection
     \label{FA:Visualisierung:Springen} 
-    \item[F3040] \textbf{Springen zu einem bestimmten Zeitpunkt der Visualisierung} \\
+    \item[F3040] \textbf{Springen zu einem bestimmten Zeitpunkt der \hyperref[pages:visualization]{Visualisierung}} \\
     \begin{FA}
-        \textbf{Ziel:} & Der \gls{Nutzer} kann zu einem beliebigen Zeitpunkt in der Visualisierung vor- oder zurückspringen. \\
-        \textbf{Vorbedingung:} & Der \gls{Nutzer} muss im \gls{Web-Interface} angemeldet sein und Mallob muss gestartet sein. \\
-        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung wird ab dem gewählten Zeitpunkt abgespielt. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung wird nicht ab dem gewählten Zeitpunkt abgespielt. \\
+        \textbf{Ziel:} & Der \gls{Nutzer} kann zu einem beliebigen Zeitpunkt in der \hyperref[pages:visualization]{Visualisierung} vor- oder zurückspringen. \\
+        \textbf{Vorbedingung:} & Der \gls{Nutzer} muss im \gls{Web-Interface} angemeldet sein und \gls{Mallob} muss gestartet sein. \\
+        \textbf{Nachbedingung (Erfolg):} & Die \hyperref[pages:visualization]{Visualisierung} wird ab dem gewählten Zeitpunkt abgespielt. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die \hyperref[pages:visualization]{Visualisierung} wird nicht ab dem gewählten Zeitpunkt abgespielt. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die Visualisierung an einem bestimmten Zeitpunkt ansehen. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die \hyperref[pages:visualization]{Visualisierung} an einem bestimmten Zeitpunkt ansehen. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung}.
         \item[2.] Wählen des gewünschte Zeitpunktes durch Anklicken oder Ziehen des Sliders zur gewünschten Position.
-        \item[3.] Die Visualisierung wird ab dem gewählten Zeitpunkt abgespielt.
+        \item[3.] Die \hyperref[pages:visualization]{Visualisierung} wird ab dem gewählten Zeitpunkt abgespielt.
     \end{FAList}
     
     
@@ -1015,20 +1016,20 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
     \label{FA:Visualisierung:Aendern der Wiedergabegeschwindigkeit} 
     \item[F3050] (Wunschkriterium) \textbf{Ändern der Wiedergabegeschwindigkeit} \\
     \begin{FA}
-        \textbf{Ziel:} & Die Geschwindigkeit, mit der die Visualisierung abgespielt wird kann geändert werden. \\
+        \textbf{Ziel:} & Die Geschwindigkeit, mit der die \hyperref[pages:visualization]{Visualisierung} abgespielt wird kann geändert werden. \\
         \textbf{Vorbedingung:} & Der \gls{Nutzer} ist im \gls{Web-Interface} angemeldet. \\
-        \textbf{Nachbedingung (Erfolg):} & Die Visualisierung wird in der gewünschten Geschwindigkeit abgespielt. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Die Visualisierung wird weiterhin in der alten Geschwindigkeit abgespielt. \\
+        \textbf{Nachbedingung (Erfolg):} & Die \hyperref[pages:visualization]{Visualisierung} wird in der gewünschten Geschwindigkeit abgespielt. \\
+        \textbf{Nachbedingung (Fehlschlag):} & Die \hyperref[pages:visualization]{Visualisierung} wird weiterhin in der alten Geschwindigkeit abgespielt. \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die Wiedergabegeschwindigkeit der Visualisierung ändern. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte die Wiedergabegeschwindigkeit der \hyperref[pages:visualization]{Visualisierung} ändern. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung im \gls{Web-Interface}.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung} im \gls{Web-Interface}.
         \item[2.] Eingabe der gewünschten Wiedergabegeschwindigkeit in das Feld \enquote{replay speed}.
-        \item[3.a.] Die Visualisierung wird in der gewünschten Wiedergabegeschwindigkeit abgespielt.
-        \item[3.b.] Wenn die gewählte Wiedergabegeschwindigkeit schneller als Echtzeit ist und sich die Visualisierung am aktuellsten Punkt befindet, wird die Wiedergabegeschwindigkeit auf Echtzeit gesetzt.
-        \item[3.c.] Wenn die gewählte Wiedergabegeschwindigkeit negativ ist, wird die Visualisierung rückwärts in der gewünschten Wiedergabegeschwindigkeit abgespielt.
+        \item[3.a.] Die \hyperref[pages:visualization]{Visualisierung} wird in der gewünschten Wiedergabegeschwindigkeit abgespielt.
+        \item[3.b.] Wenn die gewählte Wiedergabegeschwindigkeit schneller als Echtzeit ist und sich die \hyperref[pages:visualization]{Visualisierung} am aktuellsten Punkt befindet, wird die Wiedergabegeschwindigkeit auf Echtzeit gesetzt.
+        \item[3.c.] Wenn die gewählte Wiedergabegeschwindigkeit negativ ist, wird die \hyperref[pages:visualization]{Visualisierung} rückwärts in der gewünschten Wiedergabegeschwindigkeit abgespielt.
     \end{FAList}
     
     
@@ -1038,17 +1039,17 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
     \label{FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job}
     \item[F3060] (Wunschkriterium) \textbf{Anzeigen des \glslink{Binaerbaum}{Binärbaumes} für einen Job} \\
     \begin{FA}
-        \textbf{Ziel:} & Visualisierung des zu einem \hyperref[B:Jobs]{Job} gehörenden \glslink{Binaerbaum}{Binärbaumes}. \\
+        \textbf{Ziel:} & Anzeigen des zu einem \hyperref[B:Jobs]{Job} gehörenden \glslink{Binaerbaum}{Binärbaumes}. \\
         \textbf{Vorbedingung:} & Der \gls{Nutzer} muss im \gls{Web-Interface} angemeldet sein und muss einen \hyperref[B:Jobs]{Job} eingereicht oder abgeschlossen haben. \\
         \textbf{Nachbedingung (Erfolg):} & Der \gls{Binaerbaum} zu dem gewünschten \hyperref[B:Jobs]{Job} wird im \gls{Web-Interface} angezeigt. \\
         \textbf{Nachbedingung (Fehlschlag):} & Der \gls{Binaerbaum} wird nicht im \gls{Web-Interface} angezeigt.  \\
         \textbf{Akteure:} & \gls{Nutzer} \\
-        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} klickt einen \hyperref[B:Jobs]{Job} in der Visualisierung an. \\
+        \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} klickt einen \hyperref[B:Jobs]{Job} in der \hyperref[pages:visualization]{Visualisierung} an. \\
     \end{FA}
     \textbf{Beschreibung:}
     \begin{FAList} 
-        \item[1.] Navigation zur Visualisierung im \gls{Web-Interface}.
-        \item[2.] Anklicken eines \hyperref[B:Jobs]{Jobs} im linken Fenster der Visualisierung.
+        \item[1.] Navigation zur \hyperref[pages:visualization]{Visualisierung} im \gls{Web-Interface}.
+        \item[2.] Anklicken eines \hyperref[B:Jobs]{Jobs} in der \hyperref[pages:visualization]{Visualisierung}.
         \item[3.] Der \gls{Binaerbaum} zu dem ausgewählten \hyperref[B:Jobs]{Job} wird im \gls{Web-Interface} angezeigt.
     \end{FAList}
     
@@ -1061,12 +1062,13 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
 \pagebreak
 
 \subsection{System}
-    \setlength\itemsep{4em}
-
+ 
+Die folgenden Anforderungen beziehen sich auf das gesamte System.
 
 
 
 \begin{itemize}
+   \setlength\itemsep{4em}
     \phantomsection
     \label{FA:System:Einstellungen festlegen}
     \item[F4000] \textbf{Festlegen von Einstellungen mittels einer \gls{Konfigurationsdatei} bei Systemstart} \\
@@ -1087,22 +1089,12 @@ Die Visualisierung findet \gls{Web-Interface} statt und ist nur dort einsehbar.
 
   
     \phantomsection
-    \label{FA:System:Einlesen von Plugins bei Systemstart}
-    \item[F4010] (Wunschkriterium) \textbf{Einlesen von Plugins bei Systemstart} \\
+    \label{FA:System:Schnittstelle für Plugins}
+    \item[F4010] (Wunschkriterium) \textbf{Schnittstelle für Plugins} \\
     \begin{FA}
-        \textbf{Ziel:} & Das System kann extern erstellte Plugins einlesen. \\
-        \textbf{Vorbedingung:} & Es liegen ein einzulesende Plugins vor. \\
-        \textbf{Nachbedingung (Erfolg):}  & Die Plugins wurden eingelesen. \\
-        \textbf{Nachbedingung (Fehlschlag):} & Ein oder mehrere Plugins konnten nicht eingelesen werden und auf der  \hyperref[pages:admin]{Administratoren-Seite} werden mittels \hyperref[FA:Web-Interface:Anzeigen von Warnungen und Fehlermeldungen]{F2110} angezeigt. \\
-        \textbf{Akteure:} & System \\
-        \textbf{Auslösendes Ereignis:} & Starten des Systems .\\
+        \textbf{Ziel:} & Das System bietet eine Schnittstelle, die genutzt werden kann, um neue Plugins hinzuzufügen.  \\
+        \textbf{} &   \\
     \end{FA}
-    \textbf{Beschreibung:}
-    \begin{FAList} 
-        \item[1.] Starten des Systems.
-        \item[2.] Plugins werden beim Start eingelesen.
-    \end{FAList} 
-
 
 \end{itemize}
 

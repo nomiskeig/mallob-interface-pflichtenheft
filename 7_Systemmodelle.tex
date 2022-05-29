@@ -8,46 +8,46 @@
     \caption{\gls{Model-View-Controller}}
 \end{figure}
 Das System kann semantisch in 3 Komponenten gegliedert werden; View, Controller sowie Model. \\
-Die Aufgabe des \textbf{Views}, bzw. des Web-Interfaces ist es dabei eine interaktive, grafische Benutzeroberfläche für die Interaktion mit Mallob bereitzustellen. \\
-Der \textbf{Controller}, bzw. \gls{API} sowie Backend (Anfragen gehen über \gls{API} an das Backend) sind für die Kommunikation zwischen \gls{Datenbank}, Mallob und \gls{Web-Interface}, bzw. \gls{Nutzer} zuständig. Das Mallob-Interface ist im Backend implementiert und für die Kommunikation zwischen der Backend-Logik und einer laufenden Mallob-Instanz zuständig.\\
+Die Aufgabe des \textbf{Views}, bzw. des Web-Interfaces ist es dabei eine interaktive, grafische Benutzeroberfläche für die Interaktion mit \gls{Mallob} bereitzustellen. \\
+Der \textbf{Controller} ist für die Kommunikation zwischen \gls{Nutzer} und \gls{Datenbank}, sowie \gls{Mallob} zuständig. Alle Datenveränderungen finden im hier liegenden Backend statt. Das Backend bietet zur Kommunikation mit dem Nutzer eine \gls{API} an. Diese ist auch für den Datenverkehr zwischen \gls{Web-Interface} und Backend zuständig. Für die interne Kommunikation in \gls{Mallob} wird es ein \gls{Mallob}-Interface geben, welches die Kommunikationsschnittstelle zu \gls{Mallob} darstellt.\\
+%Der \textbf{Controller}, bzw. \gls{API} sowie Backend (Anfragen gehen über %\gls{API} an das Backend) sind für die Kommunikation zwischen %\gls{Datenbank}, \gls{Mallob} und \gls{Web-Interface}, bzw. \gls{Nutzer} zuständig. %Das \gls{Mallob}-Interface ist im Backend implementiert und für die Kommunikation %zwischen der Backend-Logik und einer laufenden \gls{Mallob}-Instanz zuständig.\\
 Im \textbf{Model} hält eine \gls{Datenbank} die \hyperref[PD]{Daten des Systems}. \\
-\textbf{Extern} liegt die laufende Mallob-Instanz. Mallob ist nicht Teil unseres Systems. Unser System kommuniziert lediglich mit Mallob.
+\textbf{Extern} liegt die laufende \gls{Mallob}-Instanz. \gls{Mallob} ist nicht Teil unseres Systems. Unser System kommuniziert lediglich mit \gls{Mallob}.
 
 \pagebreak
 
 \subsection{Anwendungsfalldiagramme}
 
-\begin{figure}[H]
-    \centering    
-    \includegraphics[width=\textwidth]{images-interface/Diagramme/Login_register_3_screenshot.jpg} 
-    \caption{Registrierung von \gls{Nutzer}n}
-\end{figure}
+%\begin{figure}[H]
+%    \centering    
+%    \includegraphics[width=\textwidth]{images-interface/Diagramme/Login_register_3_screenshot.jpg} 
+%    \caption{Registrierung von \gls{Nutzer}n}
+%\end{figure}
 
 
-Registriert sich ein \gls{Nutzer} gemäß \hyperref[FA:API:Registrierung von Nutzern]{F1150}, so wird seine Registrierunganfrage von einem \gls{Administrator} verifiziert. Die \gls{Datenbank} speichert die \hyperref[PD:Nutzerdaten]{Nutzerdaten}.\\
-Möchte sich ein registrierter \gls{Nutzer} im \gls{Web-Interface} anmelden, so werden die Nutzerdaten aus der \gls{Datenbank} geholt und mit den eingegebenen Daten verglichen.
+%Registriert sich ein \gls{Nutzer} gemäß \hyperref[FA:API:Registrierung von Nutzern]{F1150}, so wird seine Registrierunganfrage von einem \gls{Administrator} verifiziert. Die \gls{Datenbank} speichert die \hyperref[PD:Nutzerdaten]{Nutzerdaten}.\\
+%Möchte sich ein registrierter \gls{Nutzer} im \gls{Web-Interface} anmelden, so werden die Nutzerdaten aus der \gls{Datenbank} geholt und mit den eingegebenen Daten verglichen.
 
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Diagramme/Request_authntification_screenshot.jpg}
+    \includegraphics[width=\textwidth]{images-interface/usecasediagrams/Usecasediagram_Authentifizierung_von_Anfragen.jpg}
     \caption{Authentifizierung von \gls{API}-Anfragen}
 \end{figure}
-Jede Anfrage an die \gls{API} muss authentifiziert werden. Dies geschieht, indem der \gls{Authentifizierungstoken}, der mit der Anfrage geschickt wurde, mit dem in der \gls{Datenbank} gespeichertem \gls{Authentifizierungstoken} abgeglichen wird. Wurde eine Anfrage authentifiziert, also sichergestellt, das der \gls{Nutzer} diese auch ausführen darf, so wird sie weiterverarbeitet.\\
-Jede Anfrage an die \gls{API} wird für eine gewisse Zeit gespeichert, um sie später noch einmal referenzieren oder einsehen zu können.
+Jede Anfrage an die \gls{API} muss authentifiziert werden. Wurde eine Anfrage authentifiziert, also sichergestellt, dass der \gls{Nutzer} diese auch ausführen darf, so wird sie weiterverarbeitet.
 
 \pagebreak
 
 %https://www.overleaf.com/project
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Diagramme/Submit-abort-view-screenshot.jpg}
+    \includegraphics[width=\textwidth]{images-interface/usecasediagrams/Usecasediagram_Job-einreichen_Job-abbrechen-Job-Ergebnis-einsehen.jpg}
     \caption{Einreichen, Abbrechen und Einsehen von \hyperref[B:Jobs]{Jobs}}
 \end{figure}
 
-Reicht ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} ein, so wird dieser (je nach Konfiguration) von Mallob bearbeitet. Mallob gibt dabei Rückmeldung über den Job-Status, also entweder das \hyperref[B:Job-Ergebnis]{Ergebnis} des \hyperref[B:Jobs]{Jobs}, oder ob ein Fehler aufgetreten ist. Dieser Status wird in der \gls{Datenbank} gespeichert. \\
-Ein \gls{Nutzer} kann die Bearbeitung eines \hyperref[B:Jobs]{Jobs}, der gerade von Mallob berechnet wird, abbrechen. Die berechneten Zwischenergebnisse werden dann gespeichert und können später abgerufen werden. \\
+Reicht ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} ein, so wird dieser (je nach Konfiguration) von \gls{Mallob} bearbeitet. \gls{Mallob} gibt dabei Rückmeldung über den \hyperref[B:Job-Status]{Job-Status}, also entweder das \hyperref[B:Job-Ergebnis]{Ergebnis} des \hyperref[B:Jobs]{Jobs}, oder ob ein Fehler aufgetreten ist. Dieser Status wird in der \gls{Datenbank} gespeichert. \\
+Ein \gls{Nutzer} kann die Bearbeitung eines \hyperref[B:Jobs]{Jobs}, der gerade von \gls{Mallob} berechnet wird, abbrechen. Die berechneten Zwischenergebnisse werden dann gespeichert und können später abgerufen werden. \\
 Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einsehen, so ist es wichtig, dass dieser bereits eingereicht wurde. Um ein \hyperref[B:Jobs]{Job} einsehen zu können werden zunächst die angeforderten \hyperref[B:Job-Informationen]{Job-Informationen} aus der \gls{Datenbank} geholt und dann vorbereitet an den \gls{Nutzer} geschickt.
 
 
@@ -59,10 +59,10 @@ Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einsehen, so ist es wichti
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images-interface/Diagramme/visualisierungsdaten_anwendungsfaelle.jpg}
-    \caption{Mallob-Visualisierungsdaten abrufen}
+    \includegraphics[width=\textwidth]{images-interface/usecasediagrams/Usecasediagram_Mallob-Visualisierungsdaten_abrufen.jpg}
+    \caption{\gls{Mallob}-Visualisierungsdaten abrufen}
 \end{figure}
-Möchte ein \gls{Nutzer} Mallob-Visualisierungsdaten abrufen, so holt das System bereits vergangene \hyperref[B:Event]{Events} aus der \gls{Datenbank}, um daraus die Daten für die Visualisierung vorzubereiten. Des weiteren wird live der Output-\gls{Stream} der \gls{Log-Datei} von Mallob ausgelesen, um die Echtzeit-Visualisierung für den \gls{Nutzer} anzubieten. 
+Möchte ein \gls{Nutzer} \gls{Mallob}-\hyperref[pages:visualization]{Visualisierung}sdaten abrufen, so holt das System bereits vergangene \hyperref[B:Event]{Events} aus der \gls{Datenbank}, um daraus die Daten für die \hyperref[pages:visualization]{Visualisierung} vorzubereiten. Des weiteren wird live die \gls{Log-Datei} von \gls{Mallob} ausgelesen, um die Echtzeit-\hyperref[pages:visualization]{Visualisierung} für den \gls{Nutzer} anzubieten. 
 
 
 \pagebreak
@@ -83,7 +83,7 @@ Ein \gls{Nutzer} muss sich anmelden, um die Funktionen des \gls{Web-Interface}s 
     \includegraphics[width=\textwidth]{images-interface/v3_aktivitaetsdiagramme/Job_einreichen_v11.pdf}
     \caption{Einreichen eines \hyperref[B:Jobs]{Jobs} über das \gls{Web-Interface}}
 \end{figure}
-Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einreichen, muss er angemeldet sein. Zunächst wählt er die Schaltfläche \enquote{submit job}. Daraufhin zeigt das \gls{Web-Interface} eine \hyperref[pages:submit-job]{Eingabe-Maske} an. Hier muss er die notwendigen Parameter eingeben, die gewünschten optionalen Parameter auswählen und die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über genau eine der drei Möglichkeiten übergeben. Über ein \gls{Dropdown-Menue}, wählt er dafür zwischen direkter Eingabe, Hochladen einer Datei, die die Beschreibung enthält oder Angabe einer URL. Nach Bestätigung der Eingabe wird das Format der Eingaben vom \gls{Web-Interface} überprüft. Falls das Format inkorrekt war, muss der \gls{Nutzer} die inkorrekte Eingabe verändern, andernfalls kann der \gls{Nutzer} die Eingaben bestätigen, was seine \hyperref[B:Jobs]{Job} über das \gls{Web-Interface} zu Mallob schickt. Mallob überprüft die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} und die \hyperref[B:Job-Konfiguration]{Job-Konfiguration}. Falls diese fehlerhaft sind, wird eine Fehlermeldung vom \gls{Web-Interface} angezeigt. Falls die Daten des \hyperref[B:Jobs]{Jobs} vom \gls{Nutzer} im korrekten Format eingegeben wurden, wird eine Bestätigung zur \hyperref[B:Jobs]{Job}-Bearbeitung vom \gls{Web-Interface} zurückgegeben.
+Möchte ein \gls{Nutzer} einen \hyperref[B:Jobs]{Job} einreichen, muss er angemeldet sein. Zunächst wählt er die Schaltfläche \enquote{submit job}. Daraufhin zeigt das \gls{Web-Interface} eine \hyperref[pages:submit-job]{Eingabe-Maske} an. Hier muss er die notwendigen Parameter eingeben, die gewünschten optionalen Parameter auswählen und die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über genau eine der drei Möglichkeiten übergeben. Über ein \gls{Dropdown-Menue}, wählt er dafür zwischen direkter Eingabe, Hochladen einer Datei, die die Beschreibung enthält oder Angabe einer \gls{URL}. Nach Bestätigung der Eingabe wird das Format der Eingaben vom \gls{Web-Interface} überprüft. Falls das Format inkorrekt war, muss der \gls{Nutzer} die inkorrekte Eingabe verändern, andernfalls kann der \gls{Nutzer} die Eingaben bestätigen, was seine \hyperref[B:Jobs]{Job} über das \gls{Web-Interface} zu \gls{Mallob} schickt. \gls{Mallob} überprüft die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} und die \hyperref[B:Job-Konfiguration]{Job-Konfiguration}. Falls diese fehlerhaft sind, wird eine Fehlermeldung vom \gls{Web-Interface} angezeigt. Falls die Daten des \hyperref[B:Jobs]{Jobs} vom \gls{Nutzer} im korrekten Format eingegeben wurden, wird eine Bestätigung zur \hyperref[B:Jobs]{Job}-Bearbeitung vom \gls{Web-Interface} zurückgegeben.
 
 \begin{figure}[H]
     \centering

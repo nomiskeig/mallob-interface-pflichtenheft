@@ -10,9 +10,9 @@
     
     \item[P110] Die maximale Anzahl \hyperref[B:Jobs]{Jobs}, die ein Nutzer gleichzeitig in Bearbeitung haben kann, ist beschränkt.
     
-    \item[P120] Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der Visualisierung darzustellen, muss linear in der Anzahl der zu ladenden \hyperref[B:Event]{Events} sein.
+    \item[P120] Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der \hyperref[pages:visualization]{Visualisierung} darzustellen, muss linear in der Anzahl der zu ladenden \hyperref[B:Event]{Events} sein.
     
-    \item[P130] (Wunschbedingung)  Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der Visualisierung darzustellen, muss konstant sein, unabhängig vom gewählten Zeitpunkt.
+    \item[P130] (Wunschbedingung)  Die Zeit, die benötigt wird, um einen beliebigen Zeitpunkt in der \hyperref[pages:visualization]{Visualisierung} darzustellen, muss konstant sein, unabhängig vom gewählten Zeitpunkt.
     
     \item[P140] Das \gls{Web-Interface} ist auch auf kleineren Bildschirmen, wie etwa einem Handy-Bildschirm, nutzbar.
     
@@ -34,13 +34,19 @@
     
     \item[P220] Der \gls{Nutzer} erhält auf jede \gls{API}-Anfrage außer \hyperref[FA:API:Andauernde Abfrage des Ergebnisses eines Jobs]{F1110} unmittelbar eine  Antwort.
     
-    \item[P230] Muss in der \hyperref[pages:visualization]{Visualisierung} zu viel angezeigt werden, so wird die Qualität herabgestuft, um weiterhin eine performante Darstellung zu ermöglichen. Dies geschieht beispielsweise durch das weglassen von Verbindungen zwischen den Prozessen.
+    \item[P230] Die \hyperref[pages:visualization]{Visualiseriung} ist skalierbar, sodass auch mehrere Tausend Prozesse angezeigt werden können. Um dies zu ermöglichen, wird die Qualität bei vielen Prozessen entsprechend reduziert.%, beispielsweise durch das Weglassen von Verbindungen zwischen den Prozessen.
     
-    \item[P240] Daten über Jobs, die nicht dem angemeldetem Nutzer gehören, werden stehts pseudomynisiert ausgegeben und dargestellt. Ist ein Administrator  angemeldet, so werden die Daten nicht pseudomynisiert.
+    \item[P240] Daten über \hyperref[B:Jobs]{Jobs}, die nicht dem angemeldetem \gls{Nutzer} gehören, werden stets pseudomynisiert ausgegeben und dargestellt. Ist ein \gls{Administrator}  angemeldet, so werden die Daten nicht pseudomynisiert.
     
-    \item[P250] Es ist möglich, die Job-Seite direkt über eine passende \gls{URL} aufzurufen.
+    %.
+    \item[P250] Es ist möglich, die \hyperref[pages:job-page]{Job-Seite} direkt über eine passende \gls{URL} aufzurufen.
     
-    \item[P260] Die maximale Geschwindigkeit der Visualisierung ist das zweihundertfache.
+    \item[P260] Die maximale Geschwindigkeit der \hyperref[pages:visualization]{Visualisierung} ist das zweihundertfache.
+    
+    \item[P270] Die über Nutzer gespeicherte Daten können von einem \glspl{System-Administrator} geändert werden, um beispielsweise die Priorität des Nutzers zu ändern oder ein Konto zu verifizieren, aber auch andere Nutzer zum \gls{Administrator} zu machen.
+    
+    \item[P280] Das Backend wird in Java implementiert.
 
-    
+    \item[P290] Globale Einstellungen des Systems werden in einer \gls{Konfigurationsdatei} gespeichert und mit jedem Neustart aktualisiert.
+
 \end{itemize}
