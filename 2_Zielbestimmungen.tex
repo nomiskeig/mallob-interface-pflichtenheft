@@ -19,8 +19,8 @@
 %\end{itemize}
 
 \section{Zielbestimmung}
-\textit{Fallob} ermöglicht es \glslink{Nutzer}{Nutzern}, einfacher mit \href{https://github.com/domschrei/\gls{Mallob}}{\gls{Mallob}} zu interagieren. Diese Interaktion kann auf zwei Wege erfolgen:
-Einerseits wird eine \gls{API} für die Interaktion angeboten. Andererseits gibt es aber auch ein benutzerfreundliches \gls{Web-Interface}, welches die \gls{API} nutzt und somit eine graphische Oberfläche für diese darstellt. Auf beiden Wege können eigene \hyperref[B:Jobs]{Job} verwaltet werden. Darüber hinaus bietet das \gls{Web-Interface} auch eine \hyperref[pages:visualization]{Visualisierung} des Systems.
+\textit{Fallob} ermöglicht es \glslink{Nutzer}{Nutzern}, einfacher mit \href{https://github.com/domschrei/Mallob}{Mallob} zu interagieren. Diese Interaktion kann auf zwei Wege erfolgen:
+Einerseits wird eine \gls{API} für die Interaktion angeboten. Andererseits gibt es aber auch ein benutzerfreundliches \gls{Web-Interface}, welches die \gls{API} nutzt und somit eine graphische Oberfläche für diese darstellt. Auf beiden Wegen können eigene \hyperref[B:Jobs]{Job} verwaltet werden. Darüber hinaus bietet das \gls{Web-Interface} auch eine \hyperref[pages:visualization]{Visualisierung} des Systems.
 
 
 \subsection{Musskriterien}
@@ -28,13 +28,13 @@ Einerseits wird eine \gls{API} für die Interaktion angeboten. Andererseits gibt
         \begin{itemize}[noitemsep]
             \item Authentifizieren von \glslink{Nutzer}{Nutzern} \hyperref[FA:API:Authentifizieren von Nutzern]{(F1000)}
             %\item Registrieren von neuen Nutzer
-            \item \hyperref[B:Jobs]{Job} einreichen \hyperref[FA:API:Einreichen von Jobs]{(F1010)}
-            \item \hyperref[B:Jobs]{Job} abbrechen \hyperref[FA:API:Abbrechen von eingereichten Jobs]{(F1020)}
+            \item \hyperref[B:Jobs]{Jobs} einreichen \hyperref[FA:API:Einreichen von Jobs]{(F1010)}
+            \item \hyperref[B:Jobs]{Jobs} abbrechen \hyperref[FA:API:Abbrechen von eingereichten Jobs]{(F1020)}
             \item \hyperref[B:Job-Informationen]{Informationen zu Jobs} abfragen \hyperref[FA:API:Abfragen der Informationenen von Jobs]{(F1030)}
             \item \hyperref[B:Job-Ergebnis]{Ergebnisse} von \hyperref[B:Jobs]{Jobs} abfragen \hyperref[FA:API:Ausgeben des Ergebnisses für eine oder mehrere Jobs]{(F1060)}
             \item \hyperref[B:Job-Beschreibung]{Beschreibung von Jobs} abfragen \hyperref[FA:API:Ausgeben der Job-Beschreibung]{(F1070)}
             \item Anbieten eines \hyperref[B:Event]{Event}-\glslink{Stream}{Streams} von \gls{Mallob} \hyperref[FA:API:Ausgeben eines Event-Streams von Mallob]{(F1090)}
-            \item Andauernde Anfrage zum Abwarten des Abschlusses eines einzelnen Jobs \hyperref[FA:API:Andauernde Abfrage des Ergebnisses eines Jobs]{(F1119)}
+            \item Andauernde Anfrage zum Abwarten des Abschlusses eines einzelnen \hyperref[B:Jobs]{Jobs} \hyperref[FA:API:Andauernde Abfrage des Ergebnisses eines Jobs]{(F1110)}
             \item Abfrage von Informationen der \gls{Mallob}-Instanz \hyperref[FA:API:Abfragen der Informationen von Mallob]{(F1080)}
             %\item Erhalten von Informationen zu aufgetretenen Fehlern
         \end{itemize}
@@ -44,17 +44,17 @@ Einerseits wird eine \gls{API} für die Interaktion angeboten. Andererseits gibt
             %\item Registrierung von neuen Nutzern
             \item Tabellarische Übersicht  der Jobs
                 \begin{itemize}[noitemsep]
-                    \item Abbrechen mehrerer \hyperref[B:Jobs]{Job} auf einmal \hyperref[FA:Web-Interface:Abbruch mehrerer Jobs auf einmal]{(F2030)}
-                    \item Herunterladen von mehreren \hyperref[B:Job-Ergebnis]{Ergebnisses} auf einmal \hyperref[FA:Web-Interface:herunterladen mehrerer Ergebnisse auf einmal]{(F2050)}
+                    \item Abbrechen mehrerer \hyperref[B:Jobs]{Jobs} auf einmal \hyperref[FA:Web-Interface:Abbruch mehrerer Jobs auf einmal]{(F2030)}
+                    \item Herunterladen von mehreren \hyperref[B:Job-Ergebnis]{Ergebnissen} auf einmal \hyperref[FA:Web-Interface:herunterladen mehrerer Ergebnisse auf einmal]{(F2050)}
                 \end{itemize}
             \item \hyperref[B:Jobs]{Job} über Eingabemaske einreichen \hyperref[FA:Web-Interface:Job einreichen]{(F2010)}
                 \begin{itemize}[noitemsep]
                     \item Einreichen der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über ein Eingabe-Feld 
                     \item Einreichen der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} durch Hochladen einer entsprechenden Datei
                 \end{itemize}
-            \item \hyperref[B:Jobs]{Job} abbrechen \hyperref[FA:Web-Interface:Abbruch eines einzelnen Jobs]{(F2020)}
+            \item Einzelnen \hyperref[B:Jobs]{Job} abbrechen \hyperref[FA:Web-Interface:Abbruch eines einzelnen Jobs]{(F2020)}
             \item \hyperref[pages:job-page]{Job-Seite} um \hyperref[B:Job-Informationen]{Information} von \hyperref[B:Jobs]{Job} anzusehen \hyperref[FA:Web-Interface:Einsehen von Job-Informationen]{(F2080)}
-            \item Herunterladen der \hyperref[B:Job-Ergebnis]{Job-Ergebnisse} \hyperref[FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses]{(F2040)}
+            \item Herunterladen eines \hyperref[B:Job-Ergebnis]{Job-Ergebnisses} \hyperref[FA:Web-Interface:Herunterladen eines einzelnen Ergebnisses]{(F2040)}
             \item Anzeigen von aufgetretenen Fehlern bei \glslink{Nutzer}{Nutzern} \hyperref[FA:Web-Interface:Anzeigen von Fehlern]{(F2060)}
             \item Anzeigen von Warnungen von \gls{Mallob} im \hyperref[pages:admin]{Administratoren-Bereich} \hyperref[FA:Web-Interface:Anzeigen von Warnungen und Fehlermeldungen]{(F2070)} 
             %\item Verifizierungsmöglichkeit von neuen Nutzern für Administratoren 
@@ -85,19 +85,21 @@ Einerseits wird eine \gls{API} für die Interaktion angeboten. Andererseits gibt
 \subsection{Wunschkriterien}
     \begin{itemize}[noitemsep]
         %\item Speichern von Jobdaten für Statistiken -> Irgendwie redundaten, da wir eh schon jobdaten speichern
-        \item Möglichkeit für \glslink{Administrator}{Administratoren}, \gls{Mallob} zu starten, beenden oder neuzustarten \hyperref[FA:Web-Interface:Verwalten von Malllob]{(F2140)}
+        \item Möglichkeit für \glslink{Administrator}{Administratoren}, \gls{Mallob} über die \gls{API} zu starten, beenden oder neuzustarten  (\hyperref[FA:API:Starten von Mallob]{F1120}, \hyperref[FA:API:Stoppen von Mallob]{F1130}, \hyperref[FA:API:Neustart von Mallob]{F1140})
+        \item Möglichkeit für \glslink{Administrator}{Administratoren}, \gls{Mallob} über das \gls{Web-Interface} zu starten, beenden oder neuzustarten  \hyperref[FA:Web-Interface:Verwalten von Malllob]{(F2140)}
         \item Registrierung von \glslink{Nutzer}{Nutzern} über die \gls{API} \hyperref[FA:API:Registrierung von Nutzern]{(F1150)}
         \item Registrierung von \glslink{Nutzer}{Nutzern} über das \gls{Web-Interface} \hyperref[FA:Web-Interface:Registrierung von Nutzern]{(F2120)}
         \item Sortieren der \hyperref[pages:job-table]{Job-Tabelle} im \gls{Web-Interface} \hyperref[FA:Web-Interface:Sortieren der Tabelle]{(F2150)}
         \item Automatisches Aktualisieren der \hyperref[pages:job-table]{Job-Tabelle} (\hyperref[FA:Web-Interface:Aktualisieren]{F2105})
+        \item Möglichkeit für \glspl{Administrator}, die \hyperref[pages:job-table]{Job-Tabelle} nach eigenen \hyperref[B:Jobs]{Jobs} zu filtern \hyperref[FA:Web-Interface:Filtern für Admins]{(F2160)}
         \item \hyperref[pages:job-table-alt]{Alternative Anzeige} der \hyperref[B:Job-Informationen]{Job-Informationen} in der Job-Tabelle im \gls{Web-Interface} \hyperref[FA:Web-Interface:Einsehen von Job-Informationen]{(F2080)}
-        \item Möglichkeit zum Neustart von abgebrochenen oder abgeschlossenen \hyperref[B:Jobs]{Jobs} \hyperref[FA:Web-Interface:Neustart]{(F2130)}
+        \item Möglichkeit zum Neustart von abgebrochenen \hyperref[B:Jobs]{Jobs} über das \gls{Web-Interface} \hyperref[FA:Web-Interface:Neustart]{(F2130)}
         \item Eingabemaske statt einfaches Eingabe-Feld für die Eingabe der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} im \gls{Web-Interface}
         \item Einreichen der \hyperref[B:Job-Beschreibung]{Job-Beschreibung} über eine \gls{URL}, die auf die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} zeigt \hyperref[FA:Web-Interface:Job einreichen]{(F2010)}
         \item Anzeigen eines Graphes der Systemauslastung auf der \hyperref[pages:admin]{Seite für Administratoren} im \gls{Web-Interface} \hyperref[FA:Web-Interface:Anzeigen von Diagnosedaten]{(F2165)}
         \item \gls{Nutzer} im \gls{Web-Interface} benachrichtigen, falls \gls{Mallob} abstürzen sollte 
         \item Ändern der Wiedergabegeschwindigkeit bei der Visualisierung \hyperref[FA:Visualisierung:Aendern der Wiedergabegeschwindigkeit]{(F3050)}
-        \item Darstellung des vollständigen \glslink{Binaerbaum}{Binärbaumes} des \hyperref[B:Jobs]{Jobs} in der Visualisierung \hyperref[FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job]{(F3060)}
+        \item Darstellung des vollständigen \glslink{Binaerbaum}{Binärbaumes} des \hyperref[B:Jobs]{Jobs} bei der Visualisierung \hyperref[FA:Visualisierung:Anzeigen des Binaerbaumes für einen Job]{(F3060)}
         \item Anzeigen von \glslink{Plugin}{Plugins} im \gls{Web-Interface} \hyperref[FA:Web-Interface:Anzeigen von Plugins]{(F2170)}
         \item Entwicklung eines beispielhaften \glslink{Plugin}{Plugins}
     \end{itemize}
@@ -106,5 +108,5 @@ Einerseits wird eine \gls{API} für die Interaktion angeboten. Andererseits gibt
     \begin{itemize}[noitemsep]
         \item Es kann maximal ein Auftrag pro Anfrage hinzugefügt werden
         \item Korrektheit der Daten wird durch \gls{Mallob} geprüft
-        \item Es gibt keine Möglichkeit, falsche Daten in der \gls{API} zu korrigieren, in diesem Fall muss die gleiche Anfrage mit korrekten Daten erneut erfolgen
+        \item Es gibt keine Möglichkeit, falsche Daten in der \gls{API} zu korrigieren. Im Falle eines Fehlers, aufgrund nicht korrekter Daten, muss die gleiche Anfrage mit korrekten Daten erneut erfolgen
     \end{itemize}
