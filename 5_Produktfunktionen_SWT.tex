@@ -58,6 +58,11 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf die \gls{API} un
     \begin{FAList}
         \item[1] Der \gls{Nutzer} schickt eine Anfrage an die \gls{API}, die sowohl die \hyperref[B:Job-Konfiguration]{Job-Konfiguration} und einen Link  zu einer Datei enthält, in der die \hyperref[B:Job-Beschreibung]{Job-Beschreibung} spezifiziert ist.
     \end{FAList}
+    \textbf{Alternative 3 zu den Schritten 1 und 2: (gewünscht)}
+    \begin{FAList}
+        \item[1] Der \gls{Nutzer} schickt eine Anfrage an die \gls{API}, die eine Referenz auf einen abgebrochenen Job enthält.
+        \item[2] Der angegebene \hyperref[B:Jobs]{Job} wird neu gestartet.
+    \end{FAList}
 
     
 
@@ -86,7 +91,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf die \gls{API} un
     
     
 
-    
+    \newpage
     
     %--------------------------API - Abfragen der Daten eines einzelnen Jobs
     \phantomsection
@@ -148,7 +153,7 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf die \gls{API} un
     
     
     
-    
+    \newpage
     \phantomsection
     \label{FA:API:Ausgeben von vergangenen Events}
     \item[F1050] \textbf{Ausgeben von vergangenen \hyperref[B:Event]{Events}} \\
@@ -160,7 +165,6 @@ Die folgenden funktionalen Anforderungen beziehen sich alle auf die \gls{API} un
         \textbf{Akteure:} & \gls{Nutzer} \\
         \textbf{Auslösendes Ereignis:} & Der \gls{Nutzer} möchte \hyperref[B:Event]{Events} von eingereichte \hyperref[B:Jobs]{Jobs} erhalten. \\
     \end{FA}
-    \newpage
      \textbf{Beschreibung:}
     \begin{FAList} 
         \item[1.] Der \gls{Nutzer} stellt eine Anfrage an die \gls{API}. In dieser ist spezifiziert, von welchen \hyperref[B:Jobs]{Jobs} \hyperref[B:Event]{Events} ausgegeben werden sollen und aus welcher Zeit diese \hyperref[B:Event]{Events} stammen sollen.  Es steht dem \gls{Nutzer} frei, ob er \hyperref[B:Event]{Events} zu bestimmten \hyperref[B:Jobs]{Jobs}, allen eigenen \hyperref[B:Jobs]{Jobs} oder allen \hyperref[B:Jobs]{Jobs} im System erhalten möchte.
